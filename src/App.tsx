@@ -1,8 +1,20 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
-import { IonApp, IonRouterOutlet } from '@ionic/react';
+import {
+  IonApp,
+  IonIcon,
+  IonLabel,
+  IonRouterOutlet,
+  IonTabBar,
+  IonTabButton,
+  IonTabs
+} from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import Home from './pages/Home';
+import { ellipse, square, triangle } from 'ionicons/icons';
+import MainPage from './pages/MainPage';
+import Stocks from './pages/Stocks';
+import Royalties from './pages/Royalties';
+import Investir from './pages/Investir';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -26,10 +38,29 @@ import './theme/variables.css';
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
-      <IonRouterOutlet>
-        <Route path="/home" component={Home} exact={true} />
-        <Route exact path="/" render={() => <Redirect to="/home" />} />
-      </IonRouterOutlet>
+      <IonTabs>
+        <IonRouterOutlet>
+          <Route path="/main" component={MainPage} exact={true} />
+          <Route path="/stocks" component={Stocks} exact={true} />
+          <Route path="/royalties" component={Royalties} exact={true} />
+          <Route path="/investir" component={Investir} exact={true} />
+          <Route path="/" render={() => <Redirect to="/main" />} exact={true} />
+        </IonRouterOutlet>
+        <IonTabBar slot="bottom">
+          <IonTabButton tab="main" href="/main">
+            <IonIcon icon={triangle} />
+            <IonLabel>Main Page</IonLabel>
+          </IonTabButton>
+          <IonTabButton tab="stocks" href="/stocks">
+            <IonIcon icon={ellipse} />
+            <IonLabel>Stocks</IonLabel>
+          </IonTabButton>
+          <IonTabButton tab="royalties" href="/royalties">
+            <IonIcon icon={square} />
+            <IonLabel>Royalties</IonLabel>
+          </IonTabButton>
+        </IonTabBar>
+      </IonTabs>
     </IonReactRouter>
   </IonApp>
 );

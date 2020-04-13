@@ -12,8 +12,8 @@ import {
 import { IonReactRouter } from '@ionic/react-router';
 import { ellipse, square, triangle } from 'ionicons/icons';
 import MainPage from './pages/MainPage';
-import Stocks from './pages/Stocks';
-import Royalties from './pages/Royalties';
+import Stocks from './pages/stocks/Stocks';
+import Royalties from './pages/royalties/Royalties';
 import Investir from './pages/Investir';
 
 /* Core CSS required for Ionic components to work properly */

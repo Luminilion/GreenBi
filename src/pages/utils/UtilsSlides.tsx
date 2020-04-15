@@ -7,12 +7,29 @@ import {
   IonSlide,
   IonItem,
   IonCard,
-  IonCardContent
+  IonCardContent,
+  IonCardHeader,
+  IonCardSubtitle,
+  IonCardTitle,
 } from "@ionic/react";
 
-const UtilsSlides : React.FC = () => {
+interface ContainerProps {
+  name: string;
+}
+
+
+
+const UtilsSlides : React.FC<ContainerProps> = ({ name }) => {
   return (
-    <IonContent>
+    <IonCard href="/royalties">
+      <IonCardHeader>
+          <IonCardSubtitle>{name}</IonCardSubtitle>
+          <IonCardTitle>{name}</IonCardTitle>
+      </IonCardHeader>
+      <IonCardContent>
+          Les {name}, c'est vraiment trop super. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed bibendum, velit id tincidunt pulvinar, felis odio blandit mi, id commodo met
+      </IonCardContent>
+      <IonSlides  options={{slidesPerView:2.5}}>
       <IonSlide>
         <IonCard href="/investir">
           <IonItem>
@@ -62,7 +79,9 @@ const UtilsSlides : React.FC = () => {
         </IonCardContent>
       </IonCard>
     </IonSlide>
-  </IonContent>
+  </IonSlides>
+    </IonCard>
+
   );
 };
 

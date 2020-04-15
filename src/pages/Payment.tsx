@@ -20,7 +20,7 @@ import './MainPage.css';
 import './styles.css';
 import UtilsSlides from './utils/UtilsSlides';
 
-const Tab1: React.FC = () => {
+const Payment: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
@@ -30,11 +30,10 @@ const Tab1: React.FC = () => {
       </IonHeader>
       
       <IonContent>
-        <UtilsSlides name="Stocks"></UtilsSlides>
-        <UtilsSlides name="Royalties"></UtilsSlides>
+        <IonCard>PAYER PAYER</IonCard>
       </IonContent>
     </IonPage>
   );
 };
 
-export default Tab1;
+export default Payment;

@@ -38,7 +38,13 @@ const Tab1: React.FC = () => {
 
 
       <IonContent>
-        <IonSlides options={ {slidesPerView: 2.5} } >
+        <IonSlides options={
+          {
+            direction: 'vertical',
+            slidesPerView : 2.5,
+            freeMode: true
+          }
+        } >
 
         <IonSlide>
           <IonCard href="/investir">
@@ -49,46 +55,76 @@ const Tab1: React.FC = () => {
               Investir dans mon super projet de tour eiffel
             </IonCardContent>
           </IonCard>
-        </IonSlide>
-
-      <IonSlide>
 
         <IonCard href="/investir">
           <IonItem>
             <img src="eiffel.jpg"></img>
           </IonItem>
-
           <IonCardContent>
             Investir dans mon super projet de tour eiffel
           </IonCardContent>
         </IonCard>
       </IonSlide>
-      <IonSlide>
 
+      <IonSlide>
+        <IonCard href="/investir">
+          <IonItem>
+            <img src="eiffel.jpg"></img>
+          </IonItem>
+          <IonCardContent>
+            Investir dans mon super projet de tour eiffel
+          </IonCardContent>
+        </IonCard>
 
         <IonCard href="/investir">
           <IonItem>
             <img src="eiffel.jpg"></img>
           </IonItem>
-
           <IonCardContent>
             Investir dans mon super projet de tour eiffel
           </IonCardContent>
         </IonCard>
       </IonSlide>
+
       <IonSlide>
-
-
         <IonCard href="/investir">
           <IonItem>
             <img src="eiffel.jpg"></img>
           </IonItem>
-
           <IonCardContent>
             Investir dans mon super projet de tour eiffel
           </IonCardContent>
         </IonCard>
+
+      <IonCard href="/investir">
+        <IonItem>
+          <img src="eiffel.jpg"></img>
+        </IonItem>
+        <IonCardContent>
+          Investir dans mon super projet de tour eiffel
+        </IonCardContent>
+      </IonCard>
       </IonSlide>
+
+      <IonSlide>
+        <IonCard href="/investir">
+          <IonItem>
+            <img src="eiffel.jpg"></img>
+          </IonItem>
+          <IonCardContent>
+            Investir dans mon super projet de tour eiffel
+          </IonCardContent>
+        </IonCard>
+
+      <IonCard href="/investir">
+        <IonItem>
+          <img src="eiffel.jpg"></img>
+        </IonItem>
+        <IonCardContent>
+          Investir dans mon super projet de tour eiffel
+        </IonCardContent>
+      </IonCard>
+    </IonSlide>
 
         </IonSlides>
       </IonContent>

@@ -1,8 +1,25 @@
 import React from 'react';
 
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCard, IonCardHeader,
-IonCardContent, IonCardSubtitle, IonCardTitle, IonSlides, IonSlide, IonItem,IonIcon,IonLabel,IonButton} from '@ionic/react';
-import * as UtilsSlides from '../utils/UtilsSlides';
+import { IonContent,
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+  IonCard,
+  IonCardHeader,
+  IonCardContent,
+  IonCardSubtitle,
+  IonCardTitle,
+  IonSlides,
+  IonSlide,
+  IonItem,
+  IonIcon,
+  IonLabel,
+  IonButton,
+  IonButtons,
+  IonBackButton
+} from '@ionic/react';
+import * as UtilsSlides from '../utils/UtilsSlides'; // Ne fonctionne pas
 
 import '../MainPage.css';
 import '../styles.css';
@@ -13,6 +30,9 @@ const Tab1: React.FC = () => {
       <IonHeader>
         <IonToolbar>
           <IonTitle>Stocks</IonTitle>
+          <IonButtons slot="start">
+            <IonBackButton />
+          </IonButtons>
         </IonToolbar>
       </IonHeader>
 

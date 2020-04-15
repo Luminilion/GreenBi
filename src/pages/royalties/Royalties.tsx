@@ -1,6 +1,23 @@
 import React from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCard, IonCardHeader,
-IonCardContent, IonCardSubtitle, IonCardTitle, IonSlides, IonSlide, IonItem,IonIcon,IonLabel,IonButton} from '@ionic/react';
+import { IonContent,
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+  IonCard,
+  IonCardHeader,
+  IonCardContent,
+  IonCardSubtitle,
+  IonCardTitle,
+  IonSlides,
+  IonSlide,
+  IonItem,
+  IonIcon,
+  IonLabel,
+  IonButton,
+  IonButtons,
+  IonBackButton
+} from '@ionic/react';
 import '../MainPage.css';
 
 const Tab1: React.FC = () => {
@@ -9,8 +26,12 @@ const Tab1: React.FC = () => {
       <IonHeader>
         <IonToolbar>
           <IonTitle>Royalties</IonTitle>
+          <IonButtons slot="start">
+            <IonBackButton />
+          </IonButtons>
         </IonToolbar>
       </IonHeader>
+
       <IonContent>
       <IonSlides>
 

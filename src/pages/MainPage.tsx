@@ -14,8 +14,10 @@ import { IonContent,
   IonItem,
   IonIcon
 } from '@ionic/react';
+import { ellipsisHorizontal } from 'ionicons/icons';
 import ExploreContainer from '../components/ExploreContainer';
 import './MainPage.css';
+import './styles.css';
 
 const Tab1: React.FC = () => {
   return (
@@ -89,10 +91,8 @@ const Tab1: React.FC = () => {
           </IonSlide>
 
           <IonSlide>
-            <IonItem href='/stocks'>
-              <IonIcon name="ellipsis-horizontal">
-
-              </IonIcon>
+            <IonItem routerLink="/stocks" >
+              <IonIcon icon={ellipsisHorizontal} />
             </IonItem>
           </IonSlide>
 
@@ -108,6 +108,66 @@ const Tab1: React.FC = () => {
             <IonCardContent>
                 Les Royalties, c'est vraiment trop super. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed bibendum, velit id tincidunt pulvinar, felis odio blandit mi, id commodo met
             </IonCardContent>
+
+            <IonSlides options={{slidesPerView:2.5}}>
+
+            <IonSlide>
+              <IonCard href="/investir">
+                <IonItem>
+                  <img src="eiffel.jpg"></img>
+                </IonItem>
+                <IonCardContent>
+                  Investir dans mon super projet de tour eiffel
+                </IonCardContent>
+              </IonCard>
+            </IonSlide>
+
+          <IonSlide>
+
+            <IonCard href="/investir">
+              <IonItem>
+                <img src="eiffel.jpg"></img>
+              </IonItem>
+
+              <IonCardContent>
+                Investir dans mon super projet de tour eiffel
+              </IonCardContent>
+            </IonCard>
+          </IonSlide>
+          <IonSlide>
+
+
+            <IonCard href="/investir">
+              <IonItem>
+                <img src="eiffel.jpg"></img>
+              </IonItem>
+
+              <IonCardContent>
+                Investir dans mon super projet de tour eiffel
+              </IonCardContent>
+            </IonCard>
+          </IonSlide>
+          <IonSlide>
+
+
+            <IonCard href="/investir">
+              <IonItem>
+                <img src="eiffel.jpg"></img>
+              </IonItem>
+
+              <IonCardContent>
+                Investir dans mon super projet de tour eiffel
+              </IonCardContent>
+            </IonCard>
+          </IonSlide>
+
+          <IonSlide>
+            <IonItem routerLink="/royalties" >
+              <IonIcon icon={ellipsisHorizontal} />
+            </IonItem>
+          </IonSlide>
+
+            </IonSlides>
         </IonCard>
 
       </IonContent>

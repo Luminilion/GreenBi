@@ -5,13 +5,14 @@ import { IonContent,
   IonTitle,
   IonToolbar,
   IonButtons,
-  IonBackButton
+  IonBackButton,
 } from '@ionic/react';
 import UtilsFullCategory from '../../components/utils/UtilsFullCategory';
 
 import '../MainPage.css';
 
 const Tab1: React.FC = () => {
+
   return (
     <IonPage>
       <IonHeader>

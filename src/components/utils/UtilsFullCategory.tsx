@@ -6,7 +6,7 @@ freeMode : gives the option to scroll freely and not always scroll to next eleme
 
 */
 
-import React from 'react';
+import React, { useState } from 'react';
 
 import {
   IonSlides,
@@ -14,6 +14,7 @@ import {
   IonItem,
   IonCard,
   IonCardContent,
+  IonSearchbar
 } from "@ionic/react";
 
 interface UtilsFullCategoryProps {
@@ -24,6 +25,9 @@ interface UtilsFullCategoryProps {
 
 
 const UtilsFullCategory : React.FC<UtilsFullCategoryProps> = ({ slidesPerView, freeMode }) => {
+
+  const [searchText, setSearchText] = useState('');
+
   return (
 
     <IonSlides options={
@@ -33,6 +37,12 @@ const UtilsFullCategory : React.FC<UtilsFullCategoryProps> = ({ slidesPerView, f
         freeMode: freeMode
       }
     } >
+
+    <IonSearchbar
+      animated
+      value={searchText}
+      onIonChange={e => setSearchText(e.detail.value!)}
+    />
 
     <IonSlide>
       <IonCard routerLink="/investir">

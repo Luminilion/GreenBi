@@ -10,15 +10,9 @@ slidesPerView : number of visible slides at first glance on on the category.
 import React from 'react';
 
 import {
-  IonPage,
-  IonContent,
-  IonSlides,
-  IonSlide,
-  IonItem,
   IonCard,
   IonCardContent,
   IonCardHeader,
-  IonCardSubtitle,
   IonCardTitle,
 } from "@ionic/react";
 

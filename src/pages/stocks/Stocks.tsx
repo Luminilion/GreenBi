@@ -5,23 +5,11 @@ import { IonContent,
   IonPage,
   IonTitle,
   IonToolbar,
-  IonCard,
-  IonCardHeader,
-  IonCardContent,
-  IonCardSubtitle,
-  IonCardTitle,
-  IonSlides,
-  IonSlide,
-  IonItem,
-  IonIcon,
-  IonLabel,
-  IonButton,
   IonButtons,
   IonBackButton
 } from '@ionic/react';
 
-import UtilsSlides from '../utils/UtilsSlides';
-import UtilsFullCategory from '../utils/UtilsFullCategory';
+import UtilsFullCategory from '../../components/utils/UtilsFullCategory';
 
 import '../MainPage.css';
 import '../styles.css';

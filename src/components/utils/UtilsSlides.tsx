@@ -8,16 +8,11 @@ slidesPerView : indicates the number of slides to be visible at first glance on 
 import React from 'react';
 
 import {
-  IonPage,
-  IonContent,
   IonSlides,
   IonSlide,
   IonItem,
   IonCard,
   IonCardContent,
-  IonCardHeader,
-  IonCardSubtitle,
-  IonCardTitle,
   IonIcon,
 } from "@ionic/react";
 

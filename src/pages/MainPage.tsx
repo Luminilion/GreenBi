@@ -4,19 +4,9 @@ import { IonContent,
   IonPage,
   IonTitle,
   IonToolbar,
-  IonCard,
-  IonCardHeader,
-  IonCardContent,
-  IonCardSubtitle,
-  IonCardTitle,
-  IonSlides,
-  IonSlide,
-  IonItem,
-  IonIcon
 } from '@ionic/react';
 
-import { ellipsisHorizontal } from 'ionicons/icons';
-import UtilsCategory from './utils/UtilsCategory';
+import UtilsCategory from '../components/utils/UtilsCategory';
 
 import './MainPage.css';
 import './styles.css';

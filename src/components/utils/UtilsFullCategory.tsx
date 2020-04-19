@@ -9,17 +9,11 @@ freeMode : gives the option to scroll freely and not always scroll to next eleme
 import React from 'react';
 
 import {
-  IonPage,
-  IonContent,
   IonSlides,
   IonSlide,
   IonItem,
   IonCard,
   IonCardContent,
-  IonCardHeader,
-  IonCardSubtitle,
-  IonCardTitle,
-  IonIcon,
 } from "@ionic/react";
 
 interface UtilsFullCategoryProps {

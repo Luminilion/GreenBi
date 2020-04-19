@@ -19,7 +19,9 @@ import { IonContent,
   IonButtons,
   IonBackButton
 } from '@ionic/react';
-import * as UtilsSlides from '../utils/UtilsSlides'; // Ne fonctionne pas
+
+import UtilsSlides from '../utils/UtilsSlides';
+import UtilsFullCategory from '../utils/UtilsFullCategory';
 
 import '../MainPage.css';
 import '../styles.css';
@@ -38,95 +40,12 @@ const Tab1: React.FC = () => {
 
 
       <IonContent>
-        <IonSlides options={
-          {
-            direction: 'vertical',
-            slidesPerView : 2.5,
-            freeMode: true
-          }
-        } >
 
-        <IonSlide>
-          <IonCard href="/investir">
-            <IonItem>
-              <img src="eiffel.jpg"></img>
-            </IonItem>
-            <IonCardContent>
-              Investir dans mon super projet de tour eiffel
-            </IonCardContent>
-          </IonCard>
+        <UtilsFullCategory
+          slidesPerView={2.5}
+          freeMode={true}
+        />
 
-        <IonCard href="/investir">
-          <IonItem>
-            <img src="eiffel.jpg"></img>
-          </IonItem>
-          <IonCardContent>
-            Investir dans mon super projet de tour eiffel
-          </IonCardContent>
-        </IonCard>
-      </IonSlide>
-
-      <IonSlide>
-        <IonCard href="/investir">
-          <IonItem>
-            <img src="eiffel.jpg"></img>
-          </IonItem>
-          <IonCardContent>
-            Investir dans mon super projet de tour eiffel
-          </IonCardContent>
-        </IonCard>
-
-        <IonCard href="/investir">
-          <IonItem>
-            <img src="eiffel.jpg"></img>
-          </IonItem>
-          <IonCardContent>
-            Investir dans mon super projet de tour eiffel
-          </IonCardContent>
-        </IonCard>
-      </IonSlide>
-
-      <IonSlide>
-        <IonCard href="/investir">
-          <IonItem>
-            <img src="eiffel.jpg"></img>
-          </IonItem>
-          <IonCardContent>
-            Investir dans mon super projet de tour eiffel
-          </IonCardContent>
-        </IonCard>
-
-      <IonCard href="/investir">
-        <IonItem>
-          <img src="eiffel.jpg"></img>
-        </IonItem>
-        <IonCardContent>
-          Investir dans mon super projet de tour eiffel
-        </IonCardContent>
-      </IonCard>
-      </IonSlide>
-
-      <IonSlide>
-        <IonCard href="/investir">
-          <IonItem>
-            <img src="eiffel.jpg"></img>
-          </IonItem>
-          <IonCardContent>
-            Investir dans mon super projet de tour eiffel
-          </IonCardContent>
-        </IonCard>
-
-      <IonCard href="/investir">
-        <IonItem>
-          <img src="eiffel.jpg"></img>
-        </IonItem>
-        <IonCardContent>
-          Investir dans mon super projet de tour eiffel
-        </IonCardContent>
-      </IonCard>
-    </IonSlide>
-
-        </IonSlides>
       </IonContent>
     </IonPage>
   );

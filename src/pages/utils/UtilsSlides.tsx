@@ -1,3 +1,10 @@
+/*
+Describes a populated list of slides.
+
+slidesPerView : indicates the number of slides to be visible at first glance on the screen.
+
+*/
+
 import React from 'react';
 
 import {
@@ -11,31 +18,25 @@ import {
   IonCardHeader,
   IonCardSubtitle,
   IonCardTitle,
+  IonIcon,
 } from "@ionic/react";
 
-interface ContainerProps {
-  name: string;
+import { arrowForward } from 'ionicons/icons';
+
+interface UtilsSlidesProps {
+  slidesPerView: number;
+  moreLink: string;
 }
 
 
 
-const UtilsSlides : React.FC<ContainerProps> = ({ name }) => {
+const UtilsSlides : React.FC<UtilsSlidesProps> = ({ slidesPerView, moreLink }) => {
   return (
-    <IonCard href="/royalties">
 
-      <IonCardHeader>
-          <IonCardSubtitle>{name}</IonCardSubtitle>
-          <IonCardTitle>{name}</IonCardTitle>
-      </IonCardHeader>
-
-      <IonCardContent>
-          Les {name}, c'est vraiment trop super. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed bibendum, velit id tincidunt pulvinar, felis odio blandit mi, id commodo met
-      </IonCardContent>
-
-      <IonSlides  options={{slidesPerView:2.5}}>
+      <IonSlides  options={{ slidesPerView: slidesPerView }}>
 
         <IonSlide>
-          <IonCard href="/investir">
+          <IonCard routerLink="/investir">
             <IonItem>
               <img src="eiffel.jpg"></img>
             </IonItem>
@@ -46,7 +47,7 @@ const UtilsSlides : React.FC<ContainerProps> = ({ name }) => {
         </IonSlide>
 
         <IonSlide>
-          <IonCard href="/investir">
+          <IonCard routerLink="/investir">
             <IonItem>
               <img src="eiffel.jpg"></img>
             </IonItem>
@@ -57,7 +58,7 @@ const UtilsSlides : React.FC<ContainerProps> = ({ name }) => {
         </IonSlide>
 
         <IonSlide>
-          <IonCard href="/investir">
+          <IonCard routerLink="/investir">
             <IonItem>
               <img src="eiffel.jpg"></img>
             </IonItem>
@@ -68,7 +69,7 @@ const UtilsSlides : React.FC<ContainerProps> = ({ name }) => {
         </IonSlide>
 
         <IonSlide>
-          <IonCard href="/investir">
+          <IonCard routerLink="/investir">
             <IonItem>
               <img src="eiffel.jpg"></img>
             </IonItem>
@@ -77,9 +78,14 @@ const UtilsSlides : React.FC<ContainerProps> = ({ name }) => {
             </IonCardContent>
           </IonCard>
         </IonSlide>
-        
+
+        <IonSlide>
+          <IonItem routerLink={moreLink} >
+            <IonIcon icon={arrowForward} />
+          </IonItem>
+        </IonSlide>
+
       </IonSlides>
-    </IonCard>
 
   );
 };

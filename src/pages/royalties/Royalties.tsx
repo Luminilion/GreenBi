@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { IonContent,
   IonHeader,
   IonPage,
@@ -6,12 +6,17 @@ import { IonContent,
   IonToolbar,
   IonButtons,
   IonBackButton,
+  IonSearchbar,
 } from '@ionic/react';
+
 import UtilsFullCategory from '../../components/utils/UtilsFullCategory';
+import UtilsFilter from '../../components/utils/UtilsFilter';
 
 import '../MainPage.css';
 
 const Tab1: React.FC = () => {
+
+  const [searchText, setSearchText] = useState('');
 
   return (
     <IonPage>
@@ -25,6 +30,14 @@ const Tab1: React.FC = () => {
       </IonHeader>
 
       <IonContent>
+
+        <IonSearchbar
+          animated
+          value={searchText}
+          onIonChange={e => setSearchText(e.detail.value!)}
+        />
+
+        <UtilsFilter />
 
         <UtilsFullCategory
           slidesPerView={2.5}

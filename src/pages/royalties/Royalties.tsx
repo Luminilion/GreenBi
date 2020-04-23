@@ -10,7 +10,7 @@ import { IonContent,
 } from '@ionic/react';
 
 import UtilsFullCategory from '../../components/utils/UtilsFullCategory';
-import UtilsFilter from '../../components/utils/UtilsFilter';
+import RoyaltiesFilter from './RoyaltiesFilter';
 
 import '../MainPage.css';
 
@@ -37,7 +37,7 @@ const Tab1: React.FC = () => {
           onIonChange={e => setSearchText(e.detail.value!)}
         />
 
-        <UtilsFilter />
+        <RoyaltiesFilter />
 
         <UtilsFullCategory
           slidesPerView={2.5}

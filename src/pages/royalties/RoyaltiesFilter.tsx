@@ -8,11 +8,11 @@ import {
   IonSelectOption,
 } from '@ionic/react';
 
-interface UtilsFilterProps {
+interface RoyaltiesFilterProps {
 
 }
 
-const UtilsFilter: React.FC<UtilsFilterProps> = () => {
+const RoyaltiesFilter: React.FC<RoyaltiesFilterProps> = () => {
 
   const [showModal, setShowModal] = useState(false);
 
@@ -123,4 +123,4 @@ const UtilsFilter: React.FC<UtilsFilterProps> = () => {
   );
 };
 
-export default UtilsFilter;
+export default RoyaltiesFilter;

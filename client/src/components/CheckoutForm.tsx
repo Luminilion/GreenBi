@@ -1,5 +1,6 @@
 import React from 'react';
 import {CardElement, useStripe, useElements} from '@stripe/react-stripe-js';
+import { Redirect, Router, useHistory} from 'react-router-dom'
 
 import { IonContent,
     IonButton,
@@ -8,6 +9,7 @@ import { IonContent,
 const CheckoutForm : React.FC = () => {
     const stripe = useStripe();
     const elements = useElements();
+    const history = useHistory();
 
     const handleSubmit = async (event) => {
         // Block native form submission.
@@ -49,7 +51,15 @@ const CheckoutForm : React.FC = () => {
               },
             }
           });
+         
           console.log(result);
+
+          if(result.paymentIntent.status == "succeeded"){
+            //this.props.history.push('/payment-success');
+            history.push('/payment-success');
+            //history.pushState({},'/payment-success','/payment-success');
+            console.log("IL FAUT REDIRIGER");
+          }
         }
       };
     return (

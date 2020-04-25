@@ -1,7 +1,0 @@
-{
-  "name": "SmartInvest",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "react"
-}

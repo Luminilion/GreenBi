@@ -4,6 +4,11 @@ import { IonContent,
   IonPage,
   IonTitle,
   IonToolbar,
+  IonMenu,
+  IonList,
+  IonItem,
+  IonMenuButton,
+  IonButtons,
 } from '@ionic/react';
 
 import UtilsCategory from '../components/utils/UtilsCategory';
@@ -16,6 +21,9 @@ const Tab1: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
+          <IonButtons slot="start">
+            <IonMenuButton />
+          </IonButtons>
           <IonTitle>GreenBi</IonTitle>
         </IonToolbar>
       </IonHeader>

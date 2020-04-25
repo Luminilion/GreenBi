@@ -8,7 +8,9 @@ import {
   IonCard,
   IonCardContent,
   IonItem,
-  IonButton
+  IonButton,
+  IonButtons,
+  IonBackButton,
 } from '@ionic/react';
 import { IonActionSheet } from '@ionic/react';
 
@@ -23,6 +25,9 @@ const Tab1: React.FC = () => {
       <IonHeader>
         <IonToolbar>
           <IonTitle>Stocks</IonTitle>
+          <IonButtons slot="start">
+            <IonBackButton />
+          </IonButtons>
         </IonToolbar>
       </IonHeader>
       <IonContent>

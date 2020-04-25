@@ -24,6 +24,12 @@ const CheckoutForm : React.FC = () => {
         // each type of element.
         const cardElement = elements.getElement(CardElement);
     
+
+        var response = await fetch('http://localhost:3000/secret');
+        var json = await response.json();
+        var clientSecret = json.client_secret
+        console.log("RESPONSE");
+        console.log(json);
         // Use your card Element with other Stripe.js APIs
         const {error, paymentMethod} = await stripe.createPaymentMethod({
           type: 'card',
@@ -34,6 +40,16 @@ const CheckoutForm : React.FC = () => {
           console.log('[error]', error);
         } else {
           console.log('[PaymentMethod]', paymentMethod);
+
+          const result = await stripe.confirmCardPayment(clientSecret, {
+            payment_method: {
+              card: elements.getElement(CardElement),
+              billing_details: {
+                name: 'Amaury Perdriau',
+              },
+            }
+          });
+          console.log(result);
         }
       };
     return (

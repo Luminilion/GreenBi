@@ -8,13 +8,16 @@ import {
   IonSelectOption,
 } from '@ionic/react';
 
+import UtilsPicker from '../utils/UtilsPicker';
+
 interface RoyaltiesFilterProps {
 
 }
 
-const RoyaltiesFilter: React.FC<RoyaltiesFilterProps> = () => {
+const RoyaltiesFilter: React.FC = () => {
 
   const [showModal, setShowModal] = useState(false);
+  const [isPickerOpen, setPickerOpen] = useState(false);
 
   return (
 
@@ -25,10 +28,18 @@ const RoyaltiesFilter: React.FC<RoyaltiesFilterProps> = () => {
 
         <p style={{ margin:20 }}>Retour sur investissement</p>
 
-        <IonSegment value="one">
-          <IonSegmentButton value="one">Test</IonSegmentButton>
-          <IonSegmentButton value="two">2</IonSegmentButton>
-        </IonSegment>
+        <IonButton onClick={() => { setPickerOpen(true); }} >
+          Select ROE
+        </IonButton>
+
+        <UtilsPicker
+          isOpen={isPickerOpen}
+          onCancel={ ()=>{ setPickerOpen(false); }}
+          onSave={ (_value:any)=> {
+            console.log(_value);
+            setPickerOpen(false);
+          }}
+        />
 
         <p style={{ margin:20 }}>Progression du projet</p>
 

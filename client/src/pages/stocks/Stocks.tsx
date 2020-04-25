@@ -11,7 +11,7 @@ import { IonContent,
 } from '@ionic/react';
 
 import UtilsFullCategory from '../../components/utils/UtilsFullCategory';
-import StocksFilter from './StocksFilter';
+import StocksFilter from '../../components/Stocks/StocksFilter';
 
 import '../MainPage.css';
 import '../styles.css';

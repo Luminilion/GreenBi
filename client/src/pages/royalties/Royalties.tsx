@@ -10,7 +10,7 @@ import { IonContent,
 } from '@ionic/react';
 
 import UtilsFullCategory from '../../components/utils/UtilsFullCategory';
-import RoyaltiesFilter from './RoyaltiesFilter';
+import RoyaltiesFilter from '../../components/Royalties/RoyaltiesFilter';
 
 import '../MainPage.css';
 

@@ -17,6 +17,7 @@ import Royalties from './pages/royalties/Royalties';
 import Investir from './pages/Investir';
 import Payment from './pages/Payment';
 import PaymentSuccess from './pages/PaymentSuccess';
+import ProjectDetail from './pages/ProjectDetail';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -48,6 +49,7 @@ const App: React.FC = () => (
           <Route path="/investir" component={Investir} exact={true} />
           <Route path="/payment" component={Payment} exact={true} />
           <Route path="/payment-success" component={PaymentSuccess} exact={true} />
+          <Route path="/project-detail" component={ProjectDetail} exact={true} />
           <Route path="/" render={() => <Redirect to="/main" />} exact={true} />
         </IonRouterOutlet>
         <IonTabBar slot="bottom">

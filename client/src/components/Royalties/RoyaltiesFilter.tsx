@@ -40,7 +40,7 @@ const RoyaltiesFilter: React.FC = () => {
     ]
   } as PickerColumn;
   const progressValues = {
-    name: "progressvalues",
+    name: "progressValues",
     options: [
       { text: "10%", value: "10" },
       { text: "20%", value: "20" },

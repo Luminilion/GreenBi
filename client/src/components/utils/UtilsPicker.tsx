@@ -10,32 +10,17 @@ interface UtilsPicker {
   isOpen : boolean;
   onCancel: Function;
   onSave : Function;
+  leftColumn: PickerColumn;
+  rightColumn: PickerColumn;
 }
 
-const UtilsPicker: React.FC<UtilsPicker> = ({isOpen, onCancel, onSave}) => {
-
-  const filterMode = {
-    name: "filterMode",
-    options: [
-      { text: "<", value: "lessThan" },
-      { text: ">", value: "moreThan" }
-    ]
-  } as PickerColumn;
-  const roeValues = {
-    name: "ROEvalues",
-    options: [
-      { text: "3", value: "3" },
-      { text: "5", value: "5" },
-      { text: "7", value: "7" },
-      { text: "10", value: "10" },
-    ]
-  } as PickerColumn;
+const UtilsPicker: React.FC<UtilsPicker> = ({isOpen, onCancel, onSave, leftColumn, rightColumn}) => {
 
   return (
     <>
       <IonPicker
         isOpen={isOpen}
-        columns={[filterMode, roeValues]}
+        columns={[leftColumn, rightColumn]}
         buttons={[
           {
             text: "Cancel",

@@ -1,9 +1,19 @@
 import React, { useState } from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCard, IonCardHeader,
-IonCardContent, IonCardSubtitle, IonCardTitle, IonSlides, IonSlide, IonItem,IonIcon,IonLabel,IonButton} from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
-import './MainPage.css';
+import {
+  IonContent,
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+  IonCard,
+  IonCardContent,
+  IonItem,
+  IonButton
+} from '@ionic/react';
 import { IonActionSheet } from '@ionic/react';
+
+import './MainPage.css';
+
 import { trash, share, playCircleOutline, heart, close, logoEuro} from 'ionicons/icons';
 
 const Tab1: React.FC = () => {

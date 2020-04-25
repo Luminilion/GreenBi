@@ -19,9 +19,9 @@ const MainMenu: React.FC = () => {
     { text: "Mainpage", icon:home, link: "/main" },
     { text: "Stocks", icon:trendingUp, link: "/stocks" },
     { text: "Royalties", icon:peopleCircle, link: "/royalties" },
-    { text: "Portfolio", icon:wallet, link: "/main" },
-    { text: "Académie", icon:school, link: "/main" },
-    { text: "Paramètres", icon:settings, link: "/main" },
+    { text: "Portfolio", icon:wallet, link: "/portfolio" },
+    { text: "Académie", icon:school, link: "/academy" },
+    { text: "Paramètres", icon:settings, link: "/settings" },
   ]
 
   return (

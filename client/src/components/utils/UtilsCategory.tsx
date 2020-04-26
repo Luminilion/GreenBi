@@ -23,12 +23,12 @@ interface UtilsCategoryProps {
   name: string;
   description: string;
   moreLink: string;
-  projects: Array<Object>;
+  product: string;
 }
 
 
 
-const UtilsCategory : React.FC<UtilsCategoryProps> = ({ slidesPerView, name, description, moreLink, projects }) => {
+const UtilsCategory : React.FC<UtilsCategoryProps> = ({ slidesPerView, name, description, moreLink, product }) => {
   return (
 
     <IonCard>
@@ -44,7 +44,7 @@ const UtilsCategory : React.FC<UtilsCategoryProps> = ({ slidesPerView, name, des
       <UtilsSlides
         slidesPerView={slidesPerView}
         moreLink={moreLink}
-        projects={projects}
+        product={product}
       />
 
     </IonCard>

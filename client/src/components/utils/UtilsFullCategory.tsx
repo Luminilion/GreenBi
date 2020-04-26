@@ -16,25 +16,29 @@ import {
   IonProgressBar,
 } from "@ionic/react";
 
+import RoyaltiesDetails from '../Royalties/RoyaltiesDetails';
+import StocksDetails from '../Stocks/StocksDetails';
+
+import projectData from "../../data/ProjectData";
+
 interface UtilsFullCategoryProps {
   slidesPerView: number;
   freeMode: boolean;
+  product: string;
 }
 
 
+const UtilsFullCategory : React.FC<UtilsFullCategoryProps> = ({ slidesPerView, freeMode, product }) => {
 
-const UtilsFullCategory : React.FC<UtilsFullCategoryProps> = ({ slidesPerView, freeMode }) => {
+  const projects = [];
+  let temp = projectData[product];
+  for (let i =0; i < temp.length; i=i+2) {
+    projects.push([
+      temp[i], temp[i+1]
+    ]);
+  }
 
-  const projects = [
-    [{src: "eiffel.jpg", name: "EcoEiffel", projectProgress: 0.2, projectFund: 0.7},
-    {src: "recycle.jpg", name: "Recycle+", projectProgress: 0.5, projectFund: 0.6}],
-    [{src: "leavesneverdie.jpg", name: "LeavesNeverDie", projectProgress: 0.8, projectFund: 0.4},
-    {src: "jiko.jpg", name: "Jiko", projectProgress: 0.8, projectFund: 0.9}],
-    [{src: "jiko.jpg", name: "Jiko", projectProgress: 0.8, projectFund: 0.9},
-    {src: "jiko.jpg", name: "Jiko", projectProgress: 0.8, projectFund: 0.9}],
-    [{src: "jiko.jpg", name: "Jiko", projectProgress: 0.8, projectFund: 0.9},
-    {src: "jiko.jpg", name: "Jiko", projectProgress: 0.8, projectFund: 0.9}],
-  ]
+  console.log(projects)
 
   return (
 
@@ -53,12 +57,23 @@ const UtilsFullCategory : React.FC<UtilsFullCategoryProps> = ({ slidesPerView, f
             {bothProjects.map( p => {
               return(
                 <IonCard routerLink="/project-detail">
-                  <img src={p.src} alt={p.name}/>
+                  <img src={p.img} alt={p.title}/>
                   <IonCardContent>
-                    {p.name}
+                    {p.title}
                   </IonCardContent>
-                  <IonProgressBar value={p.projectProgress} color="primary" /> <br />
-                  <IonProgressBar value={p.projectFund} color="secondary" /> <br />
+
+                  {(() => {
+                    switch (product) {
+                      case "stocks": return (
+                        <StocksDetails direction={p.direction} value={p.value} />
+                      );
+                      case "royalties" : return (
+                        <RoyaltiesDetails progress={p.progress} fund={p.fund} />
+                      );
+                      default : return ( <></> );
+                    }
+                  })()}
+
                 </IonCard>
               );
             })}

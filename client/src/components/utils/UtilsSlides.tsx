@@ -15,29 +15,28 @@ import {
   IonCardContent,
   IonIcon,
   IonProgressBar,
+  IonLabel
 } from "@ionic/react";
 
-import { arrowForward } from 'ionicons/icons';
+import RoyaltiesDetails from '../Royalties/RoyaltiesDetails';
+import StocksDetails from '../Stocks/StocksDetails';
+
+import { arrowForward, chevronUp, chevronDown } from 'ionicons/icons';
+import projectData from '../../data/ProjectData';
 
 import './UtilsSlides.css';
+
 
 interface UtilsSlidesProps {
   slidesPerView: number;
   moreLink: string;
-  projects: Array<any>;
+  product: string;
 }
 
 
+const UtilsSlides : React.FC<UtilsSlidesProps> = ({ slidesPerView, moreLink, product }) => {
 
-
-const UtilsSlides : React.FC<UtilsSlidesProps> = ({ slidesPerView, moreLink }) => {
-
-  const projects = [
-    {src: "eiffel.jpg", name: "EcoEiffel", projectProgress: 0.2, projectFund: 0.7},
-    {src: "recycle.jpg", name: "Recycle+", projectProgress: 0.5, projectFund: 0.6},
-    {src: "leavesneverdie.jpg", name: "LeavesNeverDie", projectProgress: 0.8, projectFund: 0.4},
-    {src: "jiko.jpg", name: "Jiko", projectProgress: 0.8, projectFund: 0.9},
-  ]
+  const projects = projectData[product];
 
   return (
 
@@ -47,12 +46,23 @@ const UtilsSlides : React.FC<UtilsSlidesProps> = ({ slidesPerView, moreLink }) =
           return (
             <IonSlide>
               <IonCard routerLink="/project-detail">
-                <img src={project.src} alt={project.name} />
+                <img src={project.img} alt={project.title} />
                 <IonCardContent>
-                  {project.name}
+                  {project.title}
                 </IonCardContent>
-                <IonProgressBar value={project.projectProgress} color="primary" /> <br />
-                <IonProgressBar value={project.projectFund} color="secondary" /> <br />
+
+                {(() => {
+                  switch (product) {
+                    case "stocks": return (
+                      <StocksDetails direction={project.direction} value={project.value} />
+                    );
+                    case "royalties" : return (
+                      <RoyaltiesDetails progress={project.progress} fund={project.fund} />
+                    );
+                    default : return ( <></> );
+                  }
+                })()}
+
               </IonCard>
             </IonSlide>
           )
@@ -63,7 +73,7 @@ const UtilsSlides : React.FC<UtilsSlidesProps> = ({ slidesPerView, moreLink }) =
             <IonIcon icon={arrowForward} />
           </IonItem>
         </IonSlide>
-        
+
       </IonSlides>
 
   );

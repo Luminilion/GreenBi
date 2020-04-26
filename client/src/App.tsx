@@ -17,6 +17,8 @@ import Settings from './pages/Settings';
 import Investir from './pages/Investir';
 import Payment from './pages/Payment';
 import PaymentSuccess from './pages/PaymentSuccess';
+import ProjectDetail from './pages/ProjectDetail';
+import Contract from './pages/Contract';
 
 import MainMenu from './components/utils/MainMenu';
 
@@ -54,6 +56,8 @@ const App: React.FC = () => (
           <Route path="/settings" component={Settings} exact={true} />
           <Route path="/payment" component={Payment} exact={true} />
           <Route path="/payment-success" component={PaymentSuccess} exact={true} />
+          <Route path="/project-detail" component={ProjectDetail} exact={true} />
+          <Route path="/contrat" component={Contract} exact={true} />
           <Route path="/" render={() => <Redirect to="/main" />} exact={true} />
         </IonRouterOutlet>
     </IonReactRouter>

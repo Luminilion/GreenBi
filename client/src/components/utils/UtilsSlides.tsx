@@ -24,7 +24,9 @@ import './UtilsSlides.css';
 interface UtilsSlidesProps {
   slidesPerView: number;
   moreLink: string;
+  projects: Array<any>;
 }
+
 
 
 

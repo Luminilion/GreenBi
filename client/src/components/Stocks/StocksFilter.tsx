@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import {
   IonModal,
   IonButton,
-  IonSegment,
-  IonSegmentButton,
   IonSelect,
   IonSelectOption,
   IonInput,

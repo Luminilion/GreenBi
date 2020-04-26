@@ -29,7 +29,7 @@ const Academy: React.FC = () => {
             <h1 className="text501">Oups...</h1>
             <br />
             <br />
-            <img src="logov501.png" id="img501"/>
+            <img src="logov501.png" id="img501" alt="501 error illustration"/>
             <br />
             <br />
             <h3 className="text501">L'Académie est en cours de construction</h3>

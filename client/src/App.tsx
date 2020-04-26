@@ -12,7 +12,7 @@ import MainPage from './pages/MainPage';
 import Stocks from './pages/stocks/Stocks';
 import Royalties from './pages/royalties/Royalties';
 import Portfolio from './pages/Portfolio';
-import Academy from './pages/Academy';
+import Academy from './pages/academy/Academy';
 import Settings from './pages/Settings';
 import Investir from './pages/Investir';
 import Payment from './pages/Payment';

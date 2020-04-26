@@ -9,6 +9,8 @@ import {
   IonContent,
 } from '@ionic/react';
 
+import './Academy.css';
+
 const Academy: React.FC = () => {
   return (
     <IonPage>
@@ -22,10 +24,16 @@ const Academy: React.FC = () => {
       </IonHeader>
 
       <IonContent>
-        <div>
-          <h1>Oups...</h1>
-          <img src="logov501.png" />
-          <h3>L'Académie est en cours de construction</h3>
+        <div id="parent">
+          <div>
+            <h1 className="text501">Oups...</h1>
+            <br />
+            <br />
+            <img src="logov501.png" id="img501"/>
+            <br />
+            <br />
+            <h3 className="text501">L'Académie est en cours de construction</h3>
+          </div>
         </div>
       </IonContent>
     </IonPage>

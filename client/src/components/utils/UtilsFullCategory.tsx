@@ -14,6 +14,7 @@ import {
   IonItem,
   IonCard,
   IonCardContent,
+  IonProgressBar,
 } from "@ionic/react";
 
 interface UtilsFullCategoryProps {
@@ -34,83 +35,83 @@ const UtilsFullCategory : React.FC<UtilsFullCategoryProps> = ({ slidesPerView, f
       }
     } >
 
-    <IonSlide>
-      <IonCard routerLink="/investir">
-        <IonItem>
-          <img src="eiffel.jpg"></img>
-        </IonItem>
-        <IonCardContent>
-          Investir dans mon super projet de tour eiffel
-        </IonCardContent>
-      </IonCard>
+      <IonSlide>
+        <IonCard routerLink="/investir">
+          <img src="eiffel.jpg" />
+          <IonCardContent>
+            EcoEiffel
+          </IonCardContent>
+          <IonProgressBar value={0.2} color="primary" /> <br />
+          <IonProgressBar value={0.7} color="secondary" /> <br />
+        </IonCard>
 
-      <IonCard routerLink="/investir">
-        <IonItem>
-          <img src="eiffel.jpg"></img>
-        </IonItem>
-        <IonCardContent>
-          Investir dans mon super projet de tour eiffel
-        </IonCardContent>
-      </IonCard>
-    </IonSlide>
-
-    <IonSlide>
-      <IonCard routerLink="/investir">
-        <IonItem>
-          <img src="eiffel.jpg"></img>
-        </IonItem>
-        <IonCardContent>
-          Investir dans mon super projet de tour eiffel
-        </IonCardContent>
-      </IonCard>
-
-      <IonCard routerLink="/investir">
-        <IonItem>
-          <img src="eiffel.jpg"></img>
-        </IonItem>
-        <IonCardContent>
-          Investir dans mon super projet de tour eiffel
-        </IonCardContent>
-      </IonCard>
-    </IonSlide>
-
-    <IonSlide>
-      <IonCard routerLink="/investir">
-        <IonItem>
-          <img src="eiffel.jpg"></img>
-        </IonItem>
-        <IonCardContent>
-          Investir dans mon super projet de tour eiffel
-        </IonCardContent>
-      </IonCard>
-
-      <IonCard routerLink="/investir">
-        <IonItem>
-          <img src="eiffel.jpg"></img>
-        </IonItem>
-        <IonCardContent>
-          Investir dans mon super projet de tour eiffel
-        </IonCardContent>
-      </IonCard>
+        <IonCard routerLink="/investir">
+          <img src="recycle.jpg" />
+          <IonCardContent>
+            Recycle+
+          </IonCardContent>
+          <IonProgressBar value={0.5} color="primary" /> <br />
+          <IonProgressBar value={0.6} color="secondary" /> <br />
+        </IonCard>
       </IonSlide>
 
       <IonSlide>
         <IonCard routerLink="/investir">
-          <IonItem>
-            <img src="eiffel.jpg"></img>
-          </IonItem>
+          <img src="leavesneverdie.jpg" />
           <IonCardContent>
-            Investir dans mon super projet de tour eiffel
+            LeavesNeverDie
           </IonCardContent>
+          <IonProgressBar value={0.9} color="primary" /> <br />
+          <IonProgressBar value={0.3} color="secondary" /> <br />
         </IonCard>
 
         <IonCard routerLink="/investir">
-          <IonItem>
-            <img src="eiffel.jpg"></img>
-          </IonItem>
+          <img src="Jiko.jpg" />
           <IonCardContent>
-            Investir dans mon super projet de tour eiffel
+            Jiko
           </IonCardContent>
+          <IonProgressBar value={0.3} color="primary" /> <br />
+          <IonProgressBar value={0.8} color="secondary" /> <br />
+        </IonCard>
+      </IonSlide>
+
+      <IonSlide>
+        <IonCard routerLink="/investir">
+          <img src="Jiko.jpg" />
+          <IonCardContent>
+            Jiko
+          </IonCardContent>
+          <IonProgressBar value={0.3} color="primary" /> <br />
+          <IonProgressBar value={0.8} color="secondary" /> <br />
+        </IonCard>
+
+        <IonCard routerLink="/investir">
+          <img src="Jiko.jpg" />
+          <IonCardContent>
+            Jiko
+          </IonCardContent>
+          <IonProgressBar value={0.3} color="primary" /> <br />
+          <IonProgressBar value={0.8} color="secondary" /> <br />
+        </IonCard>
+      </IonSlide>
+
+      <IonSlide>
+        <IonCard routerLink="/investir">
+          <img src="Jiko.jpg" />
+          <IonCardContent>
+            Jiko
+          </IonCardContent>
+          <IonProgressBar value={0.3} color="primary" /> <br />
+          <IonProgressBar value={0.8} color="secondary" /> <br />
+        </IonCard>
+
+        <IonCard routerLink="/investir">
+          <img src="Jiko.jpg" />
+          <IonCardContent>
+            Jiko
+          </IonCardContent>
+          <IonProgressBar value={0.3} color="primary" /> <br />
+          <IonProgressBar value={0.8} color="secondary" /> <br />
         </IonCard>
       </IonSlide>
 

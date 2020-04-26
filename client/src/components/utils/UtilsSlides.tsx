@@ -14,9 +14,12 @@ import {
   IonCard,
   IonCardContent,
   IonIcon,
+  IonProgressBar,
 } from "@ionic/react";
 
 import { arrowForward } from 'ionicons/icons';
+
+import './UtilsSlides.css';
 
 interface UtilsSlidesProps {
   slidesPerView: number;
@@ -32,45 +35,45 @@ const UtilsSlides : React.FC<UtilsSlidesProps> = ({ slidesPerView, moreLink }) =
 
         <IonSlide>
           <IonCard routerLink="/investir">
-            <IonItem>
-              <img src="eiffel.jpg"></img>
-            </IonItem>
+            <img src="eiffel.jpg"></img>
             <IonCardContent>
-              Investir dans mon super projet de tour eiffel
+              EcoEiffel
             </IonCardContent>
+            <IonProgressBar value={0.2} color="primary" /> <br />
+            <IonProgressBar value={0.7} color="secondary" /> <br />
           </IonCard>
         </IonSlide>
 
         <IonSlide>
           <IonCard routerLink="/investir">
-            <IonItem>
-              <img src="eiffel.jpg"></img>
-            </IonItem>
+            <img src="recycle.jpg"></img>
             <IonCardContent>
-              Investir dans mon super projet de tour eiffel
+              Recycle+
             </IonCardContent>
+            <IonProgressBar value={0.5} color="primary" /> <br />
+            <IonProgressBar value={0.6} color="secondary" /> <br />
           </IonCard>
         </IonSlide>
 
         <IonSlide>
           <IonCard routerLink="/investir">
-            <IonItem>
-              <img src="eiffel.jpg"></img>
-            </IonItem>
+            <img src="leavesneverdie.jpg"></img>
             <IonCardContent>
-              Investir dans mon super projet de tour eiffel
+              LeavesNeverDie
             </IonCardContent>
+            <IonProgressBar value={0.9} color="primary" /> <br />
+            <IonProgressBar value={0.3} color="secondary" /> <br />
           </IonCard>
         </IonSlide>
 
         <IonSlide>
           <IonCard routerLink="/investir">
-            <IonItem>
-              <img src="eiffel.jpg"></img>
-            </IonItem>
+            <img src="Jiko.jpg"></img>
             <IonCardContent>
-              Investir dans mon super projet de tour eiffel
+              Jiko
             </IonCardContent>
+            <IonProgressBar value={0.3} color="primary" /> <br />
+            <IonProgressBar value={0.8} color="secondary" /> <br />
           </IonCard>
         </IonSlide>
 

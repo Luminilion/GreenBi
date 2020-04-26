@@ -20,6 +20,7 @@
     "jsx": "react",
     "noImplicitAny" : false,
     "strictNullChecks": false,
+    "downlevelIteration" : true,
   },
   "include": [
     "src"

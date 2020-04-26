@@ -24,58 +24,35 @@ import './UtilsSlides.css';
 interface UtilsSlidesProps {
   slidesPerView: number;
   moreLink: string;
+  projects: Array<any>;
 }
 
 
 
-const UtilsSlides : React.FC<UtilsSlidesProps> = ({ slidesPerView, moreLink }) => {
+const UtilsSlides : React.FC<UtilsSlidesProps> = ({ slidesPerView, moreLink, projects }) => {
+
+  const items = []
+
+  for (const [index, value] of projects.entries()) {
+    items.push(
+    <IonSlide>
+      <IonCard routerLink="/investir">
+        <img src={value.img}></img>
+        <IonCardContent>
+          {value.title}
+        </IonCardContent>
+        <IonProgressBar value={0.2} color="primary" /> <br />
+        <IonProgressBar value={0.7} color="secondary" /> <br />
+      </IonCard>
+    </IonSlide>
+      )
+  }
+
   return (
-
+      
       <IonSlides  options={{ slidesPerView: slidesPerView }}>
+        {items}
 
-        <IonSlide>
-          <IonCard routerLink="/investir">
-            <img src="eiffel.jpg"></img>
-            <IonCardContent>
-              EcoEiffel
-            </IonCardContent>
-            <IonProgressBar value={0.2} color="primary" /> <br />
-            <IonProgressBar value={0.7} color="secondary" /> <br />
-          </IonCard>
-        </IonSlide>
-
-        <IonSlide>
-          <IonCard routerLink="/investir">
-            <img src="recycle.jpg"></img>
-            <IonCardContent>
-              Recycle+
-            </IonCardContent>
-            <IonProgressBar value={0.5} color="primary" /> <br />
-            <IonProgressBar value={0.6} color="secondary" /> <br />
-          </IonCard>
-        </IonSlide>
-
-        <IonSlide>
-          <IonCard routerLink="/investir">
-            <img src="leavesneverdie.jpg"></img>
-            <IonCardContent>
-              LeavesNeverDie
-            </IonCardContent>
-            <IonProgressBar value={0.9} color="primary" /> <br />
-            <IonProgressBar value={0.3} color="secondary" /> <br />
-          </IonCard>
-        </IonSlide>
-
-        <IonSlide>
-          <IonCard routerLink="/investir">
-            <img src="Jiko.jpg"></img>
-            <IonCardContent>
-              Jiko
-            </IonCardContent>
-            <IonProgressBar value={0.3} color="primary" /> <br />
-            <IonProgressBar value={0.8} color="secondary" /> <br />
-          </IonCard>
-        </IonSlide>
 
         <IonSlide>
           <IonItem routerLink={moreLink} >

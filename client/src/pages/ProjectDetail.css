@@ -1,0 +1,11 @@
+img{
+    height:300px;
+}
+
+ion-grid{
+    --ion-grid-width:200px;
+}
+
+ion-item{
+    font-size: small;
+}

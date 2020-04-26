@@ -6,7 +6,13 @@ import {
   IonSegmentButton,
   IonSelect,
   IonSelectOption,
+  IonInput,
 } from '@ionic/react';
+import {
+  PickerColumn
+} from '@ionic/core';
+
+import UtilsPicker from '../utils/UtilsPicker';
 
 interface StocksFilterProps {
 
@@ -15,6 +21,34 @@ interface StocksFilterProps {
 const StocksFilter: React.FC<StocksFilterProps> = () => {
 
   const [showModal, setShowModal] = useState(false);
+  const [isROEPickerOpen, setROEPickerOpen] = useState(false);
+  const [isValorisationPickerOpen, setValorisationPickerOpen] = useState(false);
+
+  const filterMode = {
+    name: "filterMode",
+    options: [
+      { text: "<", value: "lessThan" },
+      { text: ">", value: "moreThan" }
+    ]
+  } as PickerColumn;
+  const roeValues = {
+    name: "ROEvalues",
+    options: [
+      { text: "3%", value: "3" },
+      { text: "5%", value: "5" },
+      { text: "7%", value: "7" },
+      { text: "10%", value: "10" },
+    ]
+  } as PickerColumn;
+  const valorisationValues = {
+    name: "valorisationValues",
+    options: [
+      { text: "10 k€", value: "10" },
+      { text: "20 k€", value: "20" },
+      { text: "50 k€", value: "50" },
+      { text: "100 k€", value: "100" },
+    ]
+  } as PickerColumn;
 
   return (
 
@@ -25,33 +59,60 @@ const StocksFilter: React.FC<StocksFilterProps> = () => {
 
         <p style={{ margin:20 }}>Retour sur investissement</p>
 
-        <IonSegment value="one">
-          <IonSegmentButton value="one">Test</IonSegmentButton>
-          <IonSegmentButton value="two">2</IonSegmentButton>
-        </IonSegment>
+        <IonButton onClick={() => { setROEPickerOpen(true); }} >
+          Select ROE
+        </IonButton>
+
+        <UtilsPicker
+          isOpen={isROEPickerOpen}
+          onCancel={ ()=>{ setROEPickerOpen(false); }}
+          onSave={ (_value:any)=> {
+            console.log(_value);
+            setROEPickerOpen(false);
+          }}
+          leftColumn={filterMode}
+          rightColumn={roeValues}
+        />
 
         <p style={{ margin:20 }}>Valorisation</p>
 
+        <IonButton onClick={() => { setValorisationPickerOpen(true); }} >
+          Select progression
+        </IonButton>
+
+        <UtilsPicker
+          isOpen={isValorisationPickerOpen}
+          onCancel={ ()=>{ setValorisationPickerOpen(false); }}
+          onSave={ (_value:any)=> {
+            console.log(_value);
+            setValorisationPickerOpen(false);
+          }}
+          leftColumn={filterMode}
+          rightColumn={valorisationValues}
+        />
+
+        <p style={{ margin:20 }}>Dilution du capital (valeur d'une action)</p>
+
         <IonSelect
-          placeholder="Selectionner la valorisation"
+          interface="popover"
+          placeholder="Valeur de comparaison"
           >
-          <IonSelectOption value={10} >&#60; 10 k€</IonSelectOption>
-          <IonSelectOption value={30} >&#60; 20 k€</IonSelectOption>
-          <IonSelectOption value={50} >&#60; 50 k€</IonSelectOption>
-          <IonSelectOption value={70} >&#60; 100 k€</IonSelectOption>
-          <IonSelectOption value={90} >&#60; 100 k€</IonSelectOption>
+          <IonSelectOption value="<" >&#60;</IonSelectOption>
+          <IonSelectOption value=">" >&#62;</IonSelectOption>
         </IonSelect>
 
-        <p style={{ margin:20 }}>Nombres d'actions émises</p>
+        <IonInput
+          type="number"
+          inputmode="decimal"
+          max="100"
+          min="0"
+          placeholder="--"
+          onIonChange={
+              e => {}
+          }
+        />
 
-        <IonSelect
-          placeholder="Selectionner le nombre d'actions"
-          >
-          <IonSelectOption value="50-" >Moins de 50</IonSelectOption>
-          <IonSelectOption value="100-" >50 à 99</IonSelectOption>
-          <IonSelectOption value="500-" >100 à 499</IonSelectOption>
-          <IonSelectOption value="500+" >500 ou plus</IonSelectOption>
-        </IonSelect>
+        <p>% de dilution</p>
 
         <p style={{ margin:20 }}>Notation du projet</p>
 

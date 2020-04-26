@@ -5,18 +5,20 @@ import {
   IonIcon,
   IonLabel,
   IonRouterOutlet,
-  IonTabBar,
-  IonTabButton,
-  IonTabs
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { ellipse, square, triangle } from 'ionicons/icons';
 import MainPage from './pages/MainPage';
 import Stocks from './pages/stocks/Stocks';
 import Royalties from './pages/royalties/Royalties';
+import Portfolio from './pages/Portfolio';
+import Academy from './pages/academy/Academy';
+import Settings from './pages/Settings';
 import Investir from './pages/Investir';
 import Payment from './pages/Payment';
 import PaymentSuccess from './pages/PaymentSuccess';
+
+import MainMenu from './components/utils/MainMenu';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -40,31 +42,20 @@ import './theme/variables.css';
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
-      <IonTabs>
-        <IonRouterOutlet>
+        <MainMenu />
+
+        <IonRouterOutlet id="main">
           <Route path="/main" component={MainPage} exact={true} />
           <Route path="/stocks" component={Stocks} exact={true} />
           <Route path="/royalties" component={Royalties} exact={true} />
           <Route path="/investir" component={Investir} exact={true} />
+          <Route path="/portfolio" component={Portfolio} exact={true} />
+          <Route path="/academy" component={Academy} exact={true} />
+          <Route path="/settings" component={Settings} exact={true} />
           <Route path="/payment" component={Payment} exact={true} />
           <Route path="/payment-success" component={PaymentSuccess} exact={true} />
           <Route path="/" render={() => <Redirect to="/main" />} exact={true} />
         </IonRouterOutlet>
-        <IonTabBar slot="bottom">
-          <IonTabButton tab="main" href="/main">
-            <IonIcon icon={triangle} />
-            <IonLabel>Main Page</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="stocks" href="/stocks">
-            <IonIcon icon={ellipse} />
-            <IonLabel>Stocks</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="royalties" href="/royalties">
-            <IonIcon icon={square} />
-            <IonLabel>Royalties</IonLabel>
-          </IonTabButton>
-        </IonTabBar>
-      </IonTabs>
     </IonReactRouter>
   </IonApp>
 );

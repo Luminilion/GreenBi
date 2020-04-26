@@ -7,6 +7,7 @@ import { IonContent,
   IonButtons,
   IonBackButton,
   IonSearchbar,
+  IonMenuButton,
 } from '@ionic/react';
 
 import UtilsFullCategory from '../../components/utils/UtilsFullCategory';
@@ -23,9 +24,7 @@ const Tab1: React.FC = () => {
       <IonHeader>
         <IonToolbar>
           <IonTitle>Royalties</IonTitle>
-          <IonButtons slot="start">
-            <IonBackButton />
-          </IonButtons>
+          <IonMenuButton slot="start" />
         </IonToolbar>
       </IonHeader>
 

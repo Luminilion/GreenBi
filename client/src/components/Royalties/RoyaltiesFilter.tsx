@@ -7,6 +7,9 @@ import {
   IonSelect,
   IonSelectOption,
 } from '@ionic/react';
+import {
+  PickerColumn
+} from '@ionic/core';
 
 import UtilsPicker from '../utils/UtilsPicker';
 
@@ -17,7 +20,39 @@ interface RoyaltiesFilterProps {
 const RoyaltiesFilter: React.FC = () => {
 
   const [showModal, setShowModal] = useState(false);
-  const [isPickerOpen, setPickerOpen] = useState(false);
+  const [isROEPickerOpen, setROEPickerOpen] = useState(false);
+  const [isProgressPickerOpen, setProgressPickerOpen] = useState(false);
+
+  const filterMode = {
+    name: "filterMode",
+    options: [
+      { text: "<", value: "lessThan" },
+      { text: ">", value: "moreThan" }
+    ]
+  } as PickerColumn;
+  const roeValues = {
+    name: "ROEvalues",
+    options: [
+      { text: "3%", value: "3" },
+      { text: "5%", value: "5" },
+      { text: "7%", value: "7" },
+      { text: "10%", value: "10" },
+    ]
+  } as PickerColumn;
+  const progressValues = {
+    name: "progressValues",
+    options: [
+      { text: "10%", value: "10" },
+      { text: "20%", value: "20" },
+      { text: "30%", value: "30" },
+      { text: "40%", value: "40" },
+      { text: "50%", value: "50" },
+      { text: "60%", value: "60" },
+      { text: "70%", value: "70" },
+      { text: "80%", value: "80" },
+      { text: "90%", value: "90" },
+    ]
+  } as PickerColumn;
 
   return (
 
@@ -28,42 +63,45 @@ const RoyaltiesFilter: React.FC = () => {
 
         <p style={{ margin:20 }}>Retour sur investissement</p>
 
-        <IonButton onClick={() => { setPickerOpen(true); }} >
+        <IonButton onClick={() => { setROEPickerOpen(true); }} >
           Select ROE
         </IonButton>
 
         <UtilsPicker
-          isOpen={isPickerOpen}
-          onCancel={ ()=>{ setPickerOpen(false); }}
+          isOpen={isROEPickerOpen}
+          onCancel={ ()=>{ setROEPickerOpen(false); }}
           onSave={ (_value:any)=> {
             console.log(_value);
-            setPickerOpen(false);
+            setROEPickerOpen(false);
           }}
+          leftColumn={filterMode}
+          rightColumn={roeValues}
         />
 
         <p style={{ margin:20 }}>Progression du projet</p>
 
-        <IonSelect
-          placeholder="Selectionner la progression"
-          >
-          <IonSelectOption value={10} >&#60; 10%</IonSelectOption>
-          <IonSelectOption value={30} >&#60; 30%</IonSelectOption>
-          <IonSelectOption value={50} >&#60; 50%</IonSelectOption>
-          <IonSelectOption value={70} >&#60; 70%</IonSelectOption>
-          <IonSelectOption value={90} >&#60; 90%</IonSelectOption>
-          <IonSelectOption value={100} >Toute progression</IonSelectOption>
-        </IonSelect>
+        <IonButton onClick={() => { setProgressPickerOpen(true); }} >
+          Select progression
+        </IonButton>
 
-        <p style={{ margin:20 }}>Nombres de personnes sur le projet</p>
+        <UtilsPicker
+          isOpen={isProgressPickerOpen}
+          onCancel={ ()=>{ setProgressPickerOpen(false); }}
+          onSave={ (_value:any)=> {
+            console.log(_value);
+            setProgressPickerOpen(false);
+          }}
+          leftColumn={filterMode}
+          rightColumn={progressValues}
+        />
 
-        <IonSelect
-          placeholder="Selectionner le nombre de participants"
-          >
-          <IonSelectOption value="50-" >Moins de 50</IonSelectOption>
-          <IonSelectOption value="100-" >50 à 99</IonSelectOption>
-          <IonSelectOption value="500-" >100 à 499</IonSelectOption>
-          <IonSelectOption value="500+" >500 ou plus</IonSelectOption>
-        </IonSelect>
+        <p style={{ margin:20 }}>Filtrer les projets par nombre d'investisseurs</p>
+
+        <IonSegment value="topAll">
+          <IonSegmentButton value="topAll">Tous</IonSegmentButton>
+          <IonSegmentButton value="top10">Top 10</IonSegmentButton>
+          <IonSegmentButton value="top3">Top 3</IonSegmentButton>
+        </IonSegment>
 
         <p style={{ margin:20 }}>Notation du projet</p>
 

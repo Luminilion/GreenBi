@@ -11,7 +11,7 @@ import {
   IonIcon,
   IonLabel,
 } from "@ionic/react"
-import { home, trendingUp, settings, rocket, peopleCircle, wallet, school } from 'ionicons/icons';
+import { home, trendingUp, settings, peopleCircle, wallet, school } from 'ionicons/icons';
 
 const MainMenu: React.FC = () => {
 

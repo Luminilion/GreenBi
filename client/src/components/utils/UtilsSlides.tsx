@@ -29,60 +29,39 @@ interface UtilsSlidesProps {
 
 
 const UtilsSlides : React.FC<UtilsSlidesProps> = ({ slidesPerView, moreLink }) => {
+
+  const projects = [
+    {src: "eiffel.jpg", name: "EcoEiffel", projectProgress: 0.2, projectFund: 0.7},
+    {src: "recycle.jpg", name: "Recycle+", projectProgress: 0.5, projectFund: 0.6},
+    {src: "leavesneverdie.jpg", name: "LeavesNeverDie", projectProgress: 0.8, projectFund: 0.4},
+    {src: "jiko.jpg", name: "Jiko", projectProgress: 0.8, projectFund: 0.9},
+  ]
+
   return (
 
       <IonSlides  options={{ slidesPerView: slidesPerView }}>
 
-        <IonSlide>
-          <IonCard routerLink="/investir">
-            <img src="eiffel.jpg"></img>
-            <IonCardContent>
-              EcoEiffel
-            </IonCardContent>
-            <IonProgressBar value={0.2} color="primary" /> <br />
-            <IonProgressBar value={0.7} color="secondary" /> <br />
-          </IonCard>
-        </IonSlide>
-
-        <IonSlide>
-          <IonCard routerLink="/investir">
-            <img src="recycle.jpg"></img>
-            <IonCardContent>
-              Recycle+
-            </IonCardContent>
-            <IonProgressBar value={0.5} color="primary" /> <br />
-            <IonProgressBar value={0.6} color="secondary" /> <br />
-          </IonCard>
-        </IonSlide>
-
-        <IonSlide>
-          <IonCard routerLink="/investir">
-            <img src="leavesneverdie.jpg"></img>
-            <IonCardContent>
-              LeavesNeverDie
-            </IonCardContent>
-            <IonProgressBar value={0.9} color="primary" /> <br />
-            <IonProgressBar value={0.3} color="secondary" /> <br />
-          </IonCard>
-        </IonSlide>
-
-        <IonSlide>
-          <IonCard routerLink="/investir">
-            <img src="Jiko.jpg"></img>
-            <IonCardContent>
-              Jiko
-            </IonCardContent>
-            <IonProgressBar value={0.3} color="primary" /> <br />
-            <IonProgressBar value={0.8} color="secondary" /> <br />
-          </IonCard>
-        </IonSlide>
+        {projects.map( (project, index) => {
+          return (
+            <IonSlide>
+              <IonCard routerLink="/investir">
+                <img src={project.src} alt={project.name} />
+                <IonCardContent>
+                  {project.name}
+                </IonCardContent>
+                <IonProgressBar value={project.projectProgress} color="primary" /> <br />
+                <IonProgressBar value={project.projectFund} color="secondary" /> <br />
+              </IonCard>
+            </IonSlide>
+          )
+        })}
 
         <IonSlide>
           <IonItem routerLink={moreLink} >
             <IonIcon icon={arrowForward} />
           </IonItem>
         </IonSlide>
-
+        
       </IonSlides>
 
   );

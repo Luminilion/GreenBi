@@ -4,12 +4,8 @@ import { IonContent,
   IonPage,
   IonTitle,
   IonToolbar,
-  IonMenu,
-  IonList,
-  IonItem,
   IonMenuButton,
   IonButtons,
-  IonImg,
 } from '@ionic/react';
 
 import UtilsCategory from '../components/utils/UtilsCategory';

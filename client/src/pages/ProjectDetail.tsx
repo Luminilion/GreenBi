@@ -1,4 +1,4 @@
-import React from 'react';
+  import React from 'react';
 import { IonContent,
   IonHeader,
   IonPage,
@@ -25,9 +25,6 @@ import { IonContent,
   IonCheckbox,
 } from '@ionic/react';
 
-
-import { Button } from 'react-bootstrap';
-
 import './ProjectDetail.css';
 import './styles.css';
 
@@ -48,7 +45,7 @@ const ProjectDetail: React.FC = () => {
       </IonHeader>
 
       <IonContent>
-          
+
             <IonGrid>
                 <IonRow>
                     <IonCol>
@@ -62,7 +59,7 @@ const ProjectDetail: React.FC = () => {
                         <IonIcon icon={star}></IonIcon>
                         <IonIcon icon={star}></IonIcon>
                             </IonLabel></IonItem>
-                    
+
                     </IonCol>
                     <IonCol><br />
                                         <br />
@@ -70,7 +67,7 @@ const ProjectDetail: React.FC = () => {
                         72 000 / 100 000 <br />
 
                         <IonItem>
-                            Lorem Ipsum set dolorem Lorem Ipsum set dolorem Lorem Ipsum set dolorem Lorem Ipsum set dolorem 
+                            Lorem Ipsum set dolorem Lorem Ipsum set dolorem Lorem Ipsum set dolorem Lorem Ipsum set dolorem
                             Lorem Ipsum set dolorem Lorem Ipsu
 
                         </IonItem>
@@ -83,8 +80,8 @@ const ProjectDetail: React.FC = () => {
                     <IonCol> <IonButton size="small" expand="block">Participer</IonButton></IonCol>
                 </IonRow>
             </IonGrid>
-           
-          
+
+
 
       </IonContent>
     </IonPage>

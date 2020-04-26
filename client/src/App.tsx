@@ -2,12 +2,12 @@ import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import {
   IonApp,
-  IonIcon,
-  IonLabel,
   IonRouterOutlet,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { ellipse, square, triangle } from 'ionicons/icons';
+
+import Login from "./pages/login/Login";
+import Signup from "./pages/login/Signup";
 import MainPage from './pages/MainPage';
 import Stocks from './pages/stocks/Stocks';
 import Royalties from './pages/royalties/Royalties';
@@ -47,18 +47,24 @@ const App: React.FC = () => (
         <MainMenu />
 
         <IonRouterOutlet id="main">
+          <Route path="/login" component={Login} exact={true} />
+          <Route path="/signup" component={Signup} exact={true} />
+
           <Route path="/main" component={MainPage} exact={true} />
+
           <Route path="/stocks" component={Stocks} exact={true} />
           <Route path="/royalties" component={Royalties} exact={true} />
-          <Route path="/investir" component={Investir} exact={true} />
+
           <Route path="/portfolio" component={Portfolio} exact={true} />
           <Route path="/academy" component={Academy} exact={true} />
           <Route path="/settings" component={Settings} exact={true} />
+
+          <Route path="/investir" component={Investir} exact={true} />
           <Route path="/payment" component={Payment} exact={true} />
           <Route path="/payment-success" component={PaymentSuccess} exact={true} />
           <Route path="/project-detail" component={ProjectDetail} exact={true} />
           <Route path="/contrat" component={Contract} exact={true} />
-          <Route path="/" render={() => <Redirect to="/main" />} exact={true} />
+          <Route path="/" render={() => <Redirect to="/login" />} exact={true} />
         </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>

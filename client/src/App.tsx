@@ -64,7 +64,7 @@ const App: React.FC = () => (
           <Route path="/payment-success" component={PaymentSuccess} exact={true} />
           <Route path="/project-detail" component={ProjectDetail} exact={true} />
           <Route path="/contrat" component={Contract} exact={true} />
-          <Route path="/" render={() => <Redirect to="/main" />} exact={true} />
+          <Route path="/" render={() => <Redirect to="/login" />} exact={true} />
         </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>

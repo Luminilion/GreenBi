@@ -41,9 +41,10 @@ const UtilsSlides : React.FC<UtilsSlidesProps> = ({ slidesPerView, moreLink, pro
       <IonSlides  options={{ slidesPerView: slidesPerView }}>
 
         {projects.map( (project, index) => {
+          let route = "/project-detail/"+product+'/'+project.id;
           return (
             <IonSlide>
-              <IonCard routerLink="/project-detail">
+              <IonCard routerLink={route}>
                 <img src={project.img} alt={project.title} />
                 <IonCardContent>
                   {project.title}

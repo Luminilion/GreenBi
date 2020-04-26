@@ -15,19 +15,30 @@ import { IonContent,
   IonBackButton,
   IonButtons,
 } from '@ionic/react';
+import { RouteComponentProps } from 'react-router-dom';
+
+import projectData from '../data/ProjectData';
 
 import './ProjectDetail.css';
 import './styles.css';
 
 import { star } from 'ionicons/icons';
 
+interface ProjectDetailProps extends RouteComponentProps<{
+  id: string;
+  product: string;
+}> {}
 
-const ProjectDetail: React.FC = () => {
+const ProjectDetail: React.FC<ProjectDetailProps> = ({match}) => {
+
+  let projects = projectData[match.params.product];
+  const project = projects.find(e=>e.id==match.params.id);
+
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Royalties</IonTitle>
+          <IonTitle>{project.title}</IonTitle>
           <IonButtons slot="start">
             <IonBackButton />
           </IonButtons>
@@ -41,7 +52,7 @@ const ProjectDetail: React.FC = () => {
                     <IonCol>
 
                         <IonItem>
-                            <img src="eiffel.jpg"></img>
+                            <img src={project.img}></img>
                         </IonItem>
                         <IonItem><IonLabel>
                         <IonIcon icon={star}></IonIcon>
@@ -51,10 +62,12 @@ const ProjectDetail: React.FC = () => {
                             </IonLabel></IonItem>
 
                     </IonCol>
-                    <IonCol><br />
-                                        <br />
+                    <IonCol>
+                        <br />
+                        <br />
                         <IonProgressBar value={0.72}></IonProgressBar><br />
-                        72 000 / 100 000 <br />
+                        72 000 / 100 000
+                        <br />
 
                         <IonItem>
                             Lorem Ipsum set dolorem Lorem Ipsum set dolorem Lorem Ipsum set dolorem Lorem Ipsum set dolorem

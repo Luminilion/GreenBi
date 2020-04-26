@@ -12,6 +12,8 @@ import { IonContent,
   IonRow,
   IonProgressBar,
   IonLabel,
+  IonBackButton,
+  IonButtons,
 } from '@ionic/react';
 
 import './ProjectDetail.css';
@@ -26,6 +28,9 @@ const ProjectDetail: React.FC = () => {
       <IonHeader>
         <IonToolbar>
           <IonTitle>Royalties</IonTitle>
+          <IonButtons slot="start">
+            <IonBackButton />
+          </IonButtons>
         </IonToolbar>
       </IonHeader>
 

@@ -13,7 +13,6 @@ import {
   IonSlide,
   IonCard,
   IonCardContent,
-  IonProgressBar,
 } from "@ionic/react";
 
 import RoyaltiesDetails from '../Royalties/RoyaltiesDetails';

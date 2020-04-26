@@ -14,14 +14,12 @@ import {
   IonCard,
   IonCardContent,
   IonIcon,
-  IonProgressBar,
-  IonLabel
 } from "@ionic/react";
 
 import RoyaltiesDetails from '../Royalties/RoyaltiesDetails';
 import StocksDetails from '../Stocks/StocksDetails';
 
-import { arrowForward, chevronUp, chevronDown } from 'ionicons/icons';
+import { arrowForward } from 'ionicons/icons';
 import projectData from '../../data/ProjectData';
 
 import './UtilsSlides.css';

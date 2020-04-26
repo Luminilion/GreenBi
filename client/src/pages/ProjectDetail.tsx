@@ -4,14 +4,7 @@ import { IonContent,
   IonPage,
   IonTitle,
   IonToolbar,
-  IonCard,
   IonButton,
-  IonCardHeader,
-  IonCardContent,
-  IonCardSubtitle,
-  IonCardTitle,
-  IonSlides,
-  IonSlide,
   IonItem,
   IonIcon,
   IonGrid,
@@ -19,23 +12,15 @@ import { IonContent,
   IonRow,
   IonProgressBar,
   IonLabel,
-  IonItemDivider,
-  IonInput,
-  IonToggle,
-  IonCheckbox,
 } from '@ionic/react';
 
 import './ProjectDetail.css';
 import './styles.css';
 
-import { trash, share, playCircleOutline, heart, close, logoEuro, star, starOutline} from 'ionicons/icons';
-
-import {loadStripe} from '@stripe/stripe-js';
-
+import { star } from 'ionicons/icons';
 
 
 const ProjectDetail: React.FC = () => {
-    const segment = "outline";
   return (
     <IonPage>
       <IonHeader>

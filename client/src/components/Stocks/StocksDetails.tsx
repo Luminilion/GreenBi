@@ -16,7 +16,7 @@ interface StocksDetailsProps {
 const StocksDetails : React.FC<StocksDetailsProps> = ({ direction, value }) => {
   return (
     <><IonItem>
-      <IonIcon icon={direction == "down" ? chevronUp : chevronDown} />
+      <IonIcon icon={direction === "down" ? chevronUp : chevronDown} />
       <IonLabel>{value}</IonLabel>
     </IonItem></>
   );

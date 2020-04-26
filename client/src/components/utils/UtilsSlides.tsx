@@ -36,7 +36,7 @@ const UtilsSlides : React.FC<UtilsSlidesProps> = ({ slidesPerView, moreLink, pro
   for (const [index, value] of projects.entries()) {
     items.push(
     <IonSlide>
-      <IonCard routerLink="/investir">
+      <IonCard routerLink="/project-detail">
         <img src={value.img}></img>
         <IonCardContent>
           {value.title}

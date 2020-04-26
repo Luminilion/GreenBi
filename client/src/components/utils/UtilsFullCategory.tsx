@@ -36,7 +36,7 @@ const UtilsFullCategory : React.FC<UtilsFullCategoryProps> = ({ slidesPerView, f
     } >
 
       <IonSlide>
-        <IonCard routerLink="/investir">
+        <IonCard routerLink="/project-detail">
           <img src="eiffel.jpg" />
           <IonCardContent>
             EcoEiffel
@@ -45,7 +45,7 @@ const UtilsFullCategory : React.FC<UtilsFullCategoryProps> = ({ slidesPerView, f
           <IonProgressBar value={0.7} color="secondary" /> <br />
         </IonCard>
 
-        <IonCard routerLink="/investir">
+        <IonCard routerLink="/project-detail">
           <img src="recycle.jpg" />
           <IonCardContent>
             Recycle+
@@ -56,7 +56,7 @@ const UtilsFullCategory : React.FC<UtilsFullCategoryProps> = ({ slidesPerView, f
       </IonSlide>
 
       <IonSlide>
-        <IonCard routerLink="/investir">
+        <IonCard routerLink="/project-detail">
           <img src="leavesneverdie.jpg" />
           <IonCardContent>
             LeavesNeverDie
@@ -65,7 +65,7 @@ const UtilsFullCategory : React.FC<UtilsFullCategoryProps> = ({ slidesPerView, f
           <IonProgressBar value={0.3} color="secondary" /> <br />
         </IonCard>
 
-        <IonCard routerLink="/investir">
+        <IonCard routerLink="/project-detail">
           <img src="Jiko.jpg" />
           <IonCardContent>
             Jiko
@@ -76,7 +76,7 @@ const UtilsFullCategory : React.FC<UtilsFullCategoryProps> = ({ slidesPerView, f
       </IonSlide>
 
       <IonSlide>
-        <IonCard routerLink="/investir">
+        <IonCard routerLink="/project-detail">
           <img src="Jiko.jpg" />
           <IonCardContent>
             Jiko
@@ -85,7 +85,7 @@ const UtilsFullCategory : React.FC<UtilsFullCategoryProps> = ({ slidesPerView, f
           <IonProgressBar value={0.8} color="secondary" /> <br />
         </IonCard>
 
-        <IonCard routerLink="/investir">
+        <IonCard routerLink="/project-detail">
           <img src="Jiko.jpg" />
           <IonCardContent>
             Jiko
@@ -96,7 +96,7 @@ const UtilsFullCategory : React.FC<UtilsFullCategoryProps> = ({ slidesPerView, f
       </IonSlide>
 
       <IonSlide>
-        <IonCard routerLink="/investir">
+        <IonCard routerLink="/project-detail">
           <img src="Jiko.jpg" />
           <IonCardContent>
             Jiko
@@ -105,7 +105,7 @@ const UtilsFullCategory : React.FC<UtilsFullCategoryProps> = ({ slidesPerView, f
           <IonProgressBar value={0.8} color="secondary" /> <br />
         </IonCard>
 
-        <IonCard routerLink="/investir">
+        <IonCard routerLink="/project-detail">
           <img src="Jiko.jpg" />
           <IonCardContent>
             Jiko

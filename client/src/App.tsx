@@ -19,7 +19,7 @@ import Payment from './pages/Payment';
 import PaymentSuccess from './pages/PaymentSuccess';
 import ProjectDetail from './pages/ProjectDetail';
 import Contract from './pages/Contract';
-
+import AdministrativeDocument from './pages/AdministrativeDocument';
 import MainMenu from './components/utils/MainMenu';
 
 /* Core CSS required for Ionic components to work properly */
@@ -65,6 +65,7 @@ const App: React.FC = () => (
           <Route path="/payment" component={Payment} exact={true} />
           <Route path="/payment-success" component={PaymentSuccess} exact={true} />
           <Route path="/contrat" component={Contract} exact={true} />
+          <Route path="/document-administratif" component={AdministrativeDocument} exact={true} />
           <Route path="/" render={() => <Redirect to="/login" />} exact={true} />
         </IonRouterOutlet>
     </IonReactRouter>

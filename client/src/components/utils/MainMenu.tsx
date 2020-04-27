@@ -22,6 +22,7 @@ const MainMenu: React.FC = () => {
     { text: "Portfolio", icon:wallet, link: "/portfolio" },
     { text: "Académie", icon:school, link: "/academy" },
     { text: "Paramètres", icon:settings, link: "/settings" },
+    { text: "Documents Administratifs", icon:settings, link: "/document-administratif" },
   ]
 
   return (

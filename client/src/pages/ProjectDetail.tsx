@@ -53,6 +53,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({match}) => {
 
                         <IonItem>
                             <img src={project.img}></img>
+
                         </IonItem>
                         <IonItem><IonLabel>
                         <IonIcon icon={star}></IonIcon>

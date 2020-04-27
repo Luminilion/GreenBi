@@ -1,0 +1,7 @@
+.portfolio-item ion-avatar{
+    margin-right: 20px;
+}
+.portfolio-item img{
+    width: 100%;
+    height: 100%;
+}

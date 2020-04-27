@@ -50,7 +50,7 @@ const ProjectDetail: React.FC = () => {
                 <IonRow>
                     <IonCol>
 
-                        <IonItem>
+                        <IonItem  class="project-detail">
                             <img src="eiffel.jpg"></img>
                         </IonItem>
                         <IonItem><IonLabel>

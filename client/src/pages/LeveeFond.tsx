@@ -18,6 +18,8 @@ import { IonContent,
   IonRow,
   IonCol,
   IonInput,
+  IonButtons,
+  IonMenuButton
 } from '@ionic/react';
 
 
@@ -34,6 +36,9 @@ const LeveeFond: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
+            <IonButtons slot="start">
+                <IonMenuButton />
+            </IonButtons>
           <IonTitle>Levée de Fond</IonTitle>
         </IonToolbar>
       </IonHeader>

@@ -14,6 +14,8 @@ import { IonContent,
   IonSlide,
   IonItem,
   IonIcon,
+  IonButtons,
+  IonMenuButton
 } from '@ionic/react';
 
 import './MainPage.css';
@@ -29,6 +31,9 @@ const PaymentSuccess: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
+        <IonButtons slot="start">
+                <IonMenuButton />
+            </IonButtons>
           <IonTitle>Payment success</IonTitle>
         </IonToolbar>
       </IonHeader>

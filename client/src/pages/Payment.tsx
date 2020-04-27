@@ -15,6 +15,8 @@ import { IonContent,
   IonItem,
   IonIcon,
   IonLoading,
+  IonButtons,
+  IonMenuButton,
 } from '@ionic/react';
 
 import './MainPage.css';
@@ -40,6 +42,9 @@ const Payment: React.FC<PaymentProps> = ({match}) => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
+        <IonButtons slot="start">
+                <IonMenuButton />
+            </IonButtons>
           <IonTitle>PAIEMENT  </IonTitle>
         </IonToolbar>
       </IonHeader>

@@ -4,14 +4,7 @@ import { IonContent,
   IonPage,
   IonTitle,
   IonToolbar,
-  IonCard,
   IonButton,
-  IonCardHeader,
-  IonCardContent,
-  IonCardSubtitle,
-  IonCardTitle,
-  IonSlides,
-  IonSlide,
   IonItem,
   IonIcon,
   IonGrid,
@@ -19,28 +12,36 @@ import { IonContent,
   IonRow,
   IonProgressBar,
   IonLabel,
-  IonItemDivider,
-  IonInput,
-  IonToggle,
-  IonCheckbox,
+  IonBackButton,
+  IonButtons,
 } from '@ionic/react';
+import { RouteComponentProps } from 'react-router-dom';
+
+import projectData from '../data/ProjectData';
 
 import './ProjectDetail.css';
 import './styles.css';
 
-import { trash, share, playCircleOutline, heart, close, logoEuro, star, starOutline} from 'ionicons/icons';
+import { star } from 'ionicons/icons';
 
-import {loadStripe} from '@stripe/stripe-js';
+interface ProjectDetailProps extends RouteComponentProps<{
+  id: string;
+  product: string;
+}> {}
 
+const ProjectDetail: React.FC<ProjectDetailProps> = ({match}) => {
 
+  let projects = projectData[match.params.product];
+  const project = projects.find(e=>e.id==match.params.id);
 
-const ProjectDetail: React.FC = () => {
-    const segment = "outline";
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Royalties</IonTitle>
+          <IonTitle>{project.title}</IonTitle>
+          <IonButtons slot="start">
+            <IonBackButton />
+          </IonButtons>
         </IonToolbar>
       </IonHeader>
 
@@ -50,8 +51,9 @@ const ProjectDetail: React.FC = () => {
                 <IonRow>
                     <IonCol>
 
-                        <IonItem  class="project-detail">
-                            <img src="eiffel.jpg"></img>
+                        <IonItem>
+                            <img src={project.img}></img>
+
                         </IonItem>
                         <IonItem><IonLabel>
                         <IonIcon icon={star}></IonIcon>
@@ -61,10 +63,12 @@ const ProjectDetail: React.FC = () => {
                             </IonLabel></IonItem>
 
                     </IonCol>
-                    <IonCol><br />
-                                        <br />
+                    <IonCol>
+                        <br />
+                        <br />
                         <IonProgressBar value={0.72}></IonProgressBar><br />
-                        72 000 / 100 000 <br />
+                        72 000 / 100 000
+                        <br />
 
                         <IonItem>
                             Lorem Ipsum set dolorem Lorem Ipsum set dolorem Lorem Ipsum set dolorem Lorem Ipsum set dolorem

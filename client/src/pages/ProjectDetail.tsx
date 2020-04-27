@@ -32,7 +32,7 @@ interface ProjectDetailProps extends RouteComponentProps<{
 const ProjectDetail: React.FC<ProjectDetailProps> = ({match}) => {
 
   let projects = projectData[match.params.product];
-  const project = projects.find(e=>e.id===match.params.id);
+  const project = projects.find(e=>e.id==match.params.id);
 
   return (
     <IonPage>

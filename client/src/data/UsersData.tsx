@@ -61,6 +61,7 @@ function signup(name, surname, pseudo, email, tel, password) {
       tel: tel,
       password: password
     })
+    return true;
   }
 }
 

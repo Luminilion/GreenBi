@@ -17,6 +17,7 @@ import {
 
 import './PortfolioDetail.css';
 
+
 const PortfolioDetail: React.FC = () => {
   return (
     <IonPage>
@@ -28,6 +29,7 @@ const PortfolioDetail: React.FC = () => {
           </IonButtons>
         </IonToolbar>
       </IonHeader>
+
       <IonContent class="portfolio-detail">
         <IonCard><br /> 
         <b></b> <br /> 

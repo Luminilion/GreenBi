@@ -6,24 +6,13 @@ import { IonContent,
   IonToolbar,
   IonCard,
   IonButton,
-  IonCardHeader,
-  IonCardContent,
-  IonCardSubtitle,
-  IonCardTitle,
-  IonSlides,
-  IonSlide,
-  IonItem,
-  IonIcon,
   IonGrid,
   IonRow,
   IonCol,
   IonInput,
+  IonButtons,
+  IonBackButton,
 } from '@ionic/react';
-
-
-
-import {loadStripe} from '@stripe/stripe-js';
-
 
 import './LeveeFond.css';
 
@@ -34,6 +23,9 @@ const LeveeFond: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
+            <IonButtons slot="start">
+                <IonBackButton />
+            </IonButtons>
           <IonTitle>Levée de Fond</IonTitle>
         </IonToolbar>
       </IonHeader>
@@ -54,17 +46,17 @@ const LeveeFond: React.FC = () => {
             </IonRow>
             <IonRow>
                 <IonCol>
-                   Taux de rendement du projet 
+                   Taux de rendement du projet
                 </IonCol>
                 <IonCol>
                     <IonCard class="rendement-card">
-                        5 % 
+                        5 %
                     </IonCard>
                 </IonCol>
             </IonRow>
         </IonGrid>
         Vous allez mettre {montantProjet} euros.
-        <IonButton href={"/payment/" + montantProjet} class="participate-button center">Participer</IonButton>
+        <IonButton routerLink={"/payment/" + montantProjet} class="participate-button center">Participer</IonButton>
       </IonContent>
     </IonPage>
   );

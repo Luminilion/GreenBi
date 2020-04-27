@@ -12,10 +12,6 @@ import { IonContent,
   IonRow,
   IonProgressBar,
   IonLabel,
-  IonItemDivider,
-  IonInput,
-  IonToggle,
-  IonCheckbox,
   IonButtons,
   IonBackButton,
 } from '@ionic/react';
@@ -36,7 +32,7 @@ interface ProjectDetailProps extends RouteComponentProps<{
 const ProjectDetail: React.FC<ProjectDetailProps> = ({match}) => {
 
   let projects = projectData[match.params.product];
-  const project = projects.find(e=>e.id==match.params.id);
+  const project = projects.find(e=>e.id===match.params.id);
 
   return (
     <IonPage>
@@ -85,7 +81,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({match}) => {
                 </IonRow>
                 <IonRow>
                     <IonCol><IonItem><IonLabel>78 personnes sur ce projet</IonLabel></IonItem> </IonCol>
-                    <IonCol> <IonButton href="/levee-fond" size="small" expand="block">Participer</IonButton></IonCol>
+                    <IonCol> <IonButton routerLink="/levee-fond" size="small" expand="block">Participer</IonButton></IonCol>
                 </IonRow>
             </IonGrid>
 

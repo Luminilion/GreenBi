@@ -22,7 +22,7 @@ import Contract from './pages/Contract';
 import AdministrativeDocument from './pages/AdministrativeDocument';
 import MainMenu from './components/utils/MainMenu';
 import LeveeFond from './pages/LeveeFond';
-
+import PortfolioDetail from './pages/PortfolioDetail';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -58,6 +58,7 @@ const App: React.FC = () => (
           <Route path="/royalties" component={Royalties} exact={true} />
 
           <Route path="/portfolio" component={Portfolio} exact={true} />
+          <Route path="/portfolio-detail" component={PortfolioDetail} exact={true} />
           <Route path="/academy" component={Academy} exact={true} />
           <Route path="/settings" component={Settings} exact={true} />
 

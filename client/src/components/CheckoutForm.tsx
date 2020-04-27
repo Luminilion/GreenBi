@@ -7,7 +7,11 @@ import { IonContent,
     IonLoading,
   } from '@ionic/react';
 
-const CheckoutForm : React.FC = () => {
+interface CheckoutFormProps {
+  montant: string;
+}
+
+const CheckoutForm : React.FC<CheckoutFormProps> = ({montant}) => {
     const stripe = useStripe();
     const elements = useElements();
     const history = useHistory();
@@ -29,7 +33,7 @@ const CheckoutForm : React.FC = () => {
         const cardElement = elements.getElement(CardElement);
     
 
-        var response = await fetch('http://localhost:3000/secret');
+        var response = await fetch('http://localhost:3000/secret/' + montant);
         var json = await response.json();
         var clientSecret = json.client_secret
         console.log("RESPONSE");

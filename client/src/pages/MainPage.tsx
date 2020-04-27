@@ -10,13 +10,11 @@ import { IonContent,
 
 import UtilsCategory from '../components/utils/UtilsCategory';
 
-import ProjectData from '../data/ProjectData';
 
 import './MainPage.css';
 import './styles.css';
 
 const Tab1: React.FC = () => {
-    console.log(ProjectData);
     return (
         <IonPage>
         <IonHeader>
@@ -40,14 +38,14 @@ const Tab1: React.FC = () => {
                 slidesPerView={2.5}
                 description="Current most profitable stocks on the market. Most users trust these !"
                 moreLink="/stocks"
-                projects={ProjectData.stocks}
+                product="stocks"
             />
             <UtilsCategory
                 name="Trendy royalties"
                 slidesPerView={2.5}
                 description="Top trends on current available royalties. These projects are on fire !"
                 moreLink="/royalties"
-                projects={ProjectData.royalties}
+                product="royalties"
             />
 
 

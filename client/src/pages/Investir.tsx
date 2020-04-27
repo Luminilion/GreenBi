@@ -16,7 +16,7 @@ import { IonActionSheet } from '@ionic/react';
 
 import './MainPage.css';
 
-import { trash, share, playCircleOutline, heart, close, logoEuro} from 'ionicons/icons';
+import { close, logoEuro} from 'ionicons/icons';
 
 const Tab1: React.FC = () => {
   const [showActionSheet, setShowActionSheet] = useState(false);

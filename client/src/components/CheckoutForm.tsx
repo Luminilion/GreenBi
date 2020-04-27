@@ -1,8 +1,8 @@
 import React from 'react';
 import {CardElement, useStripe, useElements} from '@stripe/react-stripe-js';
-import { Redirect, Router, useHistory} from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
-import { IonContent,
+import {
     IonButton,
     IonLoading,
   } from '@ionic/react';
@@ -26,12 +26,12 @@ const CheckoutForm : React.FC<CheckoutFormProps> = ({montant}) => {
           // form submission until Stripe.js has loaded.
           return;
         }
-    
+
         // Get a reference to a mounted CardElement. Elements knows how
         // to find your CardElement because there can only ever be one of
         // each type of element.
         const cardElement = elements.getElement(CardElement);
-    
+
 
         var response = await fetch('http://localhost:3000/secret/' + montant);
         var json = await response.json();
@@ -43,7 +43,7 @@ const CheckoutForm : React.FC<CheckoutFormProps> = ({montant}) => {
           type: 'card',
           card: cardElement,
         });
-    
+
         if (error) {
           console.log('[error]', error);
         } else {
@@ -57,7 +57,7 @@ const CheckoutForm : React.FC<CheckoutFormProps> = ({montant}) => {
               },
             }
           });
-         
+
           console.log(result);
 
           if(result.paymentIntent.status == "succeeded"){
@@ -96,7 +96,7 @@ const CheckoutForm : React.FC<CheckoutFormProps> = ({montant}) => {
             />
         </form>
 
-       
+
     );
 };
 

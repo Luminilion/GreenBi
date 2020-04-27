@@ -39,6 +39,7 @@ const Tab1: React.FC = () => {
         <UtilsFullCategory
           slidesPerView={2.5}
           freeMode={true}
+          product="royalties"
         />
 
       </IonContent>

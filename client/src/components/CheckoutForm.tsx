@@ -4,17 +4,19 @@ import { Redirect, Router, useHistory} from 'react-router-dom'
 
 import { IonContent,
     IonButton,
+    IonLoading,
   } from '@ionic/react';
 
 const CheckoutForm : React.FC = () => {
     const stripe = useStripe();
     const elements = useElements();
     const history = useHistory();
+    const [showLoading, setShowLoading] = React.useState(false);
 
     const handleSubmit = async (event) => {
         // Block native form submission.
         event.preventDefault();
-    
+        setShowLoading(true);
         if (!stripe || !elements) {
           // Stripe.js has not loaded yet. Make sure to disable
           // form submission until Stripe.js has loaded.
@@ -55,6 +57,7 @@ const CheckoutForm : React.FC = () => {
           console.log(result);
 
           if(result.paymentIntent.status == "succeeded"){
+            setShowLoading(false);
             history.push('/payment-success');
           }
         }
@@ -81,6 +84,12 @@ const CheckoutForm : React.FC = () => {
             <IonButton onClick={handleSubmit} disabled={!stripe}>
                 Pay
             </IonButton>
+            <IonLoading
+              isOpen={showLoading}
+              onDidDismiss={() => setShowLoading(false)}
+              message={'Nous procédons au transfert de fonds. Veuillez Patienter ...'}
+
+            />
         </form>
 
        

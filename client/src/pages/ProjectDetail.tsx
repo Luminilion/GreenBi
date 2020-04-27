@@ -77,7 +77,7 @@ const ProjectDetail: React.FC = () => {
                 </IonRow>
                 <IonRow>
                     <IonCol><IonItem><IonLabel>78 personnes sur ce projet</IonLabel></IonItem> </IonCol>
-                    <IonCol> <IonButton size="small" expand="block">Participer</IonButton></IonCol>
+                    <IonCol> <IonButton href="/levee-fond" size="small" expand="block">Participer</IonButton></IonCol>
                 </IonRow>
             </IonGrid>
 

@@ -14,6 +14,7 @@ import { IonContent,
   IonSlide,
   IonItem,
   IonIcon,
+  IonLoading,
 } from '@ionic/react';
 
 import './MainPage.css';
@@ -27,8 +28,8 @@ import {loadStripe} from '@stripe/stripe-js';
 import CheckoutForm from '../components/CheckoutForm';
 const stripePromise = loadStripe('pk_test_RIyFESooUbStZmmKdrfS6RvY00B3i58XjC');
 
-
 const Payment: React.FC = () => {
+  
   return (
     <IonPage>
       <IonHeader>
@@ -40,9 +41,10 @@ const Payment: React.FC = () => {
       <IonContent>
         <IonCard>PAYER PAYER</IonCard>
         <Elements stripe={stripePromise}>
-          <CheckoutForm />
+          <CheckoutForm  />
         </Elements>
       </IonContent>
+      
     </IonPage>
   );
 };

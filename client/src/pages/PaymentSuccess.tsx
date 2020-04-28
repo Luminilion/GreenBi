@@ -25,7 +25,7 @@ interface PaymentSuccessProps extends RouteComponentProps<{
 
 
 const PaymentSuccess: React.FC<PaymentSuccessProps> = ({match}) => {
-  
+
   const getProjectImage = function(type, id){
     let idInt = parseInt(id);
     if(type == "stocks"){
@@ -36,14 +36,11 @@ const PaymentSuccess: React.FC<PaymentSuccessProps> = ({match}) => {
         return "erreur";
     }
 }
-  
+
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-            <IonButtons slot="start">
-                <IonMenuButton />
-            </IonButtons>
           <IonTitle>Succès</IonTitle>
         </IonToolbar>
       </IonHeader>
@@ -54,19 +51,19 @@ const PaymentSuccess: React.FC<PaymentSuccessProps> = ({match}) => {
           <p>Un mail de confirmation vous sera envoyé</p>
           <IonIcon color="success" icon={checkmark} />
         </IonCard>
-        
-          
-          
-        
+
+
+
+
         <IonCard class="card-item">
           <img src={getProjectImage(match.params.projectType,match.params.projectId)}></img>
           <h2>{match.params.amount + " €"}</h2>
         </IonCard>
         <div className="card-button">
-          <IonButton class="small" routerLink="/menu">Retour au menu</IonButton>
+          <IonButton class="small" routerLink="/main">Retour au menu</IonButton>
           <IonButton class="small" routerLink="/portfolio">Voir mon Portfolio</IonButton>
         </div>
-        
+
       </IonContent>
     </IonPage>
   );

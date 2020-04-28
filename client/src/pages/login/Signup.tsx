@@ -22,7 +22,7 @@ const Signup: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle style={{padding:30}} size="large">Signup</IonTitle>
+          <IonTitle style={{padding:30}} >Signup</IonTitle>
           <IonButtons slot="start" >
             <IonBackButton />
           </IonButtons>

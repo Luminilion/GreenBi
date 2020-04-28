@@ -6,32 +6,22 @@ import { IonContent,
   IonToolbar,
   IonCard,
   IonButton,
-  IonCardHeader,
-  IonCardContent,
-  IonCardSubtitle,
-  IonCardTitle,
   IonSlides,
   IonSlide,
   IonItem,
   IonIcon,
   IonButtons,
-  IonMenuButton,
+  IonBackButton,
   IonAvatar,
-  IonLabel,
   IonText,
 } from '@ionic/react';
 
 
-import { home, trendingUp, settings, peopleCircle, wallet, school, cameraOutline } from 'ionicons/icons';
+import { cameraOutline } from 'ionicons/icons';
 
 import { RouteComponentProps} from 'react-router-dom';
 import './AdministrativeDocument.css';
 
-const DocumentPicker = () => (
-    <div id="documentPicker" className="">
-        Document Picker
-    </div>
-)
 interface AdministrativeDocumentProps extends RouteComponentProps<{
     projectType: string;
     projectId: string;
@@ -39,9 +29,9 @@ interface AdministrativeDocumentProps extends RouteComponentProps<{
   }> {}
 
 const AdministrativeDocument: React.FC<AdministrativeDocumentProps> = ({match}) => {
-    const nextUrl = '/contrat/' + 
-        match.params.projectType + '/' + 
-        match.params.projectId + '/' + 
+    const nextUrl = '/contrat/' +
+        match.params.projectType + '/' +
+        match.params.projectId + '/' +
         match.params.amount;
 
     const [showDocumentPicker, setShowDocumentPicker] = React.useState(false);
@@ -49,11 +39,11 @@ const AdministrativeDocument: React.FC<AdministrativeDocumentProps> = ({match}) 
     const [showButton, setShowButton] = React.useState(true);
     const [showDocumentContainer, setShowDocumentContainer] = React.useState(false);
     const [showContinueButton, setShowContinueButton] = React.useState(false);
-    
+
     const phonePersonalDocuments = ["jiko.jpg", "passport.png", "recycle.jpg"];
 
     const chooseDocument = async (indexDocument) => {
-        
+
 
         setShowDocumentPicker(false);
         setShowButton(false);
@@ -65,24 +55,24 @@ const AdministrativeDocument: React.FC<AdministrativeDocumentProps> = ({match}) 
     const onButtonClick = async () => {
         setShowDocumentInfo(false);
         setShowDocumentPicker(true);
-        
+
     };
     const button1 = (
         <IonItem class="button-container">
-            <IonButton onClick = {() => onButtonClick()}>Carte d'identité </IonButton> 
+            <IonButton onClick = {() => onButtonClick()}>Carte d'identité </IonButton>
             <IonIcon icon={cameraOutline} />
         </IonItem>
 
     );
     const button2 = (
         <IonItem class="button-container">
-            <IonButton onClick = {() => onButtonClick()}>Passeport </IonButton> 
+            <IonButton onClick = {() => onButtonClick()}>Passeport </IonButton>
             <IonIcon icon={cameraOutline} />
         </IonItem>
     );
     const continueButton = (
 
-        <IonButton routerLink={nextUrl}>Continuer la transaction </IonButton> 
+        <IonButton routerLink={nextUrl}>Continuer la transaction </IonButton>
 
     );
     var documentContainer = (
@@ -109,7 +99,7 @@ const AdministrativeDocument: React.FC<AdministrativeDocumentProps> = ({match}) 
         <IonItem class="document-info" color="success">
             <IonText>
                 La photo enregistrée sera examinée par nos services dans un delai de 48h
-        
+
             </IonText>
         </IonItem>
     );
@@ -118,7 +108,7 @@ const AdministrativeDocument: React.FC<AdministrativeDocumentProps> = ({match}) 
       <IonHeader>
       <IonToolbar>
             <IonButtons slot="start">
-                <IonMenuButton />
+                <IonBackButton />
             </IonButtons>
                 <IonTitle>Documents Administratifs</IonTitle>
             </IonToolbar>
@@ -131,7 +121,7 @@ const AdministrativeDocument: React.FC<AdministrativeDocumentProps> = ({match}) 
         </IonAvatar>
 
 
-        
+
         { showButton ?  button1 : null }
         { showButton ?  button2 : null }
         { showDocumentContainer ?  documentContainer : null }
@@ -139,7 +129,7 @@ const AdministrativeDocument: React.FC<AdministrativeDocumentProps> = ({match}) 
         { showDocumentPicker ?  documentPicker : null }
         { showContinueButton ?  continueButton : null }
 
-        
+
       </IonContent>
     </IonPage>
   );

@@ -68,8 +68,8 @@ const App: React.FC = () => (
           <Route path="/investir" component={Investir} exact={true} />
           <Route path="/payment/:projectType/:projectId/:amount" component={Payment} exact={true} />
           <Route path="/payment-success/:projectType/:projectId/:amount" component={PaymentSuccess} exact={true} />
-          <Route path="/contrat" component={Contract} exact={true} />
-          <Route path="/document-administratif" component={AdministrativeDocument} exact={true} />
+          <Route path="/contrat/:projectType/:projectId/:amount" component={Contract} exact={true} />
+          <Route path="/document-administratif/:projectType/:projectId/:amount" component={AdministrativeDocument} exact={true} />
           <Route path="/levee-fond/:projectType/:projectId" component={LeveeFond} exact={true} />
           <Route path="/contract" component={Contract} exact={true} />
           <Route path="/" render={() => <Redirect to="/login" />} exact={true} />

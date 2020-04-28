@@ -23,7 +23,7 @@ interface LeveeFondProps extends RouteComponentProps<{
   }> {}
 
 const LeveeFond: React.FC<LeveeFondProps> = ({match}) => {
-    const nexturl = '/payment/'+ 
+    const nexturl = '/document-administratif/'+ 
         match.params.projectType + '/' + 
         match.params.projectId + '/';
     const [montantProjet, setMontantProjet] = React.useState<number>(0);

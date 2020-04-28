@@ -13,12 +13,24 @@ import { IonContent,
   IonButton,
 } from '@ionic/react';
 
+
+import { RouteComponentProps} from 'react-router-dom';
 import './Contract.css';
 
 
+interface ContractProps extends RouteComponentProps<{
+  projectType: string;
+  projectId: string;
+  amount: string;
+}> {}
 
-const PaymentSuccess: React.FC = () => {
+
+const PaymentSuccess: React.FC<ContractProps> = ({match}) => {
   const [signature, setSignature] = React.useState<string>();
+  const nexturl = '/payment/' + 
+    match.params.projectType + '/' + 
+    match.params.projectId + '/' + 
+    match.params.amount;
   return (
     <IonPage>
       <IonHeader>
@@ -61,7 +73,7 @@ const PaymentSuccess: React.FC = () => {
             <IonInput value={signature} type="text" onIonChange={e => setSignature(e.detail.value!)}></IonInput>
           </IonItem>
       </IonCard>
-      <IonButton disabled={signature != "Louis de Puysegur"} size="small">Accepter</IonButton>
+      <IonButton routerLink={nexturl} disabled={signature != "Louis de Puysegur"} size="small">Accepter</IonButton>
       </IonContent>
     </IonPage>
   );

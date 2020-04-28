@@ -26,3 +26,26 @@
     width: 100%;
     padding: 11px 15px 11px 0;
   }
+  .payment-content h3{
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+  }
+  .payment-content ion-avatar{
+    margin-top: 20px;
+  }
+.payment-content .container-logo-stripe{
+  width: 200px;
+  margin: auto;
+  margin-top: 150px;
+  margin-bottom: 20px;
+}
+.payment-content .container-logo-stripe img{
+  width: 200px;
+  height: 60px; 
+}
+.container-stripe{
+  width: 80%;
+  margin:auto;
+}

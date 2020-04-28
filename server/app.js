@@ -21,7 +21,7 @@ app.get('/secret/:montant', async (req, res) => {
     console.log("sending a request for a montant of " + montant);
     const paymentIntent = await stripe.paymentIntents.create({
         amount: 100 * montant,
-        currency: 'usd',
+        currency: 'eur',
         metadata: {
             integration_check: 'accept_a_payment'
         },

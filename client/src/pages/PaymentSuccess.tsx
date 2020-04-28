@@ -14,6 +14,7 @@ import { IonContent,
 
 import './PaymentSuccess.css';
 import { RouteComponentProps} from 'react-router-dom';
+import projectData from '../data/ProjectData';
 
 import { arrowForward, checkmark } from 'ionicons/icons';
 interface PaymentSuccessProps extends RouteComponentProps<{
@@ -22,7 +23,20 @@ interface PaymentSuccessProps extends RouteComponentProps<{
   amount: string
 }> {}
 
+
 const PaymentSuccess: React.FC<PaymentSuccessProps> = ({match}) => {
+  
+  const getProjectImage = function(type, id){
+    let idInt = parseInt(id);
+    if(type == "stocks"){
+        return projectData.stocks[idInt].img;
+    }else if(type == "royalties"){
+        return projectData.royalties[idInt].img;
+    }else{
+        return "erreur";
+    }
+}
+  
   return (
     <IonPage>
       <IonHeader>
@@ -45,12 +59,12 @@ const PaymentSuccess: React.FC<PaymentSuccessProps> = ({match}) => {
           
         
         <IonCard class="card-item">
-          <img src="/eiffel.jpg"></img>
+          <img src={getProjectImage(match.params.projectType,match.params.projectId)}></img>
           <h2>{match.params.amount + " €"}</h2>
         </IonCard>
         <IonCard class="card-button">
-          <IonButton>Retour au menu</IonButton>
-          <IonButton class="success">Voir mon Portfolio</IonButton>
+          <IonButton routerLink="/menu">Retour au menu</IonButton>
+          <IonButton routerLink="/portfolio">Voir mon Portfolio</IonButton>
         </IonCard>
         
       </IonContent>

@@ -57,7 +57,7 @@ const App: React.FC = () => (
           <Route path="/stocks" component={Stocks} exact={true} />
           <Route path="/royalties" component={Royalties} exact={true} />
 
-          <Route path="/project-detail/:product/:id" component={ProjectDetail} exact={true} />
+          <Route path="/project-detail/:projectType/:projectId" component={ProjectDetail} exact={true} />
 
           <Route path="/portfolio" component={Portfolio} exact={true} />
           <Route path="/portfolio-detail" component={PortfolioDetail} exact={true} />
@@ -65,11 +65,11 @@ const App: React.FC = () => (
           <Route path="/settings" component={Settings} exact={true} />
 
           <Route path="/investir" component={Investir} exact={true} />
-          <Route path="/payment/:montant" component={Payment} exact={true} />
+          <Route path="/payment/:projectType/:projectId/:amount" component={Payment} exact={true} />
           <Route path="/payment-success/:projectType/:projectId/:amount" component={PaymentSuccess} exact={true} />
           <Route path="/contrat" component={Contract} exact={true} />
           <Route path="/document-administratif" component={AdministrativeDocument} exact={true} />
-          <Route path="/levee-fond" component={LeveeFond} exact={true} />
+          <Route path="/levee-fond/:projectType/:projectId" component={LeveeFond} exact={true} />
           <Route path="/" render={() => <Redirect to="/login" />} exact={true} />
         </IonRouterOutlet>
     </IonReactRouter>

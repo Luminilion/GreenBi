@@ -7,7 +7,7 @@ import { IonContent,
   IonCard,
   IonButtons,
   IonBackButton,
-  IonInput,
+  IonCheckbox,
   IonLabel,
   IonItem,
   IonButton,
@@ -26,17 +26,18 @@ interface ContractProps extends RouteComponentProps<{
 
 
 const PaymentSuccess: React.FC<ContractProps> = ({match}) => {
-  const [signature, setSignature] = React.useState<string>();
-  const nexturl = '/payment/' + 
-    match.params.projectType + '/' + 
-    match.params.projectId + '/' + 
+  const [signature, setSignature] = React.useState(false);
+  const [connaissance, setConnaissance] = React.useState(false);
+  const nexturl = '/payment/' +
+    match.params.projectType + '/' +
+    match.params.projectId + '/' +
     match.params.amount;
   return (
     <IonPage>
       <IonHeader>
-      
+
         <IonToolbar>
-          
+
           <IonTitle>Contrat</IonTitle>
           <IonButtons slot="start">
             <IonBackButton />
@@ -45,9 +46,9 @@ const PaymentSuccess: React.FC<ContractProps> = ({match}) => {
       </IonHeader>
 
       <IonContent class="contract-content">
-        <h2>Contrat d'achat du produit financier</h2>
+        <h2 style={{marginLeft:30, marginRight:30}}>Contrat d'achat du produit financier : {match.params.projectType}</h2>
         <IonCard>
-          
+
 <h3>What is Lorem Ipsum?</h3>
 
 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
@@ -66,14 +67,19 @@ const PaymentSuccess: React.FC<ContractProps> = ({match}) => {
 <h3>Where can I get some?</h3>
 
 <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
-</p>     
+</p>
 
           <IonItem>
-            <IonLabel position="stacked">Signez pour accepter le contrat</IonLabel>
-            <IonInput value={signature} type="text" onIonChange={e => setSignature(e.detail.value!)}></IonInput>
+            <IonCheckbox checked={connaissance} onIonChange={e => setConnaissance(!connaissance)} />
+            <IonLabel style={{margin:30}}>J'ai pris connaissance du contrat</IonLabel>
+          </IonItem>
+
+          <IonItem>
+            <IonCheckbox checked={signature} onIonChange={e => setSignature(!signature)} />
+            <IonLabel style={{margin:30}}>J'appose ma signature</IonLabel>
           </IonItem>
       </IonCard>
-      <IonButton routerLink={nexturl} disabled={signature != "Louis de Puysegur"} size="small">Accepter</IonButton>
+      <IonButton routerLink={nexturl} disabled={!signature||!connaissance} size="small">Accepter</IonButton>
       </IonContent>
     </IonPage>
   );

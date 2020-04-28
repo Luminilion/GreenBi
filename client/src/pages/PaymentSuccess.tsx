@@ -63,8 +63,8 @@ const PaymentSuccess: React.FC<PaymentSuccessProps> = ({match}) => {
           <h2>{match.params.amount + " €"}</h2>
         </IonCard>
         <div className="card-button">
-          <IonButton routerLink="/menu">Retour au menu</IonButton>
-          <IonButton routerLink="/portfolio">Voir mon Portfolio</IonButton>
+          <IonButton class="small" routerLink="/menu">Retour au menu</IonButton>
+          <IonButton class="small" routerLink="/portfolio">Voir mon Portfolio</IonButton>
         </div>
         
       </IonContent>

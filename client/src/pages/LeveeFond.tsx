@@ -15,9 +15,17 @@ import { IonContent,
 } from '@ionic/react';
 
 import './LeveeFond.css';
+import { RouteComponentProps} from 'react-router-dom';
 
-const LeveeFond: React.FC = () => {
+interface LeveeFondProps extends RouteComponentProps<{
+    projectType: string;
+    projectId: string;
+  }> {}
 
+const LeveeFond: React.FC<LeveeFondProps> = ({match}) => {
+    const nexturl = '/payment/'+ 
+        match.params.projectType + '/' + 
+        match.params.projectId + '/';
     const [montantProjet, setMontantProjet] = React.useState<number>(0);
   return (
     <IonPage>
@@ -56,7 +64,7 @@ const LeveeFond: React.FC = () => {
             </IonRow>
         </IonGrid>
         Vous allez mettre {montantProjet} euros.
-        <IonButton routerLink={"/payment/" + montantProjet} class="participate-button center">Participer</IonButton>
+        <IonButton routerLink={nexturl + montantProjet} class="participate-button center">Participer</IonButton>
       </IonContent>
     </IonPage>
   );

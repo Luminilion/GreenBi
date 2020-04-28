@@ -25,14 +25,23 @@ import './styles.css';
 import { star } from 'ionicons/icons';
 
 interface ProjectDetailProps extends RouteComponentProps<{
-  id: string;
-  product: string;
+  projectId: string;
+  projectType: string;
 }> {}
 
 const ProjectDetail: React.FC<ProjectDetailProps> = ({match}) => {
-
-  let projects = projectData[match.params.product];
-  const project = projects.find(e=>e.id==match.params.id);
+  const nexturl = '/levee-fond/'+ 
+    match.params.projectType + '/' + 
+    match.params.projectId + '/';
+  const getProject = function(type, id){
+      let idInt = parseInt(id);
+      if(type == "stocks"){
+          return projectData.stocks[idInt];
+      }else{
+          return projectData.royalties[idInt];
+      }
+    };
+  const project = getProject(match.params.projectType,match.params.projectId);
 
   return (
     <IonPage>
@@ -81,7 +90,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({match}) => {
                 </IonRow>
                 <IonRow>
                     <IonCol><IonItem><IonLabel>78 personnes sur ce projet</IonLabel></IonItem> </IonCol>
-                    <IonCol> <IonButton routerLink="/levee-fond" size="small" expand="block">Participer</IonButton></IonCol>
+                    <IonCol> <IonButton routerLink={nexturl} size="small" expand="block">Participer</IonButton></IonCol>
                 </IonRow>
             </IonGrid>
 

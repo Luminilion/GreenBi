@@ -9,9 +9,10 @@ import {
 
 interface CheckoutFormProps {
   montant: string;
+  successUrl: string;
 }
 
-const CheckoutForm : React.FC<CheckoutFormProps> = ({montant}) => {
+const CheckoutForm : React.FC<CheckoutFormProps> = ({montant,successUrl}) => {
     const stripe = useStripe();
     const elements = useElements();
     const history = useHistory();
@@ -62,7 +63,7 @@ const CheckoutForm : React.FC<CheckoutFormProps> = ({montant}) => {
 
           if(result.paymentIntent.status == "succeeded"){
             setShowLoading(false);
-            history.push('/payment-success');
+            history.push(successUrl);
           }
         }
       };

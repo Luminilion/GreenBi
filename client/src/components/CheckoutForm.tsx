@@ -87,7 +87,7 @@ const CheckoutForm : React.FC<CheckoutFormProps> = ({montant,successUrl}) => {
                 }}
             />
             <IonButton onClick={handleSubmit} disabled={!stripe}>
-                Pay
+                Procéder au paiement
             </IonButton>
             <IonLoading
               isOpen={showLoading}

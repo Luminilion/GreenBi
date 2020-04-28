@@ -7,10 +7,9 @@ import { IonContent,
   IonCard,
   IonButtons,
   IonBackButton,
+  IonAvatar,
 } from '@ionic/react';
 
-import './MainPage.css';
-import './styles.css';
 
 
 import {Elements} from '@stripe/react-stripe-js';
@@ -19,6 +18,9 @@ import {loadStripe} from '@stripe/stripe-js';
 import { RouteComponentProps} from 'react-router-dom';
 
 import CheckoutForm from '../components/CheckoutForm';
+import './Payment.css';
+
+
 const stripePromise = loadStripe('pk_test_RIyFESooUbStZmmKdrfS6RvY00B3i58XjC');
 
 interface PaymentProps extends RouteComponentProps<{
@@ -44,13 +46,25 @@ const Payment: React.FC<PaymentProps> = ({match}) => {
         </IonToolbar>
       </IonHeader>
 
-      <IonContent>
-        <IonCard>PAYER PAYER {match.params.amount} </IonCard>
+      <IonContent class="payment-content">
+        
+        <IonAvatar class="avatar ion-justify-content-center">
+            <img src="avatar.png" />
+        </IonAvatar>
+
+        
+        <h3>Vous vous apretez à faire un paiement de {match.params.amount} €</h3>
+        <div className="container-logo-stripe">
+          <img src="stripe.png"></img>
+        </div>
+        <div className="container-stripe">
         <Elements stripe={stripePromise}>
           <CheckoutForm 
             montant={match.params.amount} 
             successUrl={successUrl}/>
         </Elements>
+        </div>
+        
       </IonContent>
 
     </IonPage>

@@ -1,0 +1,46 @@
+.payment-success ion-icon{
+    margin: auto;
+    font-size: 70px;
+}
+.card-message{
+    justify-content: center;
+
+    display: flex;
+
+    flex-direction: column;
+}
+.card-message h1{
+    text-align: center;
+}
+.card-item h2{
+    width: 40%;
+    margin: auto;
+    margin-top: 10px;
+}
+.payment-success ion-card{
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-content: center;
+    width: 50%;
+    margin: auto;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.payment-success img{
+    height: 100%;
+    width: 100%;
+}
+
+.payment-success .card-button{
+    width: 80%;
+    justify-content: space-around;
+
+    display: flex;
+
+    flex-direction: row;
+}

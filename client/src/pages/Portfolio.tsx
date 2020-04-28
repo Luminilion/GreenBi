@@ -12,10 +12,12 @@ import {
   IonLabel,
   IonItem,
   IonAvatar,
+  IonListHeader,
 } from '@ionic/react';
 
 
 import './Portfolio.css';
+import portfolioData from '../data/PortfolioData';
 
 const Portfolio: React.FC = () => {
   return (
@@ -35,26 +37,47 @@ const Portfolio: React.FC = () => {
         Vous avez gagné 253.53 € <br /> 
         C'est vraiment beaucoup beaucoup d'argent
         </IonCard>
-        <IonList>
+      <IonList>
+      <IonListHeader>
+        Mes stocks
+      </IonListHeader>
 
-      <IonItem href="/portfolio-detail" class="portfolio-item">
-          <IonAvatar slot="start">
-            <img src="./eiffel.jpg" />
-          </IonAvatar>
-          <IonLabel>
-            <h2>Projet Tour Eiffel</h2>
-            <p>+324.32 €</p>
-          </IonLabel>
-      </IonItem>
-      <IonItem>
-        <IonLabel>The Legend of Zelda</IonLabel>
-      </IonItem>
-      <IonItem>
-        <IonLabel>Pac-Man</IonLabel>
-      </IonItem>
-      <IonItem>
-        <IonLabel>Super Mario World</IonLabel>
-      </IonItem>
+      {
+        portfolioData.stocks.map( (stock,index) => {
+          return (<IonItem href="/portfolio-detail" class="portfolio-item">
+              <IonAvatar slot="start">
+                <img src="./eiffel.jpg" />
+              </IonAvatar>
+              <IonLabel>
+                <h2>{stock.name}</h2>
+                <h3>{(stock.croissance > 0)?"+" : ""} {  stock.croissance + " %"}</h3>
+                <p>{stock.buy_price + " €"}</p>
+              </IonLabel>
+           </IonItem>);
+        })
+      }
+    </IonList>
+    <IonList>
+      <IonListHeader>
+        Mes royalties 
+      </IonListHeader>
+      {
+        portfolioData.royalties.map( (stock,index) => {
+          return (<IonItem href="/portfolio-detail" class="portfolio-item">
+              <IonAvatar slot="start">
+                <img src="./eiffel.jpg" />
+              </IonAvatar>
+              <IonLabel>
+                <h2>{stock.name}</h2>
+                <p>{stock.invest_amount + " €"}</p>
+              </IonLabel>
+              <IonLabel>
+                <h2></h2>
+                <p>{stock.refund_amount + " €"} ( {stock.refund_percentage + " %"} )</p>
+              </IonLabel>
+           </IonItem>);
+        })
+      }
     </IonList>
       </IonContent>
     </IonPage>

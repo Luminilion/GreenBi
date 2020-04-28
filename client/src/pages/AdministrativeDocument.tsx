@@ -24,6 +24,7 @@ import { IonContent,
 
 import { home, trendingUp, settings, peopleCircle, wallet, school, cameraOutline } from 'ionicons/icons';
 
+import { RouteComponentProps} from 'react-router-dom';
 import './AdministrativeDocument.css';
 
 const DocumentPicker = () => (
@@ -31,13 +32,23 @@ const DocumentPicker = () => (
         Document Picker
     </div>
 )
+interface AdministrativeDocumentProps extends RouteComponentProps<{
+    projectType: string;
+    projectId: string;
+    amount: string;
+  }> {}
 
-const AdministrativeDocument: React.FC = () => {
+const AdministrativeDocument: React.FC<AdministrativeDocumentProps> = ({match}) => {
+    const nextUrl = '/contrat/' + 
+        match.params.projectType + '/' + 
+        match.params.projectId + '/' + 
+        match.params.amount;
 
     const [showDocumentPicker, setShowDocumentPicker] = React.useState(false);
     const [showDocumentInfo, setShowDocumentInfo] = React.useState(true);
     const [showButton, setShowButton] = React.useState(true);
     const [showDocumentContainer, setShowDocumentContainer] = React.useState(false);
+    const [showContinueButton, setShowContinueButton] = React.useState(false);
     
     const phonePersonalDocuments = ["jiko.jpg", "passport.png", "recycle.jpg"];
 
@@ -48,6 +59,7 @@ const AdministrativeDocument: React.FC = () => {
         setShowButton(false);
         setShowDocumentInfo(true);
         setShowDocumentContainer(true);
+        setShowContinueButton(true);
         console.log(indexDocument);
     };
     const onButtonClick = async () => {
@@ -67,6 +79,11 @@ const AdministrativeDocument: React.FC = () => {
             <IonButton onClick = {() => onButtonClick()}>Passeport </IonButton> 
             <IonIcon icon={cameraOutline} />
         </IonItem>
+    );
+    const continueButton = (
+
+        <IonButton routerLink={nextUrl}>Continuer la transaction </IonButton> 
+
     );
     var documentContainer = (
         <IonItem class="document-container">
@@ -120,6 +137,7 @@ const AdministrativeDocument: React.FC = () => {
         { showDocumentContainer ?  documentContainer : null }
         { showDocumentInfo ?  documentInfo : null }
         { showDocumentPicker ?  documentPicker : null }
+        { showContinueButton ?  continueButton : null }
 
         
       </IonContent>

@@ -30,18 +30,19 @@ interface ProjectDetailProps extends RouteComponentProps<{
 }> {}
 
 const ProjectDetail: React.FC<ProjectDetailProps> = ({match}) => {
-  const nexturl = '/levee-fond/'+ 
-    match.params.projectType + '/' + 
+  const nexturl = '/levee-fond/'+
+    match.params.projectType + '/' +
     match.params.projectId + '/';
   const getProject = function(type, id){
       let idInt = parseInt(id);
       if(type == "stocks"){
-          return projectData.stocks[idInt];
+          return projectData.stocks.find(e => e.id == idInt);
       }else{
-          return projectData.royalties[idInt];
+          return projectData.royalties.find(e => e.id == idInt);
       }
     };
   const project = getProject(match.params.projectType,match.params.projectId);
+  console.log(project)
 
   return (
     <IonPage>

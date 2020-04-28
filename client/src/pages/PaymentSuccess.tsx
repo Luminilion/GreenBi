@@ -62,10 +62,10 @@ const PaymentSuccess: React.FC<PaymentSuccessProps> = ({match}) => {
           <img src={getProjectImage(match.params.projectType,match.params.projectId)}></img>
           <h2>{match.params.amount + " €"}</h2>
         </IonCard>
-        <IonCard class="card-button">
+        <div className="card-button">
           <IonButton routerLink="/menu">Retour au menu</IonButton>
           <IonButton routerLink="/portfolio">Voir mon Portfolio</IonButton>
-        </IonCard>
+        </div>
         
       </IonContent>
     </IonPage>

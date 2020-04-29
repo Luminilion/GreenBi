@@ -1,0 +1,16 @@
+.personal-info .form-container{
+    
+    width: 90%;
+    margin: auto;
+    margin-top:20px;
+}
+.personal-info  ion-item-divider{
+    margin-top: 20px;
+}
+.personal-info .bouton-container{
+    margin: auto;
+    margin-top:20px;
+    width: 20%;
+    
+
+}

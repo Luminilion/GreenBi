@@ -19,12 +19,13 @@ import { IonContent,
   IonAvatar,
   IonLabel,
   IonText,
+  IonAlert
 } from '@ionic/react';
 
 
 import { home, trendingUp, settings, peopleCircle, wallet, school, cameraOutline } from 'ionicons/icons';
 
-import { RouteComponentProps} from 'react-router-dom';
+import { RouteComponentProps, useHistory} from 'react-router-dom';
 import './AdministrativeDocument.css';
 
 const DocumentPicker = () => (
@@ -39,11 +40,14 @@ interface AdministrativeDocumentProps extends RouteComponentProps<{
   }> {}
 
 const AdministrativeDocument: React.FC<AdministrativeDocumentProps> = ({match}) => {
+    
+    const history = useHistory();
     const nextUrl = '/contrat/' + 
         match.params.projectType + '/' + 
         match.params.projectId + '/' + 
         match.params.amount;
 
+    const [showAlert, setShowAlert] = React.useState(false);
     const [showDocumentPicker, setShowDocumentPicker] = React.useState(false);
     const [showDocumentInfo, setShowDocumentInfo] = React.useState(true);
     const [showButton, setShowButton] = React.useState(true);
@@ -81,9 +85,10 @@ const AdministrativeDocument: React.FC<AdministrativeDocumentProps> = ({match}) 
         </IonItem>
     );
     const continueButton = (
-
-        <IonButton routerLink={nextUrl}>Continuer la transaction </IonButton> 
-
+        <div className="continue-container">
+            <IonButton onClick = {() => setShowAlert(true)}>Continuer la transaction </IonButton> 
+        </div>
+        
     );
     var documentContainer = (
         <IonItem class="document-container">
@@ -139,6 +144,20 @@ const AdministrativeDocument: React.FC<AdministrativeDocumentProps> = ({match}) 
         { showDocumentPicker ?  documentPicker : null }
         { showContinueButton ?  continueButton : null }
 
+        <IonAlert
+          isOpen={showAlert}
+          onDidDismiss={() => setShowAlert(false)}
+          header={''}
+          message={'Nous vous invitons maintenant à prendre connaissance des modalités du contrat'}
+          buttons={[{
+            text: 'Accepter',
+            role: 'accept',
+            cssClass: 'secondary',
+            handler: () => {
+              history.push(nextUrl);
+            }
+          }]}
+        />
         
       </IonContent>
     </IonPage>

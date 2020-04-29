@@ -48,8 +48,8 @@ const PaymentSuccess: React.FC<PaymentSuccessProps> = ({match}) => {
       <IonContent class="payment-success">
         <IonCard class="card-message">
           <h1>Paiement accepté</h1>
-          <p>Un mail de confirmation vous sera envoyé</p>
           <IonIcon color="success" icon={checkmark} />
+          <p>Un mail de confirmation vous sera envoyé.</p>
         </IonCard>
 
 

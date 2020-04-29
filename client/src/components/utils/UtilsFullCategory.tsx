@@ -54,8 +54,9 @@ const UtilsFullCategory : React.FC<UtilsFullCategoryProps> = ({ slidesPerView, f
           <IonSlide>
 
             {bothProjects.map( p => {
+              let route = "/project-detail/"+product+'/'+p.id;
               return(
-                <IonCard routerLink="/project-detail">
+                <IonCard routerLink={route}>
                   <img src={p.img} alt={p.title}/>
                   <IonCardContent>
                     {p.title}

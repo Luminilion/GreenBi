@@ -14,6 +14,8 @@ import { IonContent,
   IonBackButton,
   IonAvatar,
   IonText,
+  IonCheckbox,
+  IonLabel,
 } from '@ionic/react';
 
 
@@ -39,6 +41,7 @@ const AdministrativeDocument: React.FC<AdministrativeDocumentProps> = ({match}) 
     const [showButton, setShowButton] = React.useState(true);
     const [showDocumentContainer, setShowDocumentContainer] = React.useState(false);
     const [showContinueButton, setShowContinueButton] = React.useState(false);
+    const [saveCheck, setSaveCheck] = React.useState(false);
 
     const phonePersonalDocuments = ["jiko.jpg", "passport.png", "recycle.jpg"];
 
@@ -71,9 +74,13 @@ const AdministrativeDocument: React.FC<AdministrativeDocumentProps> = ({match}) 
         </IonItem>
     );
     const continueButton = (
-
-        <IonButton routerLink={nextUrl}>Continuer la transaction </IonButton>
-
+      <>
+      <IonItem>
+        <IonCheckbox checked={saveCheck} onIonChange={e => setSaveCheck(!saveCheck)} />
+        <IonLabel style={{marginLeft:30}}>Sauvegarder mes informations</IonLabel>
+      </IonItem>
+      <IonButton routerLink={nextUrl}>Continuer la transaction </IonButton>
+      </>
     );
     var documentContainer = (
         <IonItem class="document-container">

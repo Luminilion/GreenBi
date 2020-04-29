@@ -8,3 +8,16 @@
     text-align: center;
 
 }
+.levee-fond ion-grid{
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+}
+.levee-fond .histogram-container{
+
+    width:80%;
+    margin:auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-right: 10px;
+}

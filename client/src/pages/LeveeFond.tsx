@@ -16,6 +16,7 @@ import { IonContent,
 
 import './LeveeFond.css';
 import { RouteComponentProps} from 'react-router-dom';
+import Histogram from 'react-chart-histogram';
 
 interface LeveeFondProps extends RouteComponentProps<{
     projectType: string;
@@ -27,7 +28,26 @@ const LeveeFond: React.FC<LeveeFondProps> = ({match}) => {
         match.params.projectType + '/' + 
         match.params.projectId + '/';
     const [montantProjet, setMontantProjet] = React.useState<number>(0);
-  return (
+
+    const rendement = 5
+
+    const [data, setData] = React.useState([0,0,0,0,0,0,0,0,0,0,0]);
+    const labels = ['','2020', '', '','2023', '', '','2026', '', '2028'];
+
+    const options = { fillColor: '#FFFFFF', strokeColor: '#0000FF', animation: true };
+
+    const handleAmount = (e) => {
+      var newMontantProjet = parseInt(e.detail.value!, 10)
+      setMontantProjet(newMontantProjet);
+      var newData = [0];
+      for(var i=0;i<9;i++){
+        var value = newMontantProjet * Math.pow((1 + rendement/100),i)
+        newData.push(value)
+      }
+      setData(newData);
+    };
+  
+    return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
@@ -38,7 +58,7 @@ const LeveeFond: React.FC<LeveeFondProps> = ({match}) => {
         </IonToolbar>
       </IonHeader>
 
-      <IonContent>
+      <IonContent class="levee-fond">
         <IonGrid>
             <IonRow>
                 <IonCol>
@@ -47,7 +67,7 @@ const LeveeFond: React.FC<LeveeFondProps> = ({match}) => {
                 <IonCol>
                     <IonCard>
                         <IonInput placeholder="Enter Input"
-                            onIonChange={e => setMontantProjet(parseInt(e.detail.value!, 10))}
+                            onIonChange={handleAmount}
                         ></IonInput>
                     </IonCard>
                 </IonCol>
@@ -58,12 +78,20 @@ const LeveeFond: React.FC<LeveeFondProps> = ({match}) => {
                 </IonCol>
                 <IonCol>
                     <IonCard class="rendement-card">
-                        5 %
+                        {rendement} %
                     </IonCard>
                 </IonCol>
             </IonRow>
         </IonGrid>
-        Vous allez mettre {montantProjet} euros.
+        <div className="histogram-container">
+        <Histogram
+          xLabels={labels}
+          yValues={data}
+          options={options}
+      />
+      
+        </div>
+          
         <IonButton routerLink={nexturl + montantProjet} class="participate-button center">Participer</IonButton>
       </IonContent>
     </IonPage>

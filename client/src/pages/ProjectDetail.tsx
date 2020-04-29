@@ -20,7 +20,6 @@ import { RouteComponentProps } from 'react-router-dom';
 import projectData from '../data/ProjectData';
 
 import './ProjectDetail.css';
-import './styles.css';
 
 import { star } from 'ionicons/icons';
 
@@ -55,8 +54,10 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({match}) => {
         </IonToolbar>
       </IonHeader>
 
-      <IonContent>
-
+      <IonContent class="project-detail">
+          <div className="project-type">
+            <h2>{match.params.projectType}</h2>
+          </div>
             <IonGrid>
                 <IonRow>
                     <IonCol>
@@ -65,20 +66,19 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({match}) => {
                             <img src={project.img}></img>
 
                         </IonItem>
-                        <IonItem><IonLabel>
-                        <IonIcon icon={star}></IonIcon>
-                        <IonIcon icon={star}></IonIcon>
-                        <IonIcon icon={star}></IonIcon>
-                        <IonIcon icon={star}></IonIcon>
-                            </IonLabel></IonItem>
+                        <IonItem class="risk-container">
+                          Risque elevé
+                        </IonItem>
 
                     </IonCol>
                     <IonCol>
-                        <br />
-                        <br />
+                        
+                        <div className="funds">
                         <IonProgressBar value={0.72}></IonProgressBar><br />
-                        72 000 / 100 000
-                        <br />
+                        <p>72 000 / 100 000</p>
+                        </div>
+                       
+                        
 
                         <IonItem>
                             Lorem Ipsum set dolorem Lorem Ipsum set dolorem Lorem Ipsum set dolorem Lorem Ipsum set dolorem

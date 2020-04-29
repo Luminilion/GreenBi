@@ -1,6 +1,18 @@
-.project-detail img{
-    height:300px;
+.project-detail .risk-container{
+    text-align: center;
 }
+.project-detail img{
+    margin-top: 20px;
+    width: 100%;
+    height: auto;
+}
+.project-detail .project-type{
+    text-align: center;
+}
+.project-detail .funds{
+    margin-top: 30px;
+}
+
 
 ion-grid{
     --ion-grid-width:200px;

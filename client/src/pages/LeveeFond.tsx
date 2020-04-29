@@ -31,17 +31,17 @@ const LeveeFond: React.FC<LeveeFondProps> = ({match}) => {
 
     const rendement = 5
 
-    const [data, setData] = React.useState([0,0,0,0,0,0,0,0,0,0,0]);
-    const labels = ['','2020', '', '','2023', '', '','2026', '', '2028'];
+    const [data, setData] = React.useState([0,0,0,0,0,0,0,0,0,0]);
+    const labels = ['2020', '', '','2023', '', '','2026', '', '2028'];
 
     const options = { fillColor: '#FFFFFF', strokeColor: '#0000FF', animation: true };
 
     const handleAmount = (e) => {
       var newMontantProjet = parseInt(e.detail.value!, 10)
       setMontantProjet(newMontantProjet);
-      var newData = [0];
+      var newData = [];
       for(var i=0;i<9;i++){
-        var value = newMontantProjet * Math.pow((1 + rendement/100),i)
+        var value = newMontantProjet * Math.pow((1 + rendement/100),i) - newMontantProjet;
         newData.push(value)
       }
       setData(newData);

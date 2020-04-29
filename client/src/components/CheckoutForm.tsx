@@ -37,8 +37,6 @@ const CheckoutForm : React.FC<CheckoutFormProps> = ({montant,successUrl}) => {
         var response = await fetch('http://localhost:3000/secret/' + montant);
         var json = await response.json();
         var clientSecret = json.client_secret
-        console.log("RESPONSE");
-        console.log(json);
         // Use your card Element with other Stripe.js APIs
         const {error, paymentMethod} = await stripe.createPaymentMethod({
           type: 'card',

@@ -6,7 +6,7 @@ import {
   IonIcon
 } from '@ionic/react';
 
-import { chevronUp, chevronDown } from 'ionicons/icons';
+import { trendingUp, trendingDown } from 'ionicons/icons';
 
 interface StocksDetailsProps {
   direction : string;
@@ -16,8 +16,8 @@ interface StocksDetailsProps {
 const StocksDetails : React.FC<StocksDetailsProps> = ({ direction, value }) => {
   return (
     <><IonItem>
-      <IonIcon icon={direction === "down" ? chevronUp : chevronDown} />
-      <IonLabel>{value}</IonLabel>
+      <IonIcon icon={direction === "down" ? trendingUp : trendingDown } />
+      <IonLabel style={{marginLeft:10}} >{value}</IonLabel>
     </IonItem></>
   );
 }

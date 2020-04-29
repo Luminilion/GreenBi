@@ -41,7 +41,6 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({match}) => {
       }
     };
   const project = getProject(match.params.projectType,match.params.projectId);
-  console.log(project)
 
   return (
     <IonPage>
@@ -72,13 +71,13 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({match}) => {
 
                     </IonCol>
                     <IonCol>
-                        
+
                         <div className="funds">
                         <IonProgressBar value={0.72}></IonProgressBar><br />
                         <p>72 000 / 100 000</p>
                         </div>
-                       
-                        
+
+
 
                         <IonItem>
                             Lorem Ipsum set dolorem Lorem Ipsum set dolorem Lorem Ipsum set dolorem Lorem Ipsum set dolorem

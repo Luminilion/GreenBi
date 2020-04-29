@@ -37,8 +37,6 @@ const UtilsFullCategory : React.FC<UtilsFullCategoryProps> = ({ slidesPerView, f
     ]);
   }
 
-  console.log(projects)
-
   return (
 
     <IonSlides options={

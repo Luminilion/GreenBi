@@ -16,12 +16,13 @@ import { IonContent,
   IonText,
   IonCheckbox,
   IonLabel,
+  IonAlert
 } from '@ionic/react';
 
 
 import { cameraOutline } from 'ionicons/icons';
 
-import { RouteComponentProps} from 'react-router-dom';
+import { RouteComponentProps, useHistory} from 'react-router-dom';
 import './AdministrativeDocument.css';
 
 interface AdministrativeDocumentProps extends RouteComponentProps<{
@@ -31,17 +32,21 @@ interface AdministrativeDocumentProps extends RouteComponentProps<{
   }> {}
 
 const AdministrativeDocument: React.FC<AdministrativeDocumentProps> = ({match}) => {
-    const nextUrl = '/contrat/' +
-        match.params.projectType + '/' +
-        match.params.projectId + '/' +
+
+    const history = useHistory();
+    const nextUrl = '/contrat/' + 
+        match.params.projectType + '/' + 
+        match.params.projectId + '/' + 
         match.params.amount;
 
+    const [showAlert, setShowAlert] = React.useState(false);
     const [showDocumentPicker, setShowDocumentPicker] = React.useState(false);
     const [showDocumentInfo, setShowDocumentInfo] = React.useState(true);
     const [showButton, setShowButton] = React.useState(true);
     const [showDocumentContainer, setShowDocumentContainer] = React.useState(false);
     const [showContinueButton, setShowContinueButton] = React.useState(false);
     const [saveCheck, setSaveCheck] = React.useState(false);
+
 
     const phonePersonalDocuments = ["jiko.jpg", "passport.png", "recycle.jpg"];
 
@@ -53,7 +58,6 @@ const AdministrativeDocument: React.FC<AdministrativeDocumentProps> = ({match}) 
         setShowDocumentInfo(true);
         setShowDocumentContainer(true);
         setShowContinueButton(true);
-        console.log(indexDocument);
     };
     const onButtonClick = async () => {
         setShowDocumentInfo(false);
@@ -79,8 +83,10 @@ const AdministrativeDocument: React.FC<AdministrativeDocumentProps> = ({match}) 
         <IonCheckbox checked={saveCheck} onIonChange={e => setSaveCheck(!saveCheck)} />
         <IonLabel style={{marginLeft:30}}>Sauvegarder mes informations</IonLabel>
       </IonItem>
-      <IonButton routerLink={nextUrl}>Continuer la transaction </IonButton>
       </>
+      <div className="continue-container">
+          <IonButton onClick = {() => setShowAlert(true)}>Continuer la transaction </IonButton> 
+      </div>
     );
     var documentContainer = (
         <IonItem class="document-container">
@@ -136,6 +142,20 @@ const AdministrativeDocument: React.FC<AdministrativeDocumentProps> = ({match}) 
         { showDocumentPicker ?  documentPicker : null }
         { showContinueButton ?  continueButton : null }
 
+        <IonAlert
+          isOpen={showAlert}
+          onDidDismiss={() => setShowAlert(false)}
+          header={''}
+          message={'Nous vous invitons maintenant à prendre connaissance des modalités du contrat'}
+          buttons={[{
+            text: 'Accepter',
+            role: 'accept',
+            cssClass: 'secondary',
+            handler: () => {
+              history.push(nextUrl);
+            }
+          }]}
+        />
 
       </IonContent>
     </IonPage>

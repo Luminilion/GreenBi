@@ -23,7 +23,7 @@ import AdministrativeDocument from './pages/AdministrativeDocument';
 import MainMenu from './components/utils/MainMenu';
 import LeveeFond from './pages/LeveeFond';
 import PortfolioDetail from './pages/PortfolioDetail';
-
+import PersonalInfo from './pages/PersonalInfo';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -71,6 +71,7 @@ const App: React.FC = () => (
           <Route path="/contrat/:projectType/:projectId/:amount" component={Contract} exact={true} />
           <Route path="/document-administratif/:projectType/:projectId/:amount" component={AdministrativeDocument} exact={true} />
           <Route path="/levee-fond/:projectType/:projectId" component={LeveeFond} exact={true} />
+          <Route path="/info-personnelle/:projectType/:projectId/:amount" component={PersonalInfo} exact={true} />
           <Route path="/contract" component={Contract} exact={true} />
           <Route path="/" render={() => <Redirect to="/login" />} exact={true} />
         </IonRouterOutlet>

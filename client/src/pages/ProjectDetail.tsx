@@ -9,7 +9,6 @@ IonItem,
 IonGrid,
 IonCol,
 IonRow,
-IonProgressBar,
 IonLabel,
 IonButtons,
 IonBackButton,
@@ -19,7 +18,7 @@ import { RouteComponentProps } from 'react-router-dom';
 import ProjectDetailEntry from '../components/ProjectDetail/ProjectDetailEntry';
 
 import projectData from '../data/ProjectData';
-import { alertCircle } from "ionicons/icons";
+import { alertCircle, eye, checkmarkCircle } from "ionicons/icons";
 
 import './ProjectDetail.css';
 
@@ -38,59 +37,71 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({match}) => {
   let idInt = parseInt(match.params.projectId);
   const project = projectData[match.params.projectType].find(e => e.id == idInt);
 
-return (
-  <IonPage>
-    <IonHeader>
-      <IonToolbar>
-        <IonTitle>{project.title}</IonTitle>
-        <IonButtons slot="start">
-          <IonBackButton />
-        </IonButtons>
-      </IonToolbar>
-    </IonHeader>
+  let riskIcon;
+  switch (project.risque) {
+    case "élevé" :
+      riskIcon = alertCircle
+      break
+    case "modéré":
+      riskIcon = eye
+      break
+    case "faible":
+      riskIcon = checkmarkCircle
+  }
 
-    <IonContent class="project-detail">
-          <IonGrid>
+  return (
+    <IonPage>
+      <IonHeader>
+        <IonToolbar>
+          <IonTitle>{project.title}</IonTitle>
+          <IonButtons slot="start">
+            <IonBackButton />
+          </IonButtons>
+        </IonToolbar>
+      </IonHeader>
 
-              <IonRow>
+      <IonContent class="project-detail">
+            <IonGrid>
 
-                  <IonCol>
-                      <IonItem>
-                          <img src={project.img}></img>
-                      </IonItem>
-                  </IonCol>
+                <IonRow>
 
-                  <IonCol>
-                      <IonItem>Type de produit : {match.params.projectType}</IonItem>
-                      <IonItem>Nom du projet : {project.title}</IonItem>
-                      <IonItem class="risk-container">
-                        <IonIcon icon={alertCircle} slot="start"/>
-                        <IonLabel>Risque : elevé</IonLabel>
-                      </IonItem>
-                  </IonCol>
+                    <IonCol>
+                        <IonItem>
+                            <img src={project.img} alt={project.title} />
+                        </IonItem>
+                    </IonCol>
 
-              </IonRow>
+                    <IonCol>
+                        <IonItem>Type de produit : {match.params.projectType}</IonItem>
+                        <IonItem>Nom du projet : {project.title}</IonItem>
+                        <IonItem class="risk-container">
+                          <IonIcon icon={riskIcon} slot="start"/>
+                          <IonLabel>Risque : {project.risque}</IonLabel>
+                        </IonItem>
+                    </IonCol>
 
-              <IonRow style={{paddingTop:20}}>
-              <IonItem>
-              Lorem Ipsum set dolorem Lorem Ipsum set dolorem Lorem Ipsum set dolorem Lorem Ipsum set dolorem
-              Lorem Ipsum set dolorem Lorem Ipsu
-              </IonItem><br />
-              </IonRow>
+                </IonRow>
 
-              <ProjectDetailEntry
-                projectId={idInt}
-                productType={match.params.projectType}
-              />
+                <IonRow style={{paddingTop:20}}>
+                <IonItem>
+                Lorem Ipsum set dolorem Lorem Ipsum set dolorem Lorem Ipsum set dolorem Lorem Ipsum set dolorem
+                Lorem Ipsum set dolorem Lorem Ipsu
+                </IonItem><br />
+                </IonRow>
 
-              <IonRow>
-                  <IonCol> <IonButton routerLink={nexturl} size="small" expand="block">Participer</IonButton></IonCol>
-              </IonRow>
+                <ProjectDetailEntry
+                  projectId={idInt}
+                  productType={match.params.projectType}
+                />
 
-          </IonGrid>
-    </IonContent>
-  </IonPage>
-);
+                <IonRow>
+                    <IonCol> <IonButton routerLink={nexturl} size="small" expand="block">Participer</IonButton></IonCol>
+                </IonRow>
+
+            </IonGrid>
+      </IonContent>
+    </IonPage>
+  );
 };
 
 export default ProjectDetail;

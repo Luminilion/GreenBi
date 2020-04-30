@@ -30,9 +30,9 @@ const ProjectDetailEntry : React.FC<ProjectDetailEntryProps> = ({ productType, p
       <IonRow>
         <IonCol>
           <IonProgressBar value={project.progress} style={{marginLeft:15}}/><br />
-          <IonItem>72 000 / 100 000</IonItem>
+          <IonItem>{project.progress*100} %</IonItem>
           <IonProgressBar value={project.fund} style={{marginLeft:15}} color="secondary"/><br />
-          <IonItem>10 230 / 58 000 €</IonItem>
+          <IonItem>{project.fund*project.totalFund} / {project.totalFund} €</IonItem>
         </IonCol>
 
         <IonCol>

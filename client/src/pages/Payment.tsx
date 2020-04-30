@@ -42,7 +42,7 @@ const Payment: React.FC<PaymentProps> = ({match}) => {
         <IonButtons slot="start">
                 <IonBackButton />
             </IonButtons>
-          <IonTitle>PAIEMENT  </IonTitle>
+          <IonTitle>VIREMENT  </IonTitle>
         </IonToolbar>
       </IonHeader>
 

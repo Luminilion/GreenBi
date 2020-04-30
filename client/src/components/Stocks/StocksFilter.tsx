@@ -5,6 +5,10 @@ import {
   IonSelect,
   IonSelectOption,
   IonInput,
+  IonGrid,
+  IonRow,
+  IonCol,
+  IonItem,
 } from '@ionic/react';
 import {
   PickerColumn
@@ -91,9 +95,10 @@ const StocksFilter: React.FC<StocksFilterProps> = () => {
 
         <p style={{ margin:20 }}>Dilution du capital (valeur d'une action)</p>
 
+        <IonItem>
         <IonSelect
           interface="popover"
-          placeholder="Valeur de comparaison"
+          placeholder="> ou <"
           >
           <IonSelectOption value="<" >&#60;</IonSelectOption>
           <IonSelectOption value=">" >&#62;</IonSelectOption>
@@ -104,13 +109,14 @@ const StocksFilter: React.FC<StocksFilterProps> = () => {
           inputmode="decimal"
           max="100"
           min="0"
-          placeholder="--"
+          placeholder="Pourcentage de dilution"
           onIonChange={
               e => {}
           }
         />
 
         <p>% de dilution</p>
+        </IonItem>
 
         <p style={{ margin:20 }}>Notation du projet</p>
 
@@ -166,7 +172,16 @@ const StocksFilter: React.FC<StocksFilterProps> = () => {
           <IonSelectOption value="M" >Mayotte</IonSelectOption>
         </IonSelect>
 
-        <IonButton onClick={() => setShowModal(false)}>Close Modal</IonButton>
+        <IonGrid>
+          <IonRow>
+            <IonCol>
+              <IonButton expand="block" onClick={() => setShowModal(false)}>Appliquer</IonButton>
+            </IonCol>
+            <IonCol>
+              <IonButton expand="block" onClick={() => setShowModal(false)}>Annuler</IonButton>
+            </IonCol>
+          </IonRow>
+        </IonGrid>
 
       </IonModal>
 

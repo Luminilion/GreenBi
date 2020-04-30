@@ -96,9 +96,9 @@ IL A ÉTÉ PRÉALABLEMENT EXPOSÉ CE QUI SUIT :
 
 <p>
 Le Porteur de Projet a conclu un contrat de service avec la société GREENBI en vue d’utiliser le Site Internet de cette dernière pour réaliser pendant une période limitée une opération de financement participatif de son Projet, ouverte à plusieurs souscripteurs, en échange d’une Redevance (royalties) sur les revenus engendrés par ledit Projet. Il est précisé que ces revenus ne sont pas garantis.
-Après avoir pris connaissance de la description du projet et des modalités de réalisation de l’opération de financement participatif proposée par le Porteur de Projet, le Souscripteur a émis le souhait d’y contribuer. 
+Après avoir pris connaissance de la description du projet et des modalités de réalisation de l’opération de financement participatif proposée par le Porteur de Projet, le Souscripteur a émis le souhait d’y contribuer.
 Dans ce contexte, le Porteur de Projet a émis le présent contrat d’adhésion auquel le Souscripteur choisit d’adhérer.
-Les Parties ont recours à la société GREENBI pour la conclusion et l’exécution des clauses du présent contrat, notamment sans que cette liste soit limitative : 
+Les Parties ont recours à la société GREENBI pour la conclusion et l’exécution des clauses du présent contrat, notamment sans que cette liste soit limitative :
 <ul>
   <li>
   recevoir les déclarations périodiques de Revenus et les Informations Détaillées,
@@ -146,7 +146,7 @@ IL A ÉTÉ CONVENU CE QUI SUIT :
 <p>
 En contrepartie de la Souscription, le Souscripteur acquiert un droit de redevance sur les Revenus.
 Il est expressément convenu que les présentes ne pourront en aucun cas être considérées comme une société entre les Parties, la responsabilité de chacune étant limitée aux engagements pris par elle dans les présentes. Il est également expressément convenu que les présentes ne constituent pas un transfert de propriété ou de garde au Souscripteur. Ces dispositions sont essentielles et déterminantes du présent contrat d’adhésion sans lesquelles celui-ci n’aurait pas été conclu.
- 
+
 </p>
 <h3>
 
@@ -165,7 +165,7 @@ Le Porteur de Projet déclare sur l’honneur :
     </li>
 
 </ul>
-Le Souscripteur, déclare sur l’honneur : 
+Le Souscripteur, déclare sur l’honneur :
 <ul>
   <li>être majeur ;
 </li>
@@ -203,7 +203,7 @@ Redevance = (Souscription / Budget) × (Pourcentage x Revenus)
 
   </p>
   <p>
-  <b>3.5</b> Le Porteur de Projet pourra déclarer les Revenus périodiques servant de référence au calcul de la Redevance s’il estime que ceux-ci diffèrent du Prévisionnel mentionné dans l’exposé préalable des présentes. Le jour de déclaration des revenus périodiques est au plus tard le quinze du mois suivant la fin de la période du contrat échue. Le paiement devra s’effectuer sous cinq jours calendaires. 
+  <b>3.5</b> Le Porteur de Projet pourra déclarer les Revenus périodiques servant de référence au calcul de la Redevance s’il estime que ceux-ci diffèrent du Prévisionnel mentionné dans l’exposé préalable des présentes. Le jour de déclaration des revenus périodiques est au plus tard le quinze du mois suivant la fin de la période du contrat échue. Le paiement devra s’effectuer sous cinq jours calendaires.
 
   </p>
   <p>
@@ -211,7 +211,7 @@ Redevance = (Souscription / Budget) × (Pourcentage x Revenus)
 
   </p>
  <p>
- <b>3.7</b>Le paiement de la Redevance sera effectué en euros via les services de paiement en ligne distribués sur le Site de l’Intermédiaire. Les frais techniques et de gestion liés à ce paiement seront à la charge du Porteur de Projet. 
+ <b>3.7</b>Le paiement de la Redevance sera effectué en euros via les services de paiement en ligne distribués sur le Site de l’Intermédiaire. Les frais techniques et de gestion liés à ce paiement seront à la charge du Porteur de Projet.
 
 </p>
 <h3>
@@ -261,7 +261,7 @@ Dans le cas mentionné en “b)”, le Porteur de Projet sera également redevab
 </p>
 <p>
 <b>4.4</b>  Le présent Contrat prendra fin automatiquement et de plein droit à l’issue d’une opération de liquidation du Porteur de Projet. Dans le cadre d’une procédure de liquidation, la Redevance calculée selon les modalités de l’article 3.5 et non payée fera l’objet d’une déclaration de créance adressée au liquidateur. A l’issue de la procédure, aucune Redevance ne sera plus due au Souscripteur et son droit sur la Souscription sera définitivement perdu.
- 
+
 </p>
 <h3>
 
@@ -269,7 +269,7 @@ Dans le cas mentionné en “b)”, le Porteur de Projet sera également redevab
 </h3>
 <p>
 Les Parties acceptent la Clause de Garantie telle que définie dans l’exposé préalable.
- 
+
 </p>
 <h3>
 
@@ -297,13 +297,13 @@ Pour assurer le respect de ses obligations découlant du présent contrat, le Po
 </p>
 
 <h3>
-    
+
 7/ Recours à un expert pour contrôler les Revenus
 </h3>
 <p>
 Le Souscripteur se réserve le droit de faire contrôler les comptes du Porteur de Projet par huissier, expert-comptable ou commissaire aux comptes au maximum une fois par an.
 Le coût de l’intervention de cet expert sera imputable au Porteur de Projet si le contrôle décèle une  irrégularité ayant pour résultat d’imputer la Redevance de 5 % ou plus, et sera laissée à la charge du Souscripteur si l’irrégularité impute la Redevance de moins de 5 %.
- 
+
 </p>
 <h3>
 8/ Confidentialité
@@ -311,7 +311,7 @@ Le coût de l’intervention de cet expert sera imputable au Porteur de Projet s
 </h3>
 <p>
 Chacune des Parties accepte de traiter de façon strictement confidentielle les informations mises à disposition par l’autre Partie tant que cette dernière n’en aura pas accepté par écrit la libre communication ou l'usage, notamment les Revenus et les Informations Détaillées transmises par le Porteur de Projet.
- 
+
 </p>
 
 <h3>
@@ -319,9 +319,9 @@ Chacune des Parties accepte de traiter de façon strictement confidentielle les 
 9/ Entrée en vigueur du contrat
 </h3>
 <p>
-Le présent Contrat de cession de revenus futurs entre en vigueur à la date de son acceptation électronique par le Souscripteur. 
+Le présent Contrat de cession de revenus futurs entre en vigueur à la date de son acceptation électronique par le Souscripteur.
 En cas de conclusion en face à face ou par courrier postal, il entre en vigueur lorsque le Porteur de Projet le contresigne après signature du Souscripteur.
- 
+
 </p>
 <h3>
 
@@ -330,16 +330,16 @@ En cas de conclusion en face à face ou par courrier postal, il entre en vigueur
 <p>
 Le Souscripteur bénéficie d’un délai de rétractation de 14 jours calendaires révolus à compter de la conclusion du Contrat de cession de revenus futurs.
 Pour l’exercice de ce droit, le Souscripteur doit compléter, signer et renvoyer par courrier électronique avec accusé de réception à l'Intermédiaire le formulaire de rétractation disponible à l’url suivante : https://www.greenbi.co/retractation
-Le compte bancaire du Souscripteur sera alors crédité de la somme versée lors de la Souscription, via les services de paiement en ligne distribués sur le Site de l’Intermédiaire, dans un délai de 30 jours. 
- 
+Le compte bancaire du Souscripteur sera alors crédité de la somme versée lors de la Souscription, via les services de paiement en ligne distribués sur le Site de l’Intermédiaire, dans un délai de 30 jours.
+
 </p>
 <h3>
 
 11/ Preuve du contrat
 </h3>
-<p><b>11.1</b>En application de l’article 1366 du Code civil, les Parties reconnaissent à l’écrit sur support électronique la même force probante que l’écrit sur support papier. 
+<p><b>11.1</b>En application de l’article 1366 du Code civil, les Parties reconnaissent à l’écrit sur support électronique la même force probante que l’écrit sur support papier.
 </p>
-<p><b> 11.2 </b>Les Parties reconnaissent et acceptent expressément que toute personne, porteuse des présentes signées ou ayant fait l’objet d’une offre de la part du Porteur de Projet sur le Site et conservées sur support durable, pourra se prévaloir des obligations constatées dans le Contrat. 
+<p><b> 11.2 </b>Les Parties reconnaissent et acceptent expressément que toute personne, porteuse des présentes signées ou ayant fait l’objet d’une offre de la part du Porteur de Projet sur le Site et conservées sur support durable, pourra se prévaloir des obligations constatées dans le Contrat.
  </p>
 
 <h3>
@@ -360,7 +360,7 @@ Le compte bancaire du Souscripteur sera alors crédité de la somme versée lors
 <p>
 L’annulation de l’une des stipulations des présentes n’entraînerait l’annulation du présent contrat dans son ensemble que pour autant que la stipulation litigieuse puisse être considérée, dans l’esprit des Parties, comme substantielle et déterminante, et que son annulation remette en cause l’équilibre général de la convention.
 En cas d’annulation d’une des stipulations des présentes, considérée comme non substantielle, les Parties s’efforceront de négocier une clause économiquement équivalente.
- 
+
 </p>
 <h3>
 
@@ -377,7 +377,7 @@ En cas d’annulation d’une des stipulations des présentes, considérée comm
 <p>
 Le présent contrat sera réputé nul de plein droit si la somme correspondant à la Souscription est employée à une destination manifestement différente de l'activité du Porteur de Projet, sans qu’il soit besoin d’aucun préavis et d’aucune formalité judiciaire.
 La somme versée à la Souscription devra alors être restituée en totalité au Souscripteur par le Porteur de Projet.
- 
+
 </p>
 <h3>
 

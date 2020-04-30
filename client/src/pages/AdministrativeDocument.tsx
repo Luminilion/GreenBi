@@ -146,7 +146,7 @@ const AdministrativeDocument: React.FC<AdministrativeDocumentProps> = ({match}) 
           isOpen={showAlert}
           onDidDismiss={() => setShowAlert(false)}
           header={''}
-          message={'Nous vous invitons maintenant à prendre connaissance des modalités du contrat'}
+          message={'Nous vous invitons maintenant à prendre connaissance des modalités du contrat.'}
           buttons={[{
             text: 'Accepter',
             role: 'accept',

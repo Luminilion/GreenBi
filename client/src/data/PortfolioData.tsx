@@ -38,7 +38,7 @@ const portfolioData = {
             invest_amount : 200,
             refund_amount : 120,
             refund_percentage : 60,
-            active : true,
+            active : false,
         }]
 };
 

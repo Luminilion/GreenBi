@@ -6,13 +6,13 @@ import { IonContent,
   IonToolbar,
   IonCard,
   IonButtons,
-  IonMenuButton,
   IonIcon,
   IonItem,
   IonButton,
   IonList,
   IonItemDivider,
   IonInput,
+  IonBackButton,
 } from '@ionic/react';
 
 import './PersonalInfo.css';
@@ -48,7 +48,7 @@ const PersonalInfo: React.FC<PersonalInfoProps> = ({match}) => {
       <IonHeader>
         <IonToolbar>
             <IonButtons slot="start">
-                <IonMenuButton />
+                <IonBackButton />
             </IonButtons>
           <IonTitle>Infos Personnelles</IonTitle>
         </IonToolbar>
@@ -77,11 +77,11 @@ const PersonalInfo: React.FC<PersonalInfoProps> = ({match}) => {
             <IonInput placeholder="Pays"></IonInput>
           </IonItem>
 
-         
+
           </IonList>
         <div className="bouton-container">
             <IonButton routerLink={nexturl}>Continuer</IonButton>
-      
+
         </div>
     </IonContent>
     </IonPage>

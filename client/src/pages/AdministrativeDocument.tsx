@@ -6,33 +6,25 @@ import { IonContent,
   IonToolbar,
   IonCard,
   IonButton,
-  IonCardHeader,
-  IonCardContent,
-  IonCardSubtitle,
-  IonCardTitle,
   IonSlides,
   IonSlide,
   IonItem,
   IonIcon,
   IonButtons,
-  IonMenuButton,
+  IonBackButton,
   IonAvatar,
-  IonLabel,
   IonText,
+  IonCheckbox,
+  IonLabel,
   IonAlert
 } from '@ionic/react';
 
 
-import { home, trendingUp, settings, peopleCircle, wallet, school, cameraOutline } from 'ionicons/icons';
+import { cameraOutline } from 'ionicons/icons';
 
 import { RouteComponentProps, useHistory} from 'react-router-dom';
 import './AdministrativeDocument.css';
 
-const DocumentPicker = () => (
-    <div id="documentPicker" className="">
-        Document Picker
-    </div>
-)
 interface AdministrativeDocumentProps extends RouteComponentProps<{
     projectType: string;
     projectId: string;
@@ -42,9 +34,9 @@ interface AdministrativeDocumentProps extends RouteComponentProps<{
 const AdministrativeDocument: React.FC<AdministrativeDocumentProps> = ({match}) => {
 
     const history = useHistory();
-    const nextUrl = '/contrat/' + 
-        match.params.projectType + '/' + 
-        match.params.projectId + '/' + 
+    const nextUrl = '/contrat/' +
+        match.params.projectType + '/' +
+        match.params.projectId + '/' +
         match.params.amount;
 
     const [showAlert, setShowAlert] = React.useState(false);
@@ -53,6 +45,8 @@ const AdministrativeDocument: React.FC<AdministrativeDocumentProps> = ({match}) 
     const [showButton, setShowButton] = React.useState(true);
     const [showDocumentContainer, setShowDocumentContainer] = React.useState(false);
     const [showContinueButton, setShowContinueButton] = React.useState(false);
+    const [saveCheck, setSaveCheck] = React.useState(false);
+
 
     const phonePersonalDocuments = ["jiko.jpg", "passport.png", "recycle.jpg"];
 
@@ -84,11 +78,15 @@ const AdministrativeDocument: React.FC<AdministrativeDocumentProps> = ({match}) 
         </IonItem>
     );
     const continueButton = (
-
+      <>
         <div className="continue-container">
-            <IonButton onClick = {() => setShowAlert(true)}>Continuer la transaction </IonButton> 
+          <IonItem>
+            <IonCheckbox checked={saveCheck} onIonChange={e => setSaveCheck(!saveCheck)} />
+            <IonLabel style={{marginLeft:30}}>Sauvegarder mes informations</IonLabel>
+          </IonItem>
+          <IonButton onClick = {() => setShowAlert(true)}>Continuer la transaction </IonButton>
         </div>
-
+      </>
     );
     var documentContainer = (
         <IonItem class="document-container">
@@ -123,7 +121,7 @@ const AdministrativeDocument: React.FC<AdministrativeDocumentProps> = ({match}) 
       <IonHeader>
       <IonToolbar>
             <IonButtons slot="start">
-                <IonMenuButton />
+                <IonBackButton />
             </IonButtons>
                 <IonTitle>Documents Administratifs</IonTitle>
             </IonToolbar>
@@ -158,7 +156,7 @@ const AdministrativeDocument: React.FC<AdministrativeDocumentProps> = ({match}) 
             }
           }]}
         />
-        
+
       </IonContent>
     </IonPage>
   );

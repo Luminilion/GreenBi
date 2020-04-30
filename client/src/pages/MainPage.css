@@ -11,3 +11,14 @@ ion-slides .center{
 .slide-project ion-card-content{
   height: 55px;
 }
+
+.slide-arrow{
+  align-self: center;
+}
+.slide-arrow ion-icon{
+  font-size: 48px;
+}
+
+.value-label{
+  text-align: center;
+}

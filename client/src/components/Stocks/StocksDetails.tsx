@@ -17,7 +17,7 @@ const StocksDetails : React.FC<StocksDetailsProps> = ({ direction, value }) => {
   return (
     <><IonItem>
       <IonIcon icon={direction === "down" ? trendingUp : trendingDown } />
-      <IonLabel style={{marginLeft:10}} >{value}</IonLabel>
+      <IonLabel class="value-label" style={{marginLeft:10}} >{value}</IonLabel>
     </IonItem></>
   );
 }

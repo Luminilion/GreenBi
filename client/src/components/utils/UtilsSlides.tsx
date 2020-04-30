@@ -38,14 +38,17 @@ const UtilsSlides : React.FC<UtilsSlidesProps> = ({ slidesPerView, moreLink, pro
 
   return (
 
-      <IonSlides  options={{ slidesPerView: slidesPerView }}>
+      <IonSlides  
+        scrollbar={true}
+        options={{ slidesPerView: slidesPerView }
+      }>
 
         {projects.map( (project, index) => {
           let route = "/project-detail/"+product+'/'+project.id;
           return (
             <IonSlide class="slide-project">
               <IonCard routerLink={route}
-                class="ion-color-bluecolor"
+                class="project-card"
               >
                 <img src={project.img} alt={project.title} />
                 <IonCardContent>
@@ -69,7 +72,7 @@ const UtilsSlides : React.FC<UtilsSlidesProps> = ({ slidesPerView, moreLink, pro
           )
         })}
 
-        <IonSlide>
+        <IonSlide className="slide-arrow">
           <IonItem routerLink={moreLink} >
             <IonIcon icon={arrowForward} />
           </IonItem>

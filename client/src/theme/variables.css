@@ -1,15 +1,67 @@
 /* Ionic Variables and Theming. For more info, please see:
 http://ionicframework.com/docs/theming/ */
 
+:root {
+  --ion-color-bluecolor: #2b3f75;
+  --ion-color-bluecolor-rgb: 43,63,117;
+  --ion-color-bluecolor-contrast: #ffffff;
+  --ion-color-bluecolor-contrast-rgb: 255,255,255;
+  --ion-color-bluecolor-shade: #263767;
+  --ion-color-bluecolor-tint: #405283;
+}
+
+.ion-color-bluecolor {
+  --ion-color-base: var(--ion-color-bluecolor);
+  --ion-color-base-rgb: var(--ion-color-bluecolor-rgb);
+  --ion-color-contrast: var(--ion-color-bluecolor-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-bluecolor-contrast-rgb);
+  --ion-color-shade: var(--ion-color-bluecolor-shade);
+  --ion-color-tint: var(--ion-color-bluecolor-tint);
+}
+
+
 /** Ionic CSS Variables **/
 :root {
+  
+  --background: #000000;
+  
+  --ion-item-background: #ffffff;
+  --ion-background-color: #f0f0f0;
+  --ion-toolbar-background: #151f79;
+  --ion-toolbar-color: #ffffff;
+  /**
+  --ion-item-background: #f0f0f0;
+  --ion-background-color: #11184f;
+  --ion-toolbar-color: #ffffff;**/
+  /**
+  **/
+  /**--background: #f0f0f0;**/
+  
+  
+  /**--ion-toolbar-background: #f0f0f0;
+  --ion-item-background: #f0f0f0;
+  --ion-background-color: #38127e;**/
+  /**--ion-text-color: #ffffff;**/
+  /**--ion-color-step-200: #000000;
+  --ion-color-step-600: #000000;
+  --ion-color-step-850: #ffffff;
+  --ion-color-step-900: #000000;**/
+
+
+
+  /** 
+  --ion-color-primary: #f0f0f0; 
+  **/ 
+
+  /** couleur des boutons **/
+
   /** primary **/
-  --ion-color-primary: #5260ff;
+  /*--ion-color-primary: #5260ff;
   --ion-color-primary-rgb: 82, 96, 255;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
   --ion-color-primary-shade: #4854e0;
-  --ion-color-primary-tint: #6370ff;
+  --ion-color-primary-tint: #6370ff;*/
 
   /** secondary **/
   --ion-color-secondary: #3dc2ff;

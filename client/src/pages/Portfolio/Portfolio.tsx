@@ -49,7 +49,26 @@ const Portfolio: React.FC = () => {
       <IonListHeader>
         Mes actions
       </IonListHeader>
-
+        <IonItem class="portfolio-item">
+          <IonGrid>
+            <IonRow>
+              <IonCol size="2">
+              </IonCol>
+              <IonCol size="2">
+                <IonLabel><p>Nom</p></IonLabel>
+              </IonCol>
+              <IonCol size="3">
+                <IonLabel><p>Prix d'achat</p></IonLabel>
+              </IonCol>
+              <IonCol size="2">
+                <IonLabel><p>Valeur</p></IonLabel>
+              </IonCol>
+              <IonCol size="2">
+                <IonLabel><p>+/-Var</p></IonLabel>
+              </IonCol>
+            </IonRow>
+          </IonGrid>
+        </IonItem>
       {
         portfolioData.stocks.map( (stock,index) => {
           return (
@@ -67,6 +86,23 @@ const Portfolio: React.FC = () => {
       <IonListHeader>
         Mes royalties
       </IonListHeader>
+        <IonItem class="portfolio-item">
+          <IonGrid>
+            <IonRow>
+              <IonCol size="2">
+              </IonCol>
+              <IonCol size="3">
+                <IonLabel><p>Nom</p></IonLabel>
+              </IonCol>
+              <IonCol size="4">
+                <IonLabel><p>Remboursement</p></IonLabel>
+              </IonCol>
+              <IonCol size="2">
+                <IonLabel><p>en %</p></IonLabel>
+              </IonCol>
+            </IonRow>
+          </IonGrid>
+        </IonItem>
       {
         portfolioData.royalties.map( (royalty,index) => {
           return (<>

@@ -7,3 +7,7 @@ ion-slides .center{
 .background {
   color: #f2f7f0;
 }
+
+.slide-project ion-card-content{
+  height: 55px;
+}

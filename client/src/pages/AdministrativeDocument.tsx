@@ -34,9 +34,9 @@ interface AdministrativeDocumentProps extends RouteComponentProps<{
 const AdministrativeDocument: React.FC<AdministrativeDocumentProps> = ({match}) => {
 
     const history = useHistory();
-    const nextUrl = '/contrat/' + 
-        match.params.projectType + '/' + 
-        match.params.projectId + '/' + 
+    const nextUrl = '/contrat/' +
+        match.params.projectType + '/' +
+        match.params.projectId + '/' +
         match.params.amount;
 
     const [showAlert, setShowAlert] = React.useState(false);
@@ -79,14 +79,14 @@ const AdministrativeDocument: React.FC<AdministrativeDocumentProps> = ({match}) 
     );
     const continueButton = (
       <>
-      <IonItem>
-        <IonCheckbox checked={saveCheck} onIonChange={e => setSaveCheck(!saveCheck)} />
-        <IonLabel style={{marginLeft:30}}>Sauvegarder mes informations</IonLabel>
-      </IonItem>
+        <div className="continue-container">
+          <IonItem>
+            <IonCheckbox checked={saveCheck} onIonChange={e => setSaveCheck(!saveCheck)} />
+            <IonLabel style={{marginLeft:30}}>Sauvegarder mes informations</IonLabel>
+          </IonItem>
+          <IonButton onClick = {() => setShowAlert(true)}>Continuer la transaction </IonButton>
+        </div>
       </>
-      <div className="continue-container">
-          <IonButton onClick = {() => setShowAlert(true)}>Continuer la transaction </IonButton> 
-      </div>
     );
     var documentContainer = (
         <IonItem class="document-container">

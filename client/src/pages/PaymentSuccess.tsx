@@ -29,17 +29,7 @@ interface PaymentSuccessProps extends RouteComponentProps<{
 
 const PaymentSuccess: React.FC<PaymentSuccessProps> = ({match}) => {
 
-  const getProjectImage = function(type, id){
-    let idInt = parseInt(id);
-    if(type == "stocks"){
-        return projectData.stocks[idInt].img;
-    }else if(type == "royalties"){
-        return projectData.royalties[idInt].img;
-    }else{
-        return "erreur";
-    }
-  }
-
+  let idInt = parseInt(match.params.projectId);
   let project = projectData[match.params.projectType].find(e=>e.id==match.params.projectId);
 
   useIonViewDidEnter(() => {
@@ -54,6 +44,7 @@ const PaymentSuccess: React.FC<PaymentSuccessProps> = ({match}) => {
           refund_percentage: 20,
           active: false
         }
+        break;
       case "stocks" :
         portfolioEntry = {
           id: parseInt(match.params.projectId),
@@ -89,7 +80,7 @@ const PaymentSuccess: React.FC<PaymentSuccessProps> = ({match}) => {
 
 
         <IonCard class="card-item">
-          <img src={getProjectImage(match.params.projectType,match.params.projectId)}></img>
+          <img src={project.img}></img>
           <h2>{match.params.amount + " €"}</h2>
         </IonCard>
         <div className="card-button">

@@ -6,6 +6,7 @@ import { IonContent,
   IonToolbar,
   IonMenuButton,
   IonButtons,
+  IonItem
 } from '@ionic/react';
 
 import UtilsCategory from '../components/utils/UtilsCategory';
@@ -29,25 +30,29 @@ const Tab1: React.FC = () => {
         <IonContent>
 
 
-            <h1 style={{ margin:25 }}>
+            <h1 style={{ margin: 25 }}>
                 Bienvenue !
             </h1>
 
             <UtilsCategory
-                name="Stocks phares"
+                name="Actions phares"
                 slidesPerView={2.5}
-                description="Current most profitable stocks on the market. Most users trust these !"
+                description="Les actions en vogue en ce moment"
                 moreLink="/stocks"
                 product="stocks"
             />
             <UtilsCategory
-                name="Trendy royalties"
+                name="Royalties tendances"
                 slidesPerView={2.5}
-                description="Top trends on current available royalties. These projects are on fire !"
+                description="Les tendances de projets proposant des royalties"
                 moreLink="/royalties"
                 product="royalties"
             />
 
+            <br />
+            <IonItem>
+              © GreenBi
+            </IonItem>
 
         </IonContent>
         </IonPage>

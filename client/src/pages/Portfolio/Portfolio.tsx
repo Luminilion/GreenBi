@@ -13,6 +13,9 @@ import {
   IonItem,
   IonAvatar,
   IonListHeader,
+  IonGrid,
+  IonCol,
+  IonRow,
 } from '@ionic/react';
 
 import PortfolioEntry from '../../components/portfolio/PortfolioEntry';
@@ -38,12 +41,10 @@ const Portfolio: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent>
-        <IonCard><br />
-        <b>MON PORTFOLIO</b> <br />
-        <br />
-        Vous avez gagné 253.53 € <br />
-        C'est vraiment beaucoup beaucoup d'argent
-        </IonCard>
+      <div className="graph-container">
+            <img src="graphique_portfolio.png"></img>
+              </div>
+
       <IonList>
       <IonListHeader>
         Mes Actions

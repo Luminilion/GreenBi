@@ -48,7 +48,7 @@ const AdministrativeDocument: React.FC<AdministrativeDocumentProps> = ({match}) 
     const [saveCheck, setSaveCheck] = React.useState(false);
 
 
-    const phonePersonalDocuments = ["jiko.jpg", "passport.png", "recycle.jpg"];
+    const phonePersonalDocuments = ["jiko.jpg", "passeport.jpg", "recycle.jpg"];
 
     const chooseDocument = async (indexDocument) => {
 
@@ -90,7 +90,7 @@ const AdministrativeDocument: React.FC<AdministrativeDocumentProps> = ({match}) 
     );
     var documentContainer = (
         <IonItem class="document-container">
-            <img src="passport.png" />
+            <img src="passeport.jpg" />
         </IonItem>
     );
     const documentPicker = (

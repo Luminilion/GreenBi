@@ -71,7 +71,7 @@ const LeveeFond: React.FC<LeveeFondProps> = ({match}) => {
             <IonButtons slot="start">
                 <IonBackButton />
             </IonButtons>
-          <IonTitle>Levée de Fond</IonTitle>
+          <IonTitle>Investissement</IonTitle>
         </IonToolbar>
       </IonHeader>
 
@@ -85,6 +85,7 @@ const LeveeFond: React.FC<LeveeFondProps> = ({match}) => {
                     <IonCard>
                         <IonInput placeholder="Enter Input"
                             onIonChange={handleAmount}
+                            debounce={1000}
                         ></IonInput>
                     </IonCard>
                 </IonCol>

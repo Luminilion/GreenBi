@@ -8,6 +8,9 @@ import {
   IonSelectOption,
   IonItem,
   IonLabel,
+  IonGrid,
+  IonCol,
+  IonRow
 } from '@ionic/react';
 import {
   PickerColumn
@@ -200,7 +203,16 @@ const RoyaltiesFilter: React.FC = () => {
           <IonSelectOption value="M" >Mayotte</IonSelectOption>
         </IonSelect>
 
-        <IonButton onClick={() => setShowModal(false)}>Close Modal</IonButton>
+        <IonGrid>
+          <IonRow>
+            <IonCol>
+              <IonButton onClick={() => setShowModal(false)}>Appliquer</IonButton>
+            </IonCol>
+            <IonCol>
+              <IonButton onClick={() => setShowModal(false)}>Annuler</IonButton>
+            </IonCol>
+          </IonRow>
+        </IonGrid>
 
       </IonModal>
 

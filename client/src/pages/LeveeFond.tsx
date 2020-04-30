@@ -80,7 +80,7 @@ const LeveeFond: React.FC<LeveeFondProps> = ({match}) => {
             </IonRow>
             <IonRow>
                 <IonCol>
-                   Taux de rendement du projet
+                   Taux de rendement estimé
                 </IonCol>
                 <IonCol>
                     <IonCard class="rendement-card">

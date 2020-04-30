@@ -1,0 +1,3 @@
+const infoRoyalties = "Redevance sur investissements : Les royalties ce sont des gains pour l’investisseur indexés sur le chiffre d’affaire et/ou le résultat d’exploitation de l’entreprise. Après la campagne de levée de fonds, l’entreprise financée se développe ou termine le développement de son produit. Après un certain temps, elle verse un pourcentage de son chiffre d’affaires ou de son résultat d’exploitation (à déterminer) à ses investisseurs : ce sont les royalties. Les investisseurs reçoivent alors des royalties chaque trimestre et cela durant 3 ans minimum. Ces royalties sont partagées entre les investisseurs en fonction de la somme initiale que ces derniers ont apporté lors de la levée de fond."
+
+export default infoRoyalties;

@@ -8,8 +8,10 @@ import {
   IonMenuButton,
   IonContent,
 } from '@ionic/react';
+import PointInfo from '../../components/utils/PointInfo';
 
 import './Academy.css';
+import infoAcademy from './InfoAcademy';
 
 const Academy: React.FC = () => {
   return (
@@ -17,8 +19,12 @@ const Academy: React.FC = () => {
       <IonHeader>
         <IonToolbar>
           <IonTitle>Académie</IonTitle>
-          <IonButtons slot="start" >
-            <IonMenuButton />
+          <IonMenuButton slot="start" />
+          <IonButtons slot="end" >
+            <PointInfo
+              type="info"
+              content={infoAcademy}
+            />
           </IonButtons>
         </IonToolbar>
       </IonHeader>

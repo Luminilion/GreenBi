@@ -11,7 +11,7 @@ import Signup from "./pages/login/Signup";
 import MainPage from './pages/MainPage';
 import Stocks from './pages/stocks/Stocks';
 import Royalties from './pages/royalties/Royalties';
-import Portfolio from './pages/Portfolio';
+import Portfolio from './pages/Portfolio/Portfolio';
 import Academy from './pages/academy/Academy';
 import Settings from './pages/Settings';
 import Investir from './pages/Investir';

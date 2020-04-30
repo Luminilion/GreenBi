@@ -7,10 +7,13 @@ import { IonContent,
   IonToolbar,
   IonSearchbar,
   IonMenuButton,
+  IonButtons,
 } from '@ionic/react';
 
 import UtilsFullCategory from '../../components/utils/UtilsFullCategory';
 import StocksFilter from '../../components/Stocks/StocksFilter';
+import PointInfo from '../../components/utils/PointInfo';
+import infoStocks from './InfoStocks';
 
 import '../MainPage.css';
 import '../styles.css';
@@ -23,8 +26,14 @@ const Tab1: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Action</IonTitle>
+          <IonTitle>Actions</IonTitle>
           <IonMenuButton slot="start" />
+          <IonButtons slot="end">
+            <PointInfo
+              type="info"
+              content={infoStocks}
+              />
+          </IonButtons>
         </IonToolbar>
       </IonHeader>
 

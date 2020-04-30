@@ -15,9 +15,10 @@ import { IonContent,
   IonAlert,
 } from '@ionic/react';
 
-import './LeveeFond.css';
 import { RouteComponentProps, useHistory} from 'react-router-dom';
 import Histogram from 'react-chart-histogram';
+
+import './LeveeFond.css';
 
 interface LeveeFondProps extends RouteComponentProps<{
     projectType: string;
@@ -25,8 +26,8 @@ interface LeveeFondProps extends RouteComponentProps<{
   }> {}
 
 const LeveeFond: React.FC<LeveeFondProps> = ({match}) => {
-    const nexturl = '/info-personnelle/'+ 
-        match.params.projectType + '/' + 
+    const nexturl = '/info-personnelle/'+
+        match.params.projectType + '/' +
         match.params.projectId + '/';
     const [montantProjet, setMontantProjet] = React.useState<number>(0);
     const history = useHistory();
@@ -62,7 +63,7 @@ const LeveeFond: React.FC<LeveeFondProps> = ({match}) => {
       setShowAlert(true);
     };
 
-  
+
     return (
     <IonPage>
       <IonHeader>
@@ -77,8 +78,8 @@ const LeveeFond: React.FC<LeveeFondProps> = ({match}) => {
       <IonContent class="levee-fond">
         <IonGrid>
             <IonRow>
-                <IonCol>
-                    Quel Montant souhaitez vous allouer à ce projet ?
+                <IonCol size="7">
+                  Quel montant souhaitez vous allouer à ce projet ?
                 </IonCol>
                 <IonCol>
                     <IonCard>
@@ -89,10 +90,10 @@ const LeveeFond: React.FC<LeveeFondProps> = ({match}) => {
                 </IonCol>
             </IonRow>
             <IonRow>
-                <IonCol>
-                   Taux de rendement estimé
+                <IonCol size="9">
+                  Taux de rendement estimé
                 </IonCol>
-                <IonCol>
+                <IonCol size="3">
                     <IonCard class="rendement-card">
                         {rendement} %
                     </IonCard>
@@ -105,10 +106,10 @@ const LeveeFond: React.FC<LeveeFondProps> = ({match}) => {
           yValues={data}
           options={options}
       />
-      
+
         </div>
         <IonButton onClick={handleParticipateButton}   class="participate-button center">Participer</IonButton>
-      
+
         <IonAlert
           isOpen={showAlert}
           onDidDismiss={() => setShowAlert(false)}

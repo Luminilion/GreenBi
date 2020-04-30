@@ -1,0 +1,3 @@
+const infoAcademy = "Apprenez à devenir un citoyen écoresponsable tout en gagnant de l’argent ! A la fin de chaque session, il y a un quiz-test pour évaluer votre l’assimilation des connaissances. Avant d’accéder à ce quiz-test, vous pourrez vous entrainer sur un quiz d’entrainement. Si vous complétez une session et si vous réussissez à obtenir une note suffisamment élevée au quiz, alors vous recevrez un bonus sur votre retour sur investissement (de la plateforme) pendant un certain temps. Ces bonus sont cumulables jusqu'à une certaine limite déterminée par la plateforme. Le montant de ce bonus et les modalités d’octroi sont détaillés plus loin dans le tableau « récompense » de l’onglet Académie."
+
+export default infoAcademy;

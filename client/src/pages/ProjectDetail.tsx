@@ -83,9 +83,8 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({match}) => {
                 </IonRow>
 
                 <IonRow style={{paddingTop:20}}>
-                <IonItem>
-                Lorem Ipsum set dolorem Lorem Ipsum set dolorem Lorem Ipsum set dolorem Lorem Ipsum set dolorem
-                Lorem Ipsum set dolorem Lorem Ipsu
+                <IonItem style={{margin:5}}>
+                  {project.description}
                 </IonItem><br />
                 </IonRow>
 

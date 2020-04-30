@@ -38,7 +38,10 @@ const UtilsSlides : React.FC<UtilsSlidesProps> = ({ slidesPerView, moreLink, pro
 
   return (
 
-      <IonSlides  options={{ slidesPerView: slidesPerView }}>
+      <IonSlides  
+        scrollbar={true}
+        options={{ slidesPerView: slidesPerView }
+      }>
 
         {projects.map( (project, index) => {
           let route = "/project-detail/"+product+'/'+project.id;

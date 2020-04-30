@@ -83,7 +83,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({match}) => {
                 </IonRow>
 
                 <IonRow style={{paddingTop:20}}>
-                <IonItem style={{margin:5}}>
+                <IonItem class="description">
                   {project.description}
                 </IonItem><br />
                 </IonRow>

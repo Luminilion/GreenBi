@@ -6,7 +6,7 @@ import { IonContent,
   IonToolbar,
   IonMenuButton,
   IonButtons,
-  IonItem
+  IonLabel
 } from '@ionic/react';
 
 import UtilsCategory from '../components/utils/UtilsCategory';
@@ -50,9 +50,9 @@ const Tab1: React.FC = () => {
             />
 
             <br />
-            <IonItem>
-              © GreenBi
-            </IonItem>
+            <IonLabel style={{padding:20}}>
+              GreenBi ©
+            </IonLabel>
 
         </IonContent>
         </IonPage>

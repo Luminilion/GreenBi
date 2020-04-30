@@ -48,7 +48,7 @@ const UtilsSlides : React.FC<UtilsSlidesProps> = ({ slidesPerView, moreLink, pro
           return (
             <IonSlide class="slide-project">
               <IonCard routerLink={route}
-                class="ion-color-bluecolor"
+                class="project-card"
               >
                 <img src={project.img} alt={project.title} />
                 <IonCardContent>

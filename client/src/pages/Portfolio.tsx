@@ -40,7 +40,7 @@ const Portfolio: React.FC = () => {
         </IonCard>
       <IonList>
       <IonListHeader>
-        Mes stocks
+        Mes Actions
       </IonListHeader>
 
       {

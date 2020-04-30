@@ -72,7 +72,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({match}) => {
                     </IonCol>
 
                     <IonCol>
-                        <IonItem>Type de produit : {match.params.projectType}</IonItem>
+                        <IonItem>Type de produit : {(match.params.projectType == "stocks") ? "action" : "royalties"}</IonItem>
                         <IonItem>Nom du projet : {project.title}</IonItem>
                         <IonItem class="risk-container">
                           <IonIcon icon={riskIcon} slot="start"/>

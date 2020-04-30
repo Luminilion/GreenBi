@@ -4,8 +4,11 @@
     margin: auto;
     margin-top:20px;
 }
-.personal-info  ion-item-divider{
-    margin-top: 20px;
+.personal-info  .first-item-divider{
+    margin-top: -10px;
+}
+.personal-info ion-list{
+    padding-bottom: 0px;
 }
 .personal-info .bouton-container{
     margin: auto;

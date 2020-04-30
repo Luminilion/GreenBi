@@ -56,7 +56,7 @@ const PersonalInfo: React.FC<PersonalInfoProps> = ({match}) => {
 
       <IonContent class="personal-info">
       <IonList class="form-container">
-          <IonItemDivider><b>Date et Lieu de Naissance</b></IonItemDivider>
+          <IonItemDivider class="first-item-divider"><b>Date et Lieu de Naissance</b></IonItemDivider>
           <IonItem>
             <IonInput placeholder="Date de Naissance"></IonInput>
           </IonItem>

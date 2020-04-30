@@ -23,7 +23,7 @@ const Tab1: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Stocks</IonTitle>
+          <IonTitle>Action</IonTitle>
           <IonMenuButton slot="start" />
         </IonToolbar>
       </IonHeader>

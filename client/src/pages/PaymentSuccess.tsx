@@ -11,6 +11,7 @@ import { IonContent,
   IonItem,
   IonButton,
   useIonViewDidEnter,
+  IonBackButton,
 } from '@ionic/react';
 
 import { RouteComponentProps} from 'react-router-dom';
@@ -65,6 +66,9 @@ const PaymentSuccess: React.FC<PaymentSuccessProps> = ({match}) => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
+        <IonButtons slot="start">
+                <IonMenuButton />
+            </IonButtons>
           <IonTitle>Succès</IonTitle>
         </IonToolbar>
       </IonHeader>

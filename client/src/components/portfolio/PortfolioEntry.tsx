@@ -4,10 +4,15 @@ import {
   IonItem,
   IonAvatar,
   IonLabel,
+  IonGrid,
+  IonRow,
+  IonCol,
+  IonIcon
 } from '@ionic/react';
 
 import projectData from '../../data/ProjectData';
 import portfolioData from '../../data/PortfolioData';
+import {chevronForwardCircleOutline} from 'ionicons/icons';
 
 import '../../pages/Portfolio/Portfolio.css'
 
@@ -28,14 +33,22 @@ const PortfolioEntry : React.FC<PortfolioEntryProps> = ({productType, projectId}
           <IonAvatar slot="start">
             <img src={project.img} />
           </IonAvatar>
-          <IonLabel>
-            <h2>{project.title}</h2>
-            <p>{investment.invest_amount + " €"}</p>
-          </IonLabel>
-          <IonLabel>
-            <h2></h2>
-            <p>{investment.refund_amount + " €"} ( {investment.refund_percentage + " %"} )</p>
-          </IonLabel>
+          <IonGrid>
+            <IonRow>
+              <IonCol size="5">
+                <IonLabel><h2>{project.title}</h2></IonLabel>
+              </IonCol>
+              <IonCol size="4">
+                <IonLabel><p>{investment.invest_amount*investment.refund_percentage/100}/{investment.invest_amount} €</p></IonLabel>
+              </IonCol>
+              <IonCol size="2">
+                <IonLabel><p>{investment.refund_percentage}</p></IonLabel>
+              </IonCol>
+              <IonCol size="1">
+                <IonIcon icon={chevronForwardCircleOutline} />
+              </IonCol>
+            </IonRow>
+          </IonGrid>
        </IonItem>
     );
 
@@ -44,11 +57,25 @@ const PortfolioEntry : React.FC<PortfolioEntryProps> = ({productType, projectId}
           <IonAvatar slot="start">
             <img src={project.img} />
           </IonAvatar>
-          <IonLabel>
-            <h2>{project.title}</h2>
-            <h3>{(investment.croissance > 0)?"+" : ""} { investment.croissance + " %"}</h3>
-            <p>{investment.buy_price + " €"}</p>
-          </IonLabel>
+          <IonGrid>
+            <IonRow>
+              <IonCol size="3">
+                <IonLabel><h3>{project.title}</h3></IonLabel>
+              </IonCol>
+              <IonCol size="3">
+                <IonLabel><h3>{investment.buy_price + " €"}</h3></IonLabel>
+              </IonCol>
+              <IonCol size="3">
+                <IonLabel><h3>{(project.value > 0)?"+" : ""} { project.value + "%"}</h3></IonLabel>
+              </IonCol>
+              <IonCol size="2">
+                <IonLabel><h3>{investment.variation}%</h3></IonLabel>
+              </IonCol>
+              <IonCol size="1">
+                <IonIcon icon={chevronForwardCircleOutline} />
+              </IonCol>
+            </IonRow>
+          </IonGrid>
        </IonItem>
     )
   };

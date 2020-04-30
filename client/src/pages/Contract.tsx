@@ -46,7 +46,7 @@ const PaymentSuccess: React.FC<ContractProps> = ({match}) => {
       </IonHeader>
 
       <IonContent class="contract-content">
-        <h2 style={{marginLeft:30, marginRight:30}}>Contrat d'achat du produit financier : {match.params.projectType}</h2>
+        <h2 style={{marginLeft:30, marginRight:30}}>Contrat d'achat du produit financier : {(match.params.projectType == "stocks") ? "action" : "royalties"}</h2>
         <IonCard>
 
 <p>

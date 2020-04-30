@@ -42,7 +42,7 @@ const Payment: React.FC<PaymentProps> = ({match}) => {
         <IonButtons slot="start">
                 <IonBackButton />
             </IonButtons>
-          <IonTitle>PAIEMENT  </IonTitle>
+          <IonTitle>VIREMENT  </IonTitle>
         </IonToolbar>
       </IonHeader>
 
@@ -53,7 +53,7 @@ const Payment: React.FC<PaymentProps> = ({match}) => {
         </IonAvatar>
 
         
-        <h3>Vous vous apretez à faire un paiement de {match.params.amount} €</h3>
+        <h3>Vous vous apprêtez à faire un paiement de {match.params.amount} €</h3>
         <div className="container-logo-stripe">
           <img src="stripe.png"></img>
         </div>

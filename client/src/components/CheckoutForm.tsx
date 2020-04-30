@@ -90,7 +90,7 @@ const CheckoutForm : React.FC<CheckoutFormProps> = ({montant,successUrl}) => {
             <IonLoading
               isOpen={showLoading}
               onDidDismiss={() => setShowLoading(false)}
-              message={'Nous procédons au transfert de fonds. Veuillez Patienter ...'}
+              message={'Nous procédons au transfert de fonds. Veuillez patienter ...'}
               duration={5000}
             />
         </form>

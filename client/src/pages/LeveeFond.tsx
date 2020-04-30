@@ -114,7 +114,7 @@ const LeveeFond: React.FC<LeveeFondProps> = ({match}) => {
           isOpen={showAlert}
           onDidDismiss={() => setShowAlert(false)}
           header={'Attention'}
-          message={'Avant de pouvoir continuer, nous avons besoins de quelques informations personnelles'}
+          message={'Avant de pouvoir continuer, nous avons besoin de quelques informations personnelles'}
           buttons={[{
             text: 'Accepter',
             role: 'accept',

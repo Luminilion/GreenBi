@@ -91,7 +91,7 @@ const CheckoutForm : React.FC<CheckoutFormProps> = ({montant,successUrl}) => {
               isOpen={showLoading}
               onDidDismiss={() => setShowLoading(false)}
               message={'Nous procédons au transfert de fonds. Veuillez Patienter ...'}
-
+              duration={5000}
             />
         </form>
 

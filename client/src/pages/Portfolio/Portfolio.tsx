@@ -47,7 +47,7 @@ const Portfolio: React.FC = () => {
 
       <IonList>
       <IonListHeader>
-        Mes Actions
+        Mes actions
       </IonListHeader>
 
       {

@@ -72,7 +72,7 @@ const UtilsSlides : React.FC<UtilsSlidesProps> = ({ slidesPerView, moreLink, pro
           )
         })}
 
-        <IonSlide>
+        <IonSlide className="slide-arrow">
           <IonItem routerLink={moreLink} >
             <IonIcon icon={arrowForward} />
           </IonItem>

@@ -9,7 +9,7 @@ import {
 import projectData from '../../data/ProjectData';
 import portfolioData from '../../data/PortfolioData';
 
-import '../../pages/Portfolio.css'
+import '../../pages/Portfolio/Portfolio.css'
 
 interface PortfolioEntryProps {
   productType: string;

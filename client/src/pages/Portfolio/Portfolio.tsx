@@ -15,10 +15,12 @@ import {
   IonListHeader,
 } from '@ionic/react';
 
-import PortfolioEntry from '../components/portfolio/PortfolioEntry';
+import PortfolioEntry from '../../components/portfolio/PortfolioEntry';
+import PointInfo from '../../components/utils/PointInfo';
 
 import './Portfolio.css';
-import portfolioData from '../data/PortfolioData';
+import portfolioData from '../../data/PortfolioData';
+import infoPortfolio from './InfoPortfolio';
 
 const Portfolio: React.FC = () => {
   return (
@@ -26,8 +28,12 @@ const Portfolio: React.FC = () => {
       <IonHeader>
         <IonToolbar>
           <IonTitle>Portfolio</IonTitle>
-          <IonButtons slot="start" >
-            <IonMenuButton />
+          <IonMenuButton slot="start"/>
+          <IonButtons slot="end">
+            <PointInfo
+              type="info"
+              content={infoPortfolio}
+              />
           </IonButtons>
         </IonToolbar>
       </IonHeader>

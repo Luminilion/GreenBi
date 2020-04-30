@@ -6,12 +6,19 @@ import {
   IonSegmentButton,
   IonSelect,
   IonSelectOption,
+  IonItem,
+  IonLabel,
 } from '@ionic/react';
 import {
   PickerColumn
 } from '@ionic/core';
 
 import UtilsPicker from '../utils/UtilsPicker';
+import PointInfo from '../utils/PointInfo';
+
+import {infoROI, infoRisque, infoRegion, infoImpact, infoFiltre, infoPopularite, infoProgression} from './InfoRoyaltiesFilter';
+
+import { } from './InfoRoyaltiesFilter';
 
 interface RoyaltiesFilterProps {
 
@@ -61,7 +68,13 @@ const RoyaltiesFilter: React.FC = () => {
 
         <h2 style={{ margin:20 }}>Filtres</h2>
 
-        <p style={{ margin:20 }}>Retour sur investissement</p>
+        <IonItem>
+          <IonLabel>Retour sur investissement</IonLabel>
+          <PointInfo
+            type="info"
+            content={infoROI}
+            />
+        </IonItem>
 
         <IonButton onClick={() => { setROEPickerOpen(true); }} >
           Select ROE
@@ -78,7 +91,13 @@ const RoyaltiesFilter: React.FC = () => {
           rightColumn={roeValues}
         />
 
-        <p style={{ margin:20 }}>Progression du projet</p>
+        <IonItem>
+          <IonLabel>Progression du projet</IonLabel>
+          <PointInfo
+            type="info"
+            content={infoProgression}
+            />
+        </IonItem>
 
         <IonButton onClick={() => { setProgressPickerOpen(true); }} >
           Select progression
@@ -95,7 +114,13 @@ const RoyaltiesFilter: React.FC = () => {
           rightColumn={progressValues}
         />
 
-        <p style={{ margin:20 }}>Filtrer les projets par nombre d'investisseurs</p>
+        <IonItem>
+          <IonLabel>Filtrer les projets par nombre d'investisseurs</IonLabel>
+          <PointInfo
+            type="info"
+            content={infoPopularite}
+            />
+        </IonItem>
 
         <IonSegment value="topAll">
           <IonSegmentButton value="topAll">Tous</IonSegmentButton>
@@ -103,7 +128,13 @@ const RoyaltiesFilter: React.FC = () => {
           <IonSegmentButton value="top3">Top 3</IonSegmentButton>
         </IonSegment>
 
-        <p style={{ margin:20 }}>Notation du projet</p>
+        <IonItem>
+          <IonLabel>Notation du projet</IonLabel>
+          <PointInfo
+            type="info"
+            content={infoRisque}
+            />
+        </IonItem>
 
         <IonSelect
           multiple
@@ -117,7 +148,13 @@ const RoyaltiesFilter: React.FC = () => {
           <IonSelectOption value="C-" >C-</IonSelectOption>
         </IonSelect>
 
-        <p style={{ margin:20 }}>Impact</p>
+        <IonItem>
+          <IonLabel>Impact</IonLabel>
+          <PointInfo
+            type="info"
+            content={infoImpact}
+            />
+        </IonItem>
 
         <IonSelect
           multiple
@@ -131,7 +168,13 @@ const RoyaltiesFilter: React.FC = () => {
           <IonSelectOption value={6} >6</IonSelectOption>
         </IonSelect>
 
-        <p style={{ margin:20 }}>Région</p>
+        <IonItem>
+          <IonLabel>Région</IonLabel>
+          <PointInfo
+            type="info"
+            content={infoRegion}
+            />
+        </IonItem>
 
         <IonSelect
           multiple

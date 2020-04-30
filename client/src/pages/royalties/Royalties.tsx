@@ -6,10 +6,13 @@ import { IonContent,
   IonToolbar,
   IonSearchbar,
   IonMenuButton,
+  IonButtons,
 } from '@ionic/react';
 
 import UtilsFullCategory from '../../components/utils/UtilsFullCategory';
 import RoyaltiesFilter from '../../components/Royalties/RoyaltiesFilter';
+import PointInfo from '../../components/utils/PointInfo';
+import infoRoyalties from './InfoRoyalties';
 
 import '../MainPage.css';
 
@@ -23,6 +26,12 @@ const Tab1: React.FC = () => {
         <IonToolbar>
           <IonTitle>Royalties</IonTitle>
           <IonMenuButton slot="start" />
+          <IonButtons slot="end">
+            <PointInfo
+              type="info"
+              content={infoRoyalties}
+              />
+          </IonButtons>
         </IonToolbar>
       </IonHeader>
 

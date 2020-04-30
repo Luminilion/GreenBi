@@ -1,29 +1,32 @@
-  import React from 'react';
+import React from 'react';
 import { IonContent,
-  IonHeader,
-  IonPage,
-  IonTitle,
-  IonToolbar,
-  IonButton,
-  IonItem,
-  IonGrid,
-  IonCol,
-  IonRow,
-  IonProgressBar,
-  IonLabel,
-  IonButtons,
-  IonBackButton,
+IonHeader,
+IonPage,
+IonTitle,
+IonToolbar,
+IonButton,
+IonItem,
+IonGrid,
+IonCol,
+IonRow,
+IonProgressBar,
+IonLabel,
+IonButtons,
+IonBackButton,
+IonIcon
 } from '@ionic/react';
 import { RouteComponentProps } from 'react-router-dom';
+import ProjectDetailEntry from '../components/ProjectDetail/ProjectDetailEntry';
 
 import projectData from '../data/ProjectData';
+import { alertCircle } from "ionicons/icons";
 
 import './ProjectDetail.css';
 
 
 interface ProjectDetailProps extends RouteComponentProps<{
-  projectId: string;
-  projectType: string;
+projectId: string;
+projectType: string;
 }> {}
 
 const ProjectDetail: React.FC<ProjectDetailProps> = ({match}) => {
@@ -32,67 +35,62 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({match}) => {
     match.params.projectType + '/' +
     match.params.projectId + '/';
 
-  const getProject = function(type, id){
-      let idInt = parseInt(id);
-      if(type == "stocks"){
-          return projectData.stocks.find(e => e.id == idInt);
-      }else{
-          return projectData.royalties.find(e => e.id == idInt);
-      }
-  };
-  
-  const project = getProject(match.params.projectType,match.params.projectId);
+  let idInt = parseInt(match.params.projectId);
+  const project = projectData[match.params.projectType].find(e => e.id == idInt);
 
-  return (
-    <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>{project.title}</IonTitle>
-          <IonButtons slot="start">
-            <IonBackButton />
-          </IonButtons>
-        </IonToolbar>
-      </IonHeader>
+return (
+  <IonPage>
+    <IonHeader>
+      <IonToolbar>
+        <IonTitle>{project.title}</IonTitle>
+        <IonButtons slot="start">
+          <IonBackButton />
+        </IonButtons>
+      </IonToolbar>
+    </IonHeader>
 
-      <IonContent class="project-detail">
+    <IonContent class="project-detail">
+          <IonGrid>
 
-          <div className="project-type">
-            <h2>{match.params.projectType}</h2>
-          </div>
+              <IonRow>
 
-            <IonGrid>
-                <IonRow>
-                    <IonCol>
-                        <IonItem>
-                            <img src={project.img}></img>
-                        </IonItem>
-                        <IonItem class="risk-container">
-                          Risque elevé
-                        </IonItem>
-                    </IonCol>
+                  <IonCol>
+                      <IonItem>
+                          <img src={project.img}></img>
+                      </IonItem>
+                  </IonCol>
 
-                    <IonCol>
-                        <div className="funds">
-                          <IonProgressBar value={0.72} /><br />
-                          <p>72 000 / 100 000</p>
-                        </div>
+                  <IonCol>
+                      <IonItem>Type de produit : {match.params.projectType}</IonItem>
+                      <IonItem>Nom du projet : {project.title}</IonItem>
+                      <IonItem class="risk-container">
+                        <IonIcon icon={alertCircle} slot="start"/>
+                        <IonLabel>Risque : elevé</IonLabel>
+                      </IonItem>
+                  </IonCol>
 
-                        <IonItem>
-                            Lorem Ipsum set dolorem Lorem Ipsum set dolorem Lorem Ipsum set dolorem Lorem Ipsum set dolorem
-                            Lorem Ipsum set dolorem Lorem Ipsu
-                        </IonItem><br />
-                    </IonCol>
-                </IonRow>
+              </IonRow>
 
-                <IonRow>
-                    <IonCol><IonItem><IonLabel>78 personnes sur ce projet</IonLabel></IonItem> </IonCol>
-                    <IonCol> <IonButton routerLink={nexturl} size="small" expand="block">Participer</IonButton></IonCol>
-                </IonRow>
-            </IonGrid>
+              <IonRow style={{paddingTop:20}}>
+              <IonItem>
+              Lorem Ipsum set dolorem Lorem Ipsum set dolorem Lorem Ipsum set dolorem Lorem Ipsum set dolorem
+              Lorem Ipsum set dolorem Lorem Ipsu
+              </IonItem><br />
+              </IonRow>
 
-      </IonContent>
-    </IonPage>
-  );
+              <ProjectDetailEntry
+                projectId={idInt}
+                productType={match.params.projectType}
+              />
+
+              <IonRow>
+                  <IonCol> <IonButton routerLink={nexturl} size="small" expand="block">Participer</IonButton></IonCol>
+              </IonRow>
+
+          </IonGrid>
+    </IonContent>
+  </IonPage>
+);
 };
 
 export default ProjectDetail;
